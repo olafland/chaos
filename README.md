@@ -18,10 +18,19 @@ To learn more about Chaos, check out our [SenSys'13 paper](http://dl.acm.org/cit
 Code Layout
 -----------
 
-`/chaos/contiki/apps/` (Chaos example app)
+`/chaos/contiki/apps/` (example app)
+
+`/chaos/contiki/core/dev` (Chaos header and source files)
+
+`/chaos/simulator` (Python Chaos simulator)
+
 
 Building and Running Chaos
 ----------------------
+
+Testbed
+
+Cooja simulator
 
 Research
 --------
