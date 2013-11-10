@@ -4,7 +4,7 @@ Chaos
 Chaos is a versatile, efficient, and reliable primitive for sharing data among all nodes in a low-power wireless network.
 Applications of Chaos are diverse and include the computation of aggregate functions, network-wide agreement, atomic broadcast, reliable dissemination, and all-to-all communication.
 
-To start an all-to-all interaction using Chaos, an appointed *initiator* node sends a packet containing its data (e.g., a temperature reading).
+To start an all-to-all interaction using Chaos, an appointed *initiator* sends a packet containing the data it wants to share will all others (e.g., a temperature reading).
 Nodes overhearing the transmission merge their own data with the data received from the initiator and transmit the result (e.g., a packet containing the maximum of the local and the received temperature) synchronously.
 Other nodes receive one of the packets due to the *capture effect*, merge data, and transmit again.
 This process continues until all nodes in the network share the same data (e.g., the maximum temperature across all nodes in the network), which takes typically less than 100 milliseconds in a 100-node multi-hop network.
