@@ -7,7 +7,7 @@ Applications of Chaos are diverse and include the computation of aggregate funct
 To start an all-to-all interaction using Chaos, an appointed *initiator* sends a packet containing the data it wants to share will all others (e.g., a temperature reading).
 Nodes overhearing the transmission merge their own data with the data received from the initiator and transmit the result (e.g., a packet containing the maximum of their own temperature reading and the received one) synchronously.
 Other nodes receive one of the packets due to the *capture effect*, merge data, and transmit again.
-This process continues until all nodes in the network share the same data (e.g., the maximum temperature across all nodes in the network), which takes typically less than 100 milliseconds in a 100-node multi-hop network.
+This process continues in a distributed and "chaotic" manner until all nodes in the network share the same data (e.g., the maximum temperature across all nodes in the network), which takes typically less than 100 milliseconds in a 100-node multi-hop network.
 
 The versatility of Chaos stems from the programmable *merge operator* a Chaos user needs to supply.
 The merge operator specifies how a node should combine its own with the received data to produce a single output during an all-to-all interaction.
