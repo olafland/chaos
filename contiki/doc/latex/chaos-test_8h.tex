@@ -1,0 +1,84 @@
+\hypertarget{chaos-test_8h}{\section{apps/chaos-\/test/chaos-\/test.h File Reference}
+\label{chaos-test_8h}\index{apps/chaos-\/test/chaos-\/test.\-h@{apps/chaos-\/test/chaos-\/test.\-h}}
+}
+{\ttfamily \#include \char`\"{}chaos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}node-\/id.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}cc2420.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structchaos__data__struct}{chaos\-\_\-data\-\_\-struct}
+\begin{DoxyCompactList}\small\item\em Data structure used to represent Chaos data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__chaos-test-settings_ga2e373237aef3ee2b0fdb15cd0b8c5390}{\#define \hyperlink{group__chaos-test-settings_ga2e373237aef3ee2b0fdb15cd0b8c5390}{I\-N\-I\-T\-I\-A\-T\-O\-R\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D}~1}\label{group__chaos-test-settings_ga2e373237aef3ee2b0fdb15cd0b8c5390}
+
+\begin{DoxyCompactList}\small\item\em Node\-Id of the initiator. Default value\-: 200. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-settings_ga50f8fba62aef680d9929caefea7ca7e4}{\#define \hyperlink{group__chaos-test-settings_ga50f8fba62aef680d9929caefea7ca7e4}{N\-\_\-\-T\-X}~255}\label{group__chaos-test-settings_ga50f8fba62aef680d9929caefea7ca7e4}
+
+\begin{DoxyCompactList}\small\item\em Maximum number of transmissions N. Default value\-: 255. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-settings_gac350311560ae88aca71125cd35ea9b8a}{\#define \hyperlink{group__chaos-test-settings_gac350311560ae88aca71125cd35ea9b8a}{N\-\_\-\-T\-X\-\_\-\-C\-O\-M\-P\-L\-E\-T\-E}~5}\label{group__chaos-test-settings_gac350311560ae88aca71125cd35ea9b8a}
+
+\begin{DoxyCompactList}\small\item\em Maximum number of transmissions when complete. Default value\-: 5. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-settings_ga60caa3837557044dab47a0e8f074133f}{\#define \hyperlink{group__chaos-test-settings_ga60caa3837557044dab47a0e8f074133f}{C\-H\-A\-O\-S\-\_\-\-N\-O\-D\-E\-S}~3}\label{group__chaos-test-settings_ga60caa3837557044dab47a0e8f074133f}
+
+\begin{DoxyCompactList}\small\item\em define number of nodes (if not testbed config is used) Default value\-: 3. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-settings_ga866587a856ba94fe36129ce80986c2c9}{\#define \hyperlink{group__chaos-test-settings_ga866587a856ba94fe36129ce80986c2c9}{M\-E\-R\-G\-E\-\_\-\-L\-E\-N}~((\hyperlink{group__chaos-test-settings_ga60caa3837557044dab47a0e8f074133f}{C\-H\-A\-O\-S\-\_\-\-N\-O\-D\-E\-S} / 8) + ((\hyperlink{group__chaos-test-settings_ga60caa3837557044dab47a0e8f074133f}{C\-H\-A\-O\-S\-\_\-\-N\-O\-D\-E\-S} \% 8) ? 1 \-: 0))}\label{group__chaos-test-settings_ga866587a856ba94fe36129ce80986c2c9}
+
+\begin{DoxyCompactList}\small\item\em compute length of the flags array. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-settings_ga0d2f1494f226d83b044e0af291496af7}{\#define \hyperlink{group__chaos-test-settings_ga0d2f1494f226d83b044e0af291496af7}{C\-H\-A\-O\-S\-\_\-\-C\-O\-M\-P\-L\-E\-T\-E\-\_\-\-F\-L\-A\-G}~((1 $<$$<$ (((\hyperlink{group__chaos-test-settings_ga60caa3837557044dab47a0e8f074133f}{C\-H\-A\-O\-S\-\_\-\-N\-O\-D\-E\-S} -\/ 1) \% 8) + 1)) -\/ 1)}\label{group__chaos-test-settings_ga0d2f1494f226d83b044e0af291496af7}
+
+\begin{DoxyCompactList}\small\item\em compute how the last flag byte looks when we are complete (all other flag bytes are 0x\-F\-F) \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-settings_ga9eb9256366e6e80d689339627c9b016a}{\#define \hyperlink{group__chaos-test-settings_ga9eb9256366e6e80d689339627c9b016a}{C\-H\-A\-O\-S\-\_\-\-P\-E\-R\-I\-O\-D}~((uint32\-\_\-t)R\-T\-I\-M\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D $\ast$ 2)}\label{group__chaos-test-settings_ga9eb9256366e6e80d689339627c9b016a}
+
+\begin{DoxyCompactList}\small\item\em Period with which a Chaos phase is scheduled. Default value\-: 2000 ms (if I\-P\-I is not defined) \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-settings_ga41b1c21c8fdb8d06878a6da529bd0da7}{\#define \hyperlink{group__chaos-test-settings_ga41b1c21c8fdb8d06878a6da529bd0da7}{C\-H\-A\-O\-S\-\_\-\-D\-U\-R\-A\-T\-I\-O\-N}~((uint32\-\_\-t)R\-T\-I\-M\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D $\ast$ 3 / 2)}\label{group__chaos-test-settings_ga41b1c21c8fdb8d06878a6da529bd0da7}
+
+\begin{DoxyCompactList}\small\item\em Duration of each Chaos phase. Default value\-: 1500 ms (if duration divider is not defined). \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-settings_gaeff8523b0c9347628bd55d607da5460d}{\#define \hyperlink{group__chaos-test-settings_gaeff8523b0c9347628bd55d607da5460d}{C\-H\-A\-O\-S\-\_\-\-G\-U\-A\-R\-D\-\_\-\-T\-I\-M\-E}~(R\-T\-I\-M\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D / 1000)}\label{group__chaos-test-settings_gaeff8523b0c9347628bd55d607da5460d}
+
+\begin{DoxyCompactList}\small\item\em Guard-\/time at receivers. Default value\-: 1000 us (3000 us when using Cooja). \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-settings_ga115f8d5d589cf7d28c1a67902105c766}{\#define \hyperlink{group__chaos-test-settings_ga115f8d5d589cf7d28c1a67902105c766}{C\-H\-A\-O\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-\_\-\-P\-E\-R\-I\-O\-D\-S}~3}\label{group__chaos-test-settings_ga115f8d5d589cf7d28c1a67902105c766}
+
+\begin{DoxyCompactList}\small\item\em Number of consecutive Chaos phases with successful computation of reference time required to exit from bootstrapping. Default value\-: 3. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-settings_ga4d273518d37ce068cf9a0a99a80f3d6b}{\#define \hyperlink{group__chaos-test-settings_ga4d273518d37ce068cf9a0a99a80f3d6b}{C\-H\-A\-O\-S\-\_\-\-I\-N\-I\-T\-\_\-\-P\-E\-R\-I\-O\-D}~(\hyperlink{group__chaos-test-settings_ga9029d010ebd88a3f038aa1a496da1e0a}{C\-H\-A\-O\-S\-\_\-\-I\-N\-I\-T\-\_\-\-D\-U\-R\-A\-T\-I\-O\-N} + R\-T\-I\-M\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D / 100)}\label{group__chaos-test-settings_ga4d273518d37ce068cf9a0a99a80f3d6b}
+
+\begin{DoxyCompactList}\small\item\em Period during bootstrapping at receivers. It should not be an exact fraction of \hyperlink{group__chaos-test-settings_ga9eb9256366e6e80d689339627c9b016a}{C\-H\-A\-O\-S\-\_\-\-P\-E\-R\-I\-O\-D}. Default value\-: 69.\-474 ms. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-settings_ga9029d010ebd88a3f038aa1a496da1e0a}{\#define \hyperlink{group__chaos-test-settings_ga9029d010ebd88a3f038aa1a496da1e0a}{C\-H\-A\-O\-S\-\_\-\-I\-N\-I\-T\-\_\-\-D\-U\-R\-A\-T\-I\-O\-N}~(\hyperlink{group__chaos-test-settings_ga41b1c21c8fdb8d06878a6da529bd0da7}{C\-H\-A\-O\-S\-\_\-\-D\-U\-R\-A\-T\-I\-O\-N} -\/ \hyperlink{group__chaos-test-settings_gaeff8523b0c9347628bd55d607da5460d}{C\-H\-A\-O\-S\-\_\-\-G\-U\-A\-R\-D\-\_\-\-T\-I\-M\-E} + \hyperlink{group__chaos-test-settings_ga1f0aaac6ffeb7477d0718d1cfacdf4a1}{C\-H\-A\-O\-S\-\_\-\-I\-N\-I\-T\-\_\-\-G\-U\-A\-R\-D\-\_\-\-T\-I\-M\-E})}\label{group__chaos-test-settings_ga9029d010ebd88a3f038aa1a496da1e0a}
+
+\begin{DoxyCompactList}\small\item\em Duration during bootstrapping at receivers. Default value\-: 59.\-474 ms. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-settings_ga1f0aaac6ffeb7477d0718d1cfacdf4a1}{\#define \hyperlink{group__chaos-test-settings_ga1f0aaac6ffeb7477d0718d1cfacdf4a1}{C\-H\-A\-O\-S\-\_\-\-I\-N\-I\-T\-\_\-\-G\-U\-A\-R\-D\-\_\-\-T\-I\-M\-E}~(R\-T\-I\-M\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D / 20)}\label{group__chaos-test-settings_ga1f0aaac6ffeb7477d0718d1cfacdf4a1}
+
+\begin{DoxyCompactList}\small\item\em Guard-\/time during bootstrapping at receivers. Default value\-: 50 ms. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-settings_ga212a14606599edd2c69298c5cffa64a0}{\#define \hyperlink{group__chaos-test-settings_ga212a14606599edd2c69298c5cffa64a0}{P\-A\-Y\-L\-O\-A\-D\-\_\-\-L\-E\-N}~100}\label{group__chaos-test-settings_ga212a14606599edd2c69298c5cffa64a0}
+
+\begin{DoxyCompactList}\small\item\em payload length. Default value\-: 100 bytes. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-defines_gaf02e45f15080b8ec9dd7b286157617ff}{\#define \hyperlink{group__chaos-test-defines_gaf02e45f15080b8ec9dd7b286157617ff}{D\-A\-T\-A\-\_\-\-L\-E\-N}~sizeof(\hyperlink{structchaos__data__struct}{chaos\-\_\-data\-\_\-struct})}\label{group__chaos-test-defines_gaf02e45f15080b8ec9dd7b286157617ff}
+
+\begin{DoxyCompactList}\small\item\em Length of data structure. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-defines_ga4033ccadc530529ac8bc59d83d36b727}{\#define \hyperlink{group__chaos-test-defines_ga4033ccadc530529ac8bc59d83d36b727}{C\-H\-A\-O\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-M\-O\-D\-E}~C\-H\-A\-O\-S\-\_\-\-S\-Y\-N\-C}\label{group__chaos-test-defines_ga4033ccadc530529ac8bc59d83d36b727}
+
+\begin{DoxyCompactList}\small\item\em synchronization on/off \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-defines_ga3d1e7d432a1b08c6c103a999b1dc76df}{\#define \hyperlink{group__chaos-test-defines_ga3d1e7d432a1b08c6c103a999b1dc76df}{I\-S\-\_\-\-I\-N\-I\-T\-I\-A\-T\-O\-R}()~(node\-\_\-id == \hyperlink{group__chaos-test-settings_ga2e373237aef3ee2b0fdb15cd0b8c5390}{I\-N\-I\-T\-I\-A\-T\-O\-R\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D})}\label{group__chaos-test-defines_ga3d1e7d432a1b08c6c103a999b1dc76df}
+
+\begin{DoxyCompactList}\small\item\em Check if the node\-Id matches the one of the initiator. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__chaos-test-defines_gad93c921ab7f327f23c1ba985a0f33c1a}{C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-P\-I\-N\-G}()~(skew\-\_\-estimated $<$ \hyperlink{group__chaos-test-settings_ga115f8d5d589cf7d28c1a67902105c766}{C\-H\-A\-O\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-\_\-\-P\-E\-R\-I\-O\-D\-S})
+\begin{DoxyCompactList}\small\item\em Check if Chaos is still bootstrapping. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__chaos-test-defines_ga8953d1c8a6ef4556adfaf81253f98fc7}{C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-E\-D}()~(\hyperlink{group__chaos__sync_gae7e475746ec86ae6dd8ca9ece642faf8}{is\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated}())
+\begin{DoxyCompactList}\small\item\em Check if Chaos is synchronized. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__chaos-test-defines_ga034934dede09c474ca85417c4794cb51}{C\-H\-A\-O\-S\-\_\-\-R\-E\-F\-E\-R\-E\-N\-C\-E\-\_\-\-T\-I\-M\-E}~(\hyperlink{group__chaos__sync_gaa37a5474c90f7747d0f5054dc1a03764}{get\-\_\-t\-\_\-ref\-\_\-l}())
+\begin{DoxyCompactList}\small\item\em Get Chaos reference time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}    A simple example of an application that uses Chaos, header file.
+
+    The application schedules Chaos periodically.
+    The period is determined by \link CHAOS_PERIOD \endlink.
+\end{DoxyVerb}
+ \begin{DoxyAuthor}{Author}
+Olaf Landsiedel \href{mailto:olafl@chalmers.se}{\tt olafl@chalmers.\-se} 
+
+Federico Ferrari \href{mailto:ferrari@tik.ee.ethz.ch}{\tt ferrari@tik.\-ee.\-ethz.\-ch} 
+\end{DoxyAuthor}

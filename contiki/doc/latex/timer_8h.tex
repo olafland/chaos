@@ -1,0 +1,28 @@
+\hypertarget{timer_8h}{\section{core/sys/timer.h File Reference}
+\label{timer_8h}\index{core/sys/timer.\-h@{core/sys/timer.\-h}}
+}
+{\ttfamily \#include \char`\"{}sys/clock.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtimer}{timer}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__timer_ga6614d96fdfcd95c95ec6e6f63071ff51}{timer\-\_\-set} (struct \hyperlink{structtimer}{timer} $\ast$t, clock\-\_\-time\-\_\-t interval)
+\item 
+void \hyperlink{group__timer_gaedaf3e48c2b04229b85455fb948468d6}{timer\-\_\-reset} (struct \hyperlink{structtimer}{timer} $\ast$t)
+\item 
+void \hyperlink{group__timer_gacb807bd57e5489b386b876af5c1f163a}{timer\-\_\-restart} (struct \hyperlink{structtimer}{timer} $\ast$t)
+\item 
+int \hyperlink{group__timer_ga6d71dececfce707c668e6257aad5906e}{timer\-\_\-expired} (struct \hyperlink{structtimer}{timer} $\ast$t)
+\item 
+clock\-\_\-time\-\_\-t \hyperlink{group__timer_gaa10c14f8082ea8b10dfbefb81e1fa2e0}{timer\-\_\-remaining} (struct \hyperlink{structtimer}{timer} $\ast$t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Timer library header file. \begin{DoxyAuthor}{Author}
+Adam Dunkels \href{mailto:adam@sics.se}{\tt adam@sics.\-se} 
+\end{DoxyAuthor}

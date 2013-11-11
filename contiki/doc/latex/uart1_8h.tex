@@ -1,0 +1,43 @@
+\hypertarget{uart1_8h}{\section{cpu/msp430/dev/uart1.h File Reference}
+\label{uart1_8h}\index{cpu/msp430/dev/uart1.\-h@{cpu/msp430/dev/uart1.\-h}}
+}
+{\ttfamily \#include \char`\"{}msp430\-Contiki.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{uart1_8h_a8af86b82fd598cae966ebc12a73aab3c}{\#define {\bfseries U\-A\-R\-T1\-\_\-\-B\-A\-U\-D2\-U\-B\-R}(baud)~((M\-S\-P430\-\_\-\-C\-P\-U\-\_\-\-S\-P\-E\-E\-D)/(baud))}\label{uart1_8h_a8af86b82fd598cae966ebc12a73aab3c}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{uart1_8h_a29dfe8517f3208a7c5149e145e59fb7f}{void {\bfseries uart1\-\_\-set\-\_\-input} (int($\ast$input)(unsigned char c))}\label{uart1_8h_a29dfe8517f3208a7c5149e145e59fb7f}
+
+\item 
+\hypertarget{uart1_8h_a0dd96f9480ef39347dfca7ff4d387652}{void {\bfseries uart1\-\_\-writeb} (unsigned char c)}\label{uart1_8h_a0dd96f9480ef39347dfca7ff4d387652}
+
+\item 
+void \hyperlink{uart1_8h_a63263e531162ee62179b3f0c9915b8a3}{uart1\-\_\-init} (unsigned long ubr)
+\item 
+\hypertarget{uart1_8h_a2054b106ea3d195a9f080b14776ff613}{uint8\-\_\-t {\bfseries uart1\-\_\-active} (void)}\label{uart1_8h_a2054b106ea3d195a9f080b14776ff613}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}    A brief description of what this file is.
+\end{DoxyVerb}
+ \begin{DoxyAuthor}{Author}
+Adam Dunkels \href{mailto:adam@sics.se}{\tt adam@sics.\-se} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{uart1_8h_a63263e531162ee62179b3f0c9915b8a3}{\index{uart1.\-h@{uart1.\-h}!uart1\-\_\-init@{uart1\-\_\-init}}
+\index{uart1\-\_\-init@{uart1\-\_\-init}!uart1.h@{uart1.\-h}}
+\subsubsection[{uart1\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uart1\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{ubr}
+\end{DoxyParamCaption}
+)}}\label{uart1_8h_a63263e531162ee62179b3f0c9915b8a3}
+Initalize the R\-S232 port. 

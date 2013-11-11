@@ -1,0 +1,171 @@
+\hypertarget{group__chaos__internal}{\section{Chaos internal functions}
+\label{group__chaos__internal}\index{Chaos internal functions@{Chaos internal functions}}
+}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__chaos__timeouts}{Timeouts}
+\item 
+\hyperlink{group__chaos__interrupts}{Interrupt functions}
+\item 
+\hyperlink{group__chaos__capture}{Timer capture of clock ticks}
+\item 
+\hyperlink{group__chaos__sfd}{Management of S\-F\-D interrupts}
+\end{DoxyCompactItemize}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{chaos_8h}{chaos.\-h}
+\item 
+file \hyperlink{chaos_8c}{chaos.\-c}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__chaos__internal_ga06ff8df2351884e681feb85cda3b7045}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N}(a, b)~do \{ P\#\#a\#\#O\-U\-T $|$=  B\-V(b); \} while (0)}\label{group__chaos__internal_ga06ff8df2351884e681feb85cda3b7045}
+
+\item 
+\hypertarget{group__chaos__internal_gad41c97f646b9e37f6c4f967910b5f012}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N}(a, b)~do \{ P\#\#a\#\#O\-U\-T \&= $\sim$B\-V(b); \} while (0)}\label{group__chaos__internal_gad41c97f646b9e37f6c4f967910b5f012}
+
+\item 
+\hypertarget{group__chaos__internal_gaa45796bc706ece2f2f96bda54df162f8}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N}(a, b)~do \{ P\#\#a\#\#O\-U\-T $^\wedge$=  B\-V(b); \} while (0)}\label{group__chaos__internal_gaa45796bc706ece2f2f96bda54df162f8}
+
+\item 
+\hypertarget{group__chaos__internal_ga11177cf033a258d640e767fc09e10fdb}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N}(a, b)~do \{ P\#\#a\#\#S\-E\-L \&= $\sim$B\-V(b); P\#\#a\#\#D\-I\-R \&= $\sim$B\-V(b); \} while (0)}\label{group__chaos__internal_ga11177cf033a258d640e767fc09e10fdb}
+
+\item 
+\hypertarget{group__chaos__internal_gaf542b15cf4ab5aab9a6e39fc40e09f13}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T}(a, b)~do \{ P\#\#a\#\#S\-E\-L \&= $\sim$B\-V(b); P\#\#a\#\#D\-I\-R $|$=  B\-V(b); \} while (0)}\label{group__chaos__internal_gaf542b15cf4ab5aab9a6e39fc40e09f13}
+
+\item 
+\hypertarget{group__chaos__internal_gad446a170ca0e9f0f3f57e24e3199a406}{\#define {\bfseries P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T}(a, b)~(    P\#\#a\#\#I\-N  \&   B\-V(b))}\label{group__chaos__internal_gad446a170ca0e9f0f3f57e24e3199a406}
+
+\item 
+\hypertarget{group__chaos__internal_gad8148e4e191d853cd938b5f5db7770c9}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-U\-S\-E\-R\-I\-N\-T}~S\-E\-T\-\_\-\-P\-I\-N(2,7)}\label{group__chaos__internal_gad8148e4e191d853cd938b5f5db7770c9}
+
+\item 
+\hypertarget{group__chaos__internal_gaf50dd28e301252221584ba3d18b01410}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-U\-S\-E\-R\-I\-N\-T}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(2,7)}\label{group__chaos__internal_gaf50dd28e301252221584ba3d18b01410}
+
+\item 
+\hypertarget{group__chaos__internal_ga916a9186bb4f182e5af266d4dc90cff7}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-U\-S\-E\-R\-I\-N\-T}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(2,7)}\label{group__chaos__internal_ga916a9186bb4f182e5af266d4dc90cff7}
+
+\item 
+\hypertarget{group__chaos__internal_gaa39505be5534abf8580acdbfdf1235bd}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-U\-S\-E\-R\-I\-N\-T\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(2,7)}\label{group__chaos__internal_gaa39505be5534abf8580acdbfdf1235bd}
+
+\item 
+\hypertarget{group__chaos__internal_gad77f955775b5eea291071fecad3d0c1b}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-U\-S\-E\-R\-I\-N\-T\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(2,7)}\label{group__chaos__internal_gad77f955775b5eea291071fecad3d0c1b}
+
+\item 
+\hypertarget{group__chaos__internal_ga30d361bf620ac4442ff19d4743a5d9f2}{\#define {\bfseries P\-I\-N\-\_\-\-U\-S\-E\-R\-I\-N\-T\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(2,7)}\label{group__chaos__internal_ga30d361bf620ac4442ff19d4743a5d9f2}
+
+\item 
+\hypertarget{group__chaos__internal_ga1909ecbab5c4c09bb52418812c297925}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-G\-I\-O2}~S\-E\-T\-\_\-\-P\-I\-N(2,3)}\label{group__chaos__internal_ga1909ecbab5c4c09bb52418812c297925}
+
+\item 
+\hypertarget{group__chaos__internal_gaaddd7bcc324b82054cfc6fab52ea04a8}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-G\-I\-O2}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(2,3)}\label{group__chaos__internal_gaaddd7bcc324b82054cfc6fab52ea04a8}
+
+\item 
+\hypertarget{group__chaos__internal_gac2026e3db014a7bb8d1b73dfbc4667d6}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-G\-I\-O2}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(2,3)}\label{group__chaos__internal_gac2026e3db014a7bb8d1b73dfbc4667d6}
+
+\item 
+\hypertarget{group__chaos__internal_gad156fdd1b2dfc8dd611851f20a473e9b}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-G\-I\-O2\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(2,3)}\label{group__chaos__internal_gad156fdd1b2dfc8dd611851f20a473e9b}
+
+\item 
+\hypertarget{group__chaos__internal_gaf3dc5da27a868271c23e74eb154eccc9}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-G\-I\-O2\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(2,3)}\label{group__chaos__internal_gaf3dc5da27a868271c23e74eb154eccc9}
+
+\item 
+\hypertarget{group__chaos__internal_ga65467f55f5f794db7c8e5632da8ac657}{\#define {\bfseries P\-I\-N\-\_\-\-G\-I\-O2\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(2,3)}\label{group__chaos__internal_ga65467f55f5f794db7c8e5632da8ac657}
+
+\item 
+\hypertarget{group__chaos__internal_gaf651b41e6c086eac871b0c3e42c8bdfa}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C0}~S\-E\-T\-\_\-\-P\-I\-N(6,0)}\label{group__chaos__internal_gaf651b41e6c086eac871b0c3e42c8bdfa}
+
+\item 
+\hypertarget{group__chaos__internal_ga00c8bcab557d9f470960221a0faf7704}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C0}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(6,0)}\label{group__chaos__internal_ga00c8bcab557d9f470960221a0faf7704}
+
+\item 
+\hypertarget{group__chaos__internal_gadaaddfb6856dfeee2660bad8fbcdcc63}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C0}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(6,0)}\label{group__chaos__internal_gadaaddfb6856dfeee2660bad8fbcdcc63}
+
+\item 
+\hypertarget{group__chaos__internal_ga96ba5b963a4f3f42502b9c7b791684f2}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C0\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(6,0)}\label{group__chaos__internal_ga96ba5b963a4f3f42502b9c7b791684f2}
+
+\item 
+\hypertarget{group__chaos__internal_gaf88d6905492ec51bf4b6764bcf2b09a5}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C0\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(6,0)}\label{group__chaos__internal_gaf88d6905492ec51bf4b6764bcf2b09a5}
+
+\item 
+\hypertarget{group__chaos__internal_ga36b481203cb07d9f3eaebc2716d992fb}{\#define {\bfseries P\-I\-N\-\_\-\-A\-D\-C0\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(6,0)}\label{group__chaos__internal_ga36b481203cb07d9f3eaebc2716d992fb}
+
+\item 
+\hypertarget{group__chaos__internal_ga8fda716103a0ece8568194f7d2b8f1cf}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C1}~S\-E\-T\-\_\-\-P\-I\-N(6,1)}\label{group__chaos__internal_ga8fda716103a0ece8568194f7d2b8f1cf}
+
+\item 
+\hypertarget{group__chaos__internal_gab163c7cb46720c474fb5062e4b1e7b1b}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C1}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(6,1)}\label{group__chaos__internal_gab163c7cb46720c474fb5062e4b1e7b1b}
+
+\item 
+\hypertarget{group__chaos__internal_gadbc63ddea7b3b19198e7536c479081ef}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C1}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(6,1)}\label{group__chaos__internal_gadbc63ddea7b3b19198e7536c479081ef}
+
+\item 
+\hypertarget{group__chaos__internal_ga570f30427c6e1291e77f76233749a1d1}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C1\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(6,1)}\label{group__chaos__internal_ga570f30427c6e1291e77f76233749a1d1}
+
+\item 
+\hypertarget{group__chaos__internal_ga0182283cf6a731271dd097f99adcd6db}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C1\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(6,1)}\label{group__chaos__internal_ga0182283cf6a731271dd097f99adcd6db}
+
+\item 
+\hypertarget{group__chaos__internal_ga6ced4ddf619e6802ce362de6c4f4bf37}{\#define {\bfseries P\-I\-N\-\_\-\-A\-D\-C1\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(6,1)}\label{group__chaos__internal_ga6ced4ddf619e6802ce362de6c4f4bf37}
+
+\item 
+\hypertarget{group__chaos__internal_gabd42bab3312f286f0867c3d4f9436251}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C2}~S\-E\-T\-\_\-\-P\-I\-N(6,2)}\label{group__chaos__internal_gabd42bab3312f286f0867c3d4f9436251}
+
+\item 
+\hypertarget{group__chaos__internal_gadda3062005f03851380105afdde81228}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C2}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(6,2)}\label{group__chaos__internal_gadda3062005f03851380105afdde81228}
+
+\item 
+\hypertarget{group__chaos__internal_ga7e214e65f723135edb6b31ba2c1f8b77}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C2}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(6,2)}\label{group__chaos__internal_ga7e214e65f723135edb6b31ba2c1f8b77}
+
+\item 
+\hypertarget{group__chaos__internal_ga0a2ba4d712fad1cec93cc0874b21d2f6}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C2\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(6,2)}\label{group__chaos__internal_ga0a2ba4d712fad1cec93cc0874b21d2f6}
+
+\item 
+\hypertarget{group__chaos__internal_gacdb25193366b7bfb38b2a5a6092d2379}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C2\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(6,2)}\label{group__chaos__internal_gacdb25193366b7bfb38b2a5a6092d2379}
+
+\item 
+\hypertarget{group__chaos__internal_ga263deaaf27eac90abf8569d4af12352e}{\#define {\bfseries P\-I\-N\-\_\-\-A\-D\-C2\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(6,2)}\label{group__chaos__internal_ga263deaaf27eac90abf8569d4af12352e}
+
+\item 
+\hypertarget{group__chaos__internal_ga29c23245607503b0f680a8ef73a40fdb}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C6}~S\-E\-T\-\_\-\-P\-I\-N(6,6)}\label{group__chaos__internal_ga29c23245607503b0f680a8ef73a40fdb}
+
+\item 
+\hypertarget{group__chaos__internal_gaad6c1e4ab5260c447fe612ea6b7b5489}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C6}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(6,6)}\label{group__chaos__internal_gaad6c1e4ab5260c447fe612ea6b7b5489}
+
+\item 
+\hypertarget{group__chaos__internal_gac0932613fe080adcf57a630b2732e3bd}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C6}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(6,6)}\label{group__chaos__internal_gac0932613fe080adcf57a630b2732e3bd}
+
+\item 
+\hypertarget{group__chaos__internal_ga7582fffb8f295bce528713e60d9b5394}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C6\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(6,6)}\label{group__chaos__internal_ga7582fffb8f295bce528713e60d9b5394}
+
+\item 
+\hypertarget{group__chaos__internal_ga045eb405a46d0377dd34662d4b56d5b3}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C6\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(6,6)}\label{group__chaos__internal_ga045eb405a46d0377dd34662d4b56d5b3}
+
+\item 
+\hypertarget{group__chaos__internal_gad5dc1712f4d54b0759d0d1b8f50eb91a}{\#define {\bfseries P\-I\-N\-\_\-\-A\-D\-C6\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(6,6)}\label{group__chaos__internal_gad5dc1712f4d54b0759d0d1b8f50eb91a}
+
+\item 
+\hypertarget{group__chaos__internal_ga289d3de66a286061c6c8b8c52ebd1924}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C7}~S\-E\-T\-\_\-\-P\-I\-N(6,7)}\label{group__chaos__internal_ga289d3de66a286061c6c8b8c52ebd1924}
+
+\item 
+\hypertarget{group__chaos__internal_ga2b944db8ca404c3dd61f2c932716e7ef}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C7}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(6,7)}\label{group__chaos__internal_ga2b944db8ca404c3dd61f2c932716e7ef}
+
+\item 
+\hypertarget{group__chaos__internal_gaaaa929c46347e7d25dd0821e56a65e61}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C7}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(6,7)}\label{group__chaos__internal_gaaaa929c46347e7d25dd0821e56a65e61}
+
+\item 
+\hypertarget{group__chaos__internal_ga1d1725175cb15247c08cf55b0e1161b3}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C7\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(6,7)}\label{group__chaos__internal_ga1d1725175cb15247c08cf55b0e1161b3}
+
+\item 
+\hypertarget{group__chaos__internal_ga0e5981ac04e9306f3613570a4e60f3a5}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C7\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(6,7)}\label{group__chaos__internal_ga0e5981ac04e9306f3613570a4e60f3a5}
+
+\item 
+\hypertarget{group__chaos__internal_ga4bb4e9b8ce59c07dc7d3eca26b11f041}{\#define {\bfseries P\-I\-N\-\_\-\-A\-D\-C7\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(6,7)}\label{group__chaos__internal_ga4bb4e9b8ce59c07dc7d3eca26b11f041}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}

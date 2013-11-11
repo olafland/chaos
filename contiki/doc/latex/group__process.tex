@@ -1,0 +1,660 @@
+\hypertarget{group__process}{\section{Contiki processes}
+\label{group__process}\index{Contiki processes@{Contiki processes}}
+}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{process_8c}{process.\-c}
+\item 
+file \hyperlink{process_8h}{process.\-h}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structevent__data}{event\-\_\-data}
+\item 
+struct \hyperlink{structprocess}{process}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__process_ga437239861f9ea9ebec1d1226d4d97aa6}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-N\-O\-N\-E}~0}\label{group__process_ga437239861f9ea9ebec1d1226d4d97aa6}
+
+\item 
+\hypertarget{group__process_ga1a012e4a68ade6aa0eef2ab61b649d8a}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-U\-N\-N\-I\-N\-G}~1}\label{group__process_ga1a012e4a68ade6aa0eef2ab61b649d8a}
+
+\item 
+\hypertarget{group__process_ga8b440ee2f4859a533b9b2164d252027f}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-A\-L\-L\-E\-D}~2}\label{group__process_ga8b440ee2f4859a533b9b2164d252027f}
+
+\item 
+\hypertarget{group__process_gad72dbcf6d0153db1b8d8a58001feed83}{\#define {\bfseries D\-E\-B\-U\-G}~0}\label{group__process_gad72dbcf6d0153db1b8d8a58001feed83}
+
+\item 
+\hypertarget{group__process_ga1f464e950a4fa11e8821b5c725921a15}{\#define {\bfseries P\-R\-I\-N\-T\-F}(...)}\label{group__process_ga1f464e950a4fa11e8821b5c725921a15}
+
+\item 
+\hypertarget{group__process_ga8c1c92ac579df9addba8037625589611}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-N\-O\-N\-E}~N\-U\-L\-L}\label{group__process_ga8c1c92ac579df9addba8037625589611}
+
+\item 
+\hypertarget{group__process_ga9ab88d3a6c2d13dd59f9d41e1347ad40}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-F\-\_\-\-N\-U\-M\-E\-V\-E\-N\-T\-S}~32}\label{group__process_ga9ab88d3a6c2d13dd59f9d41e1347ad40}
+
+\item 
+\hypertarget{group__process_ga57de891168a2d72f56213461d9fb0cc9}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-N\-O\-N\-E}~0x80}\label{group__process_ga57de891168a2d72f56213461d9fb0cc9}
+
+\item 
+\hypertarget{group__process_ga6c18caccfa1f228ca39b41f1be228f91}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-I\-N\-I\-T}~0x81}\label{group__process_ga6c18caccfa1f228ca39b41f1be228f91}
+
+\item 
+\hypertarget{group__process_gaa651f4990d6044e87d5ded0762ef5fec}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-P\-O\-L\-L}~0x82}\label{group__process_gaa651f4990d6044e87d5ded0762ef5fec}
+
+\item 
+\hypertarget{group__process_ga05a3f7ccdd1fa76a632233b2fb925030}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-E\-X\-I\-T}~0x83}\label{group__process_ga05a3f7ccdd1fa76a632233b2fb925030}
+
+\item 
+\hypertarget{group__process_ga2ad52142e294647c7a6f4d3b1f7d0c50}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-S\-E\-R\-V\-I\-C\-E\-\_\-\-R\-E\-M\-O\-V\-E\-D}~0x84}\label{group__process_ga2ad52142e294647c7a6f4d3b1f7d0c50}
+
+\item 
+\hypertarget{group__process_gacdefdad965091a7d73b81b4b79d20cf3}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-C\-O\-N\-T\-I\-N\-U\-E}~0x85}\label{group__process_gacdefdad965091a7d73b81b4b79d20cf3}
+
+\item 
+\hypertarget{group__process_gaf9468ac9433d3fefdc38e1c49c290a45}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-M\-S\-G}~0x86}\label{group__process_gaf9468ac9433d3fefdc38e1c49c290a45}
+
+\item 
+\hypertarget{group__process_ga1b2dcad893494c2a0c51bc18ef53c854}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-E\-X\-I\-T\-E\-D}~0x87}\label{group__process_ga1b2dcad893494c2a0c51bc18ef53c854}
+
+\item 
+\hypertarget{group__process_gad5863f65171a4a63e598afc3da030290}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-T\-I\-M\-E\-R}~0x88}\label{group__process_gad5863f65171a4a63e598afc3da030290}
+
+\item 
+\hypertarget{group__process_gaedffb0684c685580b478e8f49eabc3ad}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-C\-O\-M}~0x89}\label{group__process_gaedffb0684c685580b478e8f49eabc3ad}
+
+\item 
+\hypertarget{group__process_gaf4acd471e64f0b2209049ee42ccff3e4}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-M\-A\-X}~0x8a}\label{group__process_gaf4acd471e64f0b2209049ee42ccff3e4}
+
+\item 
+\hypertarget{group__process_ga958ff4131a37eaf12b920da16749e3b7}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T}~N\-U\-L\-L}\label{group__process_ga958ff4131a37eaf12b920da16749e3b7}
+
+\item 
+\hypertarget{group__process_ga750b6b1b06aa8ba8ae1d72cff428f45a}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-Z\-O\-M\-B\-I\-E}~((struct \hyperlink{structprocess}{process} $\ast$)0x1)}\label{group__process_ga750b6b1b06aa8ba8ae1d72cff428f45a}
+
+\item 
+\hypertarget{group__process_ga1cdf7dc0628e32a933f82de1d3d0d2ce}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-L\-I\-S\-T}()~process\-\_\-list}\label{group__process_ga1cdf7dc0628e32a933f82de1d3d0d2ce}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__process_ga4d81d85c09c89d0e97cd0d239728a942}{typedef unsigned char {\bfseries process\-\_\-event\-\_\-t}}\label{group__process_ga4d81d85c09c89d0e97cd0d239728a942}
+
+\item 
+\hypertarget{group__process_gaacfecee3e853f3904a8e695de0f6649d}{typedef void $\ast$ {\bfseries process\-\_\-data\-\_\-t}}\label{group__process_gaacfecee3e853f3904a8e695de0f6649d}
+
+\item 
+\hypertarget{group__process_ga5071f7c273b5a622099737a01e828a06}{typedef unsigned char {\bfseries process\-\_\-num\-\_\-events\-\_\-t}}\label{group__process_ga5071f7c273b5a622099737a01e828a06}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__process_ga69c8a4d6b7be8c8fdaf3d9d42716786f}{struct \hyperlink{structprocess}{process} $\ast$ {\bfseries process\-\_\-list} = N\-U\-L\-L}\label{group__process_ga69c8a4d6b7be8c8fdaf3d9d42716786f}
+
+\item 
+\hypertarget{group__process_ga6093569fbb63502df10fd8ddb83727bf}{struct \hyperlink{structprocess}{process} $\ast$ {\bfseries process\-\_\-current} = N\-U\-L\-L}\label{group__process_ga6093569fbb63502df10fd8ddb83727bf}
+
+\item 
+\hypertarget{group__process_ga03302c412b77c7e2a8c5b3515e0ad93a}{C\-C\-I\-F struct \hyperlink{structprocess}{process} $\ast$ {\bfseries process\-\_\-list}}\label{group__process_ga03302c412b77c7e2a8c5b3515e0ad93a}
+
+\end{DoxyCompactItemize}
+\subsection*{Return values}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__process_gab8b88e679094ca4b95deb8ee8320802b}{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-O\-K}~0
+\begin{DoxyCompactList}\small\item\em Return value indicating that an operation was successful. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__process_gaf73c4e16f7db2731761680c84e18bf37}{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-F\-U\-L\-L}~1
+\begin{DoxyCompactList}\small\item\em Return value indicating that the event queue was full. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Process protothread functions}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__process_ga8efc62947f2ca2c870f52896e0dc1a81}{P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-E\-G\-I\-N}()
+\item 
+\#define \hyperlink{group__process_ga9c2681a0070eba8a7c9fdf4dbb6db05e}{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-N\-D}()
+\item 
+\#define \hyperlink{group__process_ga4f9c1d291e210793e8c4444762f748ba}{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T}()
+\item 
+\#define \hyperlink{group__process_ga996168a0f904c0e28e3f6ed18dddd129}{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T\-\_\-\-U\-N\-T\-I\-L}(c)
+\item 
+\#define \hyperlink{group__process_gad78fc20c14b0b03c3b2412742f5f416f}{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D}()
+\item 
+\#define \hyperlink{group__process_gae5edd3d10ed29b7a6ed4a42e0690738b}{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L}(c)
+\item 
+\#define \hyperlink{group__process_ga203e74a64e870015d3c2aa456c1ad5d9}{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L}(c)
+\item 
+\hypertarget{group__process_ga31a4bb7afbf5adac9f43f37469640229}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-W\-H\-I\-L\-E}(c)~\hyperlink{group__pt_gaad14bbbf092b90aa0a5a4f9169504a8d}{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-W\-H\-I\-L\-E}(process\-\_\-pt, c)}\label{group__process_ga31a4bb7afbf5adac9f43f37469640229}
+
+\item 
+\#define \hyperlink{group__process_ga479c3ebc58ecef0c027d627433c65862}{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T}()
+\item 
+\#define \hyperlink{group__process_ga8e6d21a11491c5bd2d8017b783da6b29}{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-T\-\_\-\-S\-P\-A\-W\-N}(\hyperlink{structpt}{pt}, thread)
+\item 
+\#define \hyperlink{group__process_ga29eb92d7ef01f486d70a90cc34800a5d}{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-A\-U\-S\-E}()
+\end{DoxyCompactItemize}
+\subsection*{Poll and exit handlers}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__process_ga4159c99c908ca521cf8b9fdda4b7f64c}{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-O\-L\-L\-H\-A\-N\-D\-L\-E\-R}(handler)
+\item 
+\#define \hyperlink{group__process_ga3dee46e19ad8848b86d9d06321b75c0e}{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T\-H\-A\-N\-D\-L\-E\-R}(handler)
+\end{DoxyCompactItemize}
+\subsection*{Process declaration and definition}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__process_gaa4cff8e4f3abc50c74619a90ae347200}{P\-R\-O\-C\-E\-S\-S\-\_\-\-T\-H\-R\-E\-A\-D}(name, ev, data)
+\item 
+\#define \hyperlink{group__process_ga96ff784b76d6edef302610d69664025f}{P\-R\-O\-C\-E\-S\-S\-\_\-\-N\-A\-M\-E}(name)
+\item 
+\#define \hyperlink{group__process_ga27e9b6fc13f0438e37a198f69b38b4cf}{P\-R\-O\-C\-E\-S\-S}(name, strname)
+\end{DoxyCompactItemize}
+\subsection*{Functions called from application programs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__process_ga5d5ebe8593273fc5cb6d4a203879b300}{C\-C\-I\-F struct \hyperlink{structprocess}{process} $\ast$ {\bfseries process\-\_\-current}}\label{group__process_ga5d5ebe8593273fc5cb6d4a203879b300}
+
+\item 
+process\-\_\-event\-\_\-t \hyperlink{group__process_ga24326129d48a7afaf618e3e01f75c086}{process\-\_\-alloc\-\_\-event} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a global event number. \end{DoxyCompactList}\item 
+void \hyperlink{group__process_ga1ecfc797b48072142b3e22ac1f0bbfdd}{process\-\_\-start} (struct \hyperlink{structprocess}{process} $\ast$p, const char $\ast$arg)
+\item 
+void \hyperlink{group__process_ga7f3c7706ec62fbcbdf018f799b21cd66}{process\-\_\-exit} (struct \hyperlink{structprocess}{process} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Cause a process to exit. \end{DoxyCompactList}\item 
+int \hyperlink{group__process_gaaf5f03bb404a67415ea4ea72a749203f}{process\-\_\-post} (struct \hyperlink{structprocess}{process} $\ast$p, process\-\_\-event\-\_\-t ev, process\-\_\-data\-\_\-t data)
+\item 
+void \hyperlink{group__process_ga6b8e9574ecf58706d51b28c26723a94b}{process\-\_\-post\-\_\-synch} (struct \hyperlink{structprocess}{process} $\ast$p, process\-\_\-event\-\_\-t ev, process\-\_\-data\-\_\-t data)
+\item 
+\#define \hyperlink{group__process_ga64e81621381e2e575fad8959ce7a8496}{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-U\-R\-R\-E\-N\-T}()
+\item 
+\#define \hyperlink{group__process_gaa355c55e3ff7aa0999f2ae770298b7bb}{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-B\-E\-G\-I\-N}(p)
+\item 
+\#define \hyperlink{group__process_gae4aa7fc8384dfc5416669cc0f712d0ed}{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-E\-N\-D}(p)~process\-\_\-current = tmp\-\_\-current; \}
+\end{DoxyCompactItemize}
+\subsection*{Functions called from device drivers}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__process_ga496ba132ce7a2ec12a8313dc05ab0142}{process\-\_\-poll} (struct \hyperlink{structprocess}{process} $\ast$p)
+\end{DoxyCompactItemize}
+\subsection*{Functions called by the system and boot-\/up code}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__process_gaab238b68c176e90138159f41af9133f1}{process\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the process module. \end{DoxyCompactList}\item 
+int \hyperlink{group__process_ga4968157ca91c28e26075ab78a1a4fb56}{process\-\_\-run} (void)
+\item 
+int \hyperlink{group__process_gaa6f7728a7860837ad311380036b538eb}{process\-\_\-nevents} (void)
+\item 
+int \hyperlink{group__process_ga45108066f1eabfd536782f7a19c7da6e}{process\-\_\-is\-\_\-running} (struct \hyperlink{structprocess}{process} $\ast$p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A process in Contiki consists of a single \hyperlink{group__pt}{protothread}. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__process_ga27e9b6fc13f0438e37a198f69b38b4cf}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S@{P\-R\-O\-C\-E\-S\-S}}
+\index{P\-R\-O\-C\-E\-S\-S@{P\-R\-O\-C\-E\-S\-S}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S(
+\begin{DoxyParamCaption}
+\item[{}]{name, }
+\item[{}]{strname}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga27e9b6fc13f0438e37a198f69b38b4cf}
+Declare a process.
+
+This macro declares a process. The process has two names\-: the variable of the process structure, which is used by the C program, and a human readable string name, which is used when debugging.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The variable name of the process structure. \\
+\hline
+{\em strname} & The string representation of the process' name. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__process_ga8efc62947f2ca2c870f52896e0dc1a81}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-E\-G\-I\-N@{P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-E\-G\-I\-N}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-E\-G\-I\-N@{P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-E\-G\-I\-N}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-E\-G\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-E\-G\-I\-N(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga8efc62947f2ca2c870f52896e0dc1a81}
+Define the beginning of a process.
+
+This macro defines the beginning of a process, and must always appear in a \hyperlink{group__process_gaa4cff8e4f3abc50c74619a90ae347200}{P\-R\-O\-C\-E\-S\-S\-\_\-\-T\-H\-R\-E\-A\-D()} definition. The \hyperlink{group__process_ga9c2681a0070eba8a7c9fdf4dbb6db05e}{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-N\-D()} macro must come at the end of the process. \hypertarget{group__process_gaa355c55e3ff7aa0999f2ae770298b7bb}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-B\-E\-G\-I\-N@{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-B\-E\-G\-I\-N}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-B\-E\-G\-I\-N@{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-B\-E\-G\-I\-N}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-B\-E\-G\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-B\-E\-G\-I\-N(
+\begin{DoxyParamCaption}
+\item[{}]{p}
+\end{DoxyParamCaption}
+)}}\label{group__process_gaa355c55e3ff7aa0999f2ae770298b7bb}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{\(\backslash\)
+struct \hyperlink{structprocess}{process} *tmp\_current = \hyperlink{group__process_ga64e81621381e2e575fad8959ce7a8496}{PROCESS\_CURRENT}();\(\backslash\)
+process\_current = p
+\end{DoxyCode}
+Switch context to another process
+
+This function switch context to the specified process and executes the code as if run by that process. Typical use of this function is to switch context in services, called by other processes. Each \hyperlink{group__process_gaa355c55e3ff7aa0999f2ae770298b7bb}{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-B\-E\-G\-I\-N()} must be followed by the \hyperlink{group__process_gae4aa7fc8384dfc5416669cc0f712d0ed}{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-E\-N\-D()} macro to end the context switch.
+
+Example\-: 
+\begin{DoxyCode}
+\hyperlink{group__process_gaa355c55e3ff7aa0999f2ae770298b7bb}{PROCESS\_CONTEXT\_BEGIN}(&test\_process);
+\hyperlink{group__etimer_gadb6c83643bbca82b614c50b27c586302}{etimer\_set}(&\hyperlink{structtimer}{timer}, \hyperlink{group__clock_gae3ced0551b26c9b99cb45a86f34d100a}{CLOCK\_SECOND});
+\hyperlink{group__process_gae4aa7fc8384dfc5416669cc0f712d0ed}{PROCESS\_CONTEXT\_END}(&test\_process);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The process to use as context\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__process_gae4aa7fc8384dfc5416669cc0f712d0ed}{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-E\-N\-D()} 
+
+\hyperlink{group__process_ga64e81621381e2e575fad8959ce7a8496}{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-U\-R\-R\-E\-N\-T()} 
+\end{DoxySeeAlso}
+\hypertarget{group__process_gae4aa7fc8384dfc5416669cc0f712d0ed}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-E\-N\-D@{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-E\-N\-D}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-E\-N\-D@{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-E\-N\-D}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-E\-N\-D(
+\begin{DoxyParamCaption}
+\item[{}]{p}
+\end{DoxyParamCaption}
+)~process\-\_\-current = tmp\-\_\-current; \}}}\label{group__process_gae4aa7fc8384dfc5416669cc0f712d0ed}
+End a context switch
+
+This function ends a context switch and changes back to the previous process.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The process used in the context switch\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-S\-T\-A\-R\-T() 
+\end{DoxySeeAlso}
+\hypertarget{group__process_ga64e81621381e2e575fad8959ce7a8496}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-U\-R\-R\-E\-N\-T@{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-U\-R\-R\-E\-N\-T}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-U\-R\-R\-E\-N\-T@{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-U\-R\-R\-E\-N\-T}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-U\-R\-R\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-U\-R\-R\-E\-N\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga64e81621381e2e575fad8959ce7a8496}
+Get a pointer to the currently running process.
+
+This macro get a pointer to the currently running process. Typically, this macro is used to post an event to the current process with \hyperlink{group__process_gaaf5f03bb404a67415ea4ea72a749203f}{process\-\_\-post()}. \hypertarget{group__process_ga9c2681a0070eba8a7c9fdf4dbb6db05e}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-N\-D@{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-N\-D}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-N\-D@{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-N\-D}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-N\-D(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga9c2681a0070eba8a7c9fdf4dbb6db05e}
+Define the end of a process.
+
+This macro defines the end of a process. It must appear in a \hyperlink{group__process_gaa4cff8e4f3abc50c74619a90ae347200}{P\-R\-O\-C\-E\-S\-S\-\_\-\-T\-H\-R\-E\-A\-D()} definition and must always be included. The process exits when the \hyperlink{group__process_ga9c2681a0070eba8a7c9fdf4dbb6db05e}{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-N\-D()} macro is reached. \hypertarget{group__process_gaf73c4e16f7db2731761680c84e18bf37}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-F\-U\-L\-L@{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-F\-U\-L\-L}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-F\-U\-L\-L@{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-F\-U\-L\-L}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-F\-U\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-F\-U\-L\-L~1}}\label{group__process_gaf73c4e16f7db2731761680c84e18bf37}
+
+
+Return value indicating that the event queue was full. 
+
+This value is returned from \hyperlink{group__process_gaaf5f03bb404a67415ea4ea72a749203f}{process\-\_\-post()} to indicate that the event queue was full and that an event could not be posted. \hypertarget{group__process_gab8b88e679094ca4b95deb8ee8320802b}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-O\-K@{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-O\-K}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-O\-K@{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-O\-K}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-O\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-O\-K~0}}\label{group__process_gab8b88e679094ca4b95deb8ee8320802b}
+
+
+Return value indicating that an operation was successful. 
+
+This value is returned to indicate that an operation was successful. \hypertarget{group__process_ga479c3ebc58ecef0c027d627433c65862}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T@{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T@{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga479c3ebc58ecef0c027d627433c65862}
+Exit the currently running process. \hypertarget{group__process_ga3dee46e19ad8848b86d9d06321b75c0e}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T\-H\-A\-N\-D\-L\-E\-R@{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T\-H\-A\-N\-D\-L\-E\-R}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T\-H\-A\-N\-D\-L\-E\-R@{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T\-H\-A\-N\-D\-L\-E\-R}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T\-H\-A\-N\-D\-L\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T\-H\-A\-N\-D\-L\-E\-R(
+\begin{DoxyParamCaption}
+\item[{}]{handler}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga3dee46e19ad8848b86d9d06321b75c0e}
+Specify an action when a process exits.
+
+\begin{DoxyNote}{Note}
+This declaration must come immediately before the \hyperlink{group__process_ga8efc62947f2ca2c870f52896e0dc1a81}{P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-E\-G\-I\-N()} macro.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em handler} & The action to be performed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__process_ga96ff784b76d6edef302610d69664025f}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-N\-A\-M\-E@{P\-R\-O\-C\-E\-S\-S\-\_\-\-N\-A\-M\-E}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-N\-A\-M\-E@{P\-R\-O\-C\-E\-S\-S\-\_\-\-N\-A\-M\-E}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-N\-A\-M\-E(
+\begin{DoxyParamCaption}
+\item[{}]{name}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga96ff784b76d6edef302610d69664025f}
+Declare the name of a process.
+
+This macro is typically used in header files to declare the name of a process that is implemented in the C file. \hypertarget{group__process_ga29eb92d7ef01f486d70a90cc34800a5d}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-A\-U\-S\-E@{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-A\-U\-S\-E}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-A\-U\-S\-E@{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-A\-U\-S\-E}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-A\-U\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-A\-U\-S\-E(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga29eb92d7ef01f486d70a90cc34800a5d}
+Yield the process for a short while.
+
+This macro yields the currently running process for a short while, thus letting other processes run before the process continues. \hypertarget{group__process_ga4159c99c908ca521cf8b9fdda4b7f64c}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-O\-L\-L\-H\-A\-N\-D\-L\-E\-R@{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-O\-L\-L\-H\-A\-N\-D\-L\-E\-R}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-O\-L\-L\-H\-A\-N\-D\-L\-E\-R@{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-O\-L\-L\-H\-A\-N\-D\-L\-E\-R}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-O\-L\-L\-H\-A\-N\-D\-L\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-O\-L\-L\-H\-A\-N\-D\-L\-E\-R(
+\begin{DoxyParamCaption}
+\item[{}]{handler}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga4159c99c908ca521cf8b9fdda4b7f64c}
+Specify an action when a process is polled.
+
+\begin{DoxyNote}{Note}
+This declaration must come immediately before the \hyperlink{group__process_ga8efc62947f2ca2c870f52896e0dc1a81}{P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-E\-G\-I\-N()} macro.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em handler} & The action to be performed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__process_ga8e6d21a11491c5bd2d8017b783da6b29}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-T\-\_\-\-S\-P\-A\-W\-N@{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-T\-\_\-\-S\-P\-A\-W\-N}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-T\-\_\-\-S\-P\-A\-W\-N@{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-T\-\_\-\-S\-P\-A\-W\-N}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-T\-\_\-\-S\-P\-A\-W\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-T\-\_\-\-S\-P\-A\-W\-N(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}, }
+\item[{}]{thread}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga8e6d21a11491c5bd2d8017b783da6b29}
+Spawn a protothread from the process.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & The protothread state (struct pt) for the new protothread \\
+\hline
+{\em thread} & The call to the protothread function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__pt_ga9e97a0b4d5cc7764d8e19758f5da53ae}{P\-T\-\_\-\-S\-P\-A\-W\-N()} 
+\end{DoxySeeAlso}
+\hypertarget{group__process_gaa4cff8e4f3abc50c74619a90ae347200}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-T\-H\-R\-E\-A\-D@{P\-R\-O\-C\-E\-S\-S\-\_\-\-T\-H\-R\-E\-A\-D}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-T\-H\-R\-E\-A\-D@{P\-R\-O\-C\-E\-S\-S\-\_\-\-T\-H\-R\-E\-A\-D}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-T\-H\-R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-T\-H\-R\-E\-A\-D(
+\begin{DoxyParamCaption}
+\item[{}]{name, }
+\item[{}]{ev, }
+\item[{}]{data}
+\end{DoxyParamCaption}
+)}}\label{group__process_gaa4cff8e4f3abc50c74619a90ae347200}
+Define the body of a process.
+
+This macro is used to define the body (protothread) of a process. The process is called whenever an event occurs in the system, A process always start with the \hyperlink{group__process_ga8efc62947f2ca2c870f52896e0dc1a81}{P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-E\-G\-I\-N()} macro and end with the \hyperlink{group__process_ga9c2681a0070eba8a7c9fdf4dbb6db05e}{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-N\-D()} macro. \hypertarget{group__process_ga4f9c1d291e210793e8c4444762f748ba}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T@{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T@{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga4f9c1d291e210793e8c4444762f748ba}
+Wait for an event to be posted to the process.
+
+This macro blocks the currently running process until the process receives an event. \hypertarget{group__process_ga996168a0f904c0e28e3f6ed18dddd129}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T\-\_\-\-U\-N\-T\-I\-L@{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T\-\_\-\-U\-N\-T\-I\-L}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T\-\_\-\-U\-N\-T\-I\-L@{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T\-\_\-\-U\-N\-T\-I\-L}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T\-\_\-\-U\-N\-T\-I\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T\-\_\-\-U\-N\-T\-I\-L(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga996168a0f904c0e28e3f6ed18dddd129}
+Wait for an event to be posted to the process, with an extra condition.
+
+This macro is similar to \hyperlink{group__process_ga4f9c1d291e210793e8c4444762f748ba}{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T()} in that it blocks the currently running process until the process receives an event. But \hyperlink{group__process_ga996168a0f904c0e28e3f6ed18dddd129}{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T\-\_\-\-U\-N\-T\-I\-L()} takes an extra condition which must be true for the process to continue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The condition that must be true for the process to continue. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__pt_ga99e43010ec61327164466aa2d902de45}{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L()} 
+\end{DoxySeeAlso}
+\hypertarget{group__process_ga203e74a64e870015d3c2aa456c1ad5d9}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L@{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L@{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga203e74a64e870015d3c2aa456c1ad5d9}
+Wait for a condition to occur.
+
+This macro does not guarantee that the process yields, and should therefore be used with care. In most cases, \hyperlink{group__process_ga4f9c1d291e210793e8c4444762f748ba}{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T()}, \hyperlink{group__process_ga996168a0f904c0e28e3f6ed18dddd129}{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T\-\_\-\-U\-N\-T\-I\-L()}, \hyperlink{group__process_gad78fc20c14b0b03c3b2412742f5f416f}{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D()} or \hyperlink{group__process_gae5edd3d10ed29b7a6ed4a42e0690738b}{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L()} should be used instead.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The condition to wait for. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__process_gad78fc20c14b0b03c3b2412742f5f416f}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D@{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D@{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__process_gad78fc20c14b0b03c3b2412742f5f416f}
+Yield the currently running process. \hypertarget{group__process_gae5edd3d10ed29b7a6ed4a42e0690738b}{\index{Contiki processes@{Contiki processes}!P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L@{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L}}
+\index{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L@{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L}!Contiki processes@{Contiki processes}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)}}\label{group__process_gae5edd3d10ed29b7a6ed4a42e0690738b}
+Yield the currently running process until a condition occurs.
+
+This macro is different from \hyperlink{group__process_ga203e74a64e870015d3c2aa456c1ad5d9}{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L()} in that \hyperlink{group__process_gae5edd3d10ed29b7a6ed4a42e0690738b}{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L()} is guaranteed to always yield at least once. This ensures that the process does not end up in an infinite loop and monopolizing the C\-P\-U.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The condition to wait for. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__process_ga24326129d48a7afaf618e3e01f75c086}{\index{Contiki processes@{Contiki processes}!process\-\_\-alloc\-\_\-event@{process\-\_\-alloc\-\_\-event}}
+\index{process\-\_\-alloc\-\_\-event@{process\-\_\-alloc\-\_\-event}!Contiki processes@{Contiki processes}}
+\subsubsection[{process\-\_\-alloc\-\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}C\-C\-I\-F process\-\_\-event\-\_\-t process\-\_\-alloc\-\_\-event (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga24326129d48a7afaf618e3e01f75c086}
+
+
+Allocate a global event number. 
+
+\begin{DoxyReturn}{Returns}
+The allocated event number \begin{DoxyVerb}        In Contiki, event numbers above 128 are global and may
+        be posted from one process to another. This function
+        allocates one such event number.
+\end{DoxyVerb}
+
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+There currently is no way to deallocate an allocated event number. 
+\end{DoxyNote}
+\hypertarget{group__process_ga7f3c7706ec62fbcbdf018f799b21cd66}{\index{Contiki processes@{Contiki processes}!process\-\_\-exit@{process\-\_\-exit}}
+\index{process\-\_\-exit@{process\-\_\-exit}!Contiki processes@{Contiki processes}}
+\subsubsection[{process\-\_\-exit}]{\setlength{\rightskip}{0pt plus 5cm}C\-C\-I\-F void process\-\_\-exit (
+\begin{DoxyParamCaption}
+\item[{struct {\bf process} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga7f3c7706ec62fbcbdf018f799b21cd66}
+
+
+Cause a process to exit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The process that is to be exited \begin{DoxyVerb}        This function causes a process to exit. The process can
+        either be the currently executing process, or another
+        process that is currently running.
+\end{DoxyVerb}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__process_ga64e81621381e2e575fad8959ce7a8496}{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-U\-R\-R\-E\-N\-T()} 
+\end{DoxySeeAlso}
+\hypertarget{group__process_gaab238b68c176e90138159f41af9133f1}{\index{Contiki processes@{Contiki processes}!process\-\_\-init@{process\-\_\-init}}
+\index{process\-\_\-init@{process\-\_\-init}!Contiki processes@{Contiki processes}}
+\subsubsection[{process\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void process\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__process_gaab238b68c176e90138159f41af9133f1}
+
+
+Initialize the process module. 
+
+This function initializes the process module and should be called by the system boot-\/up code. \hypertarget{group__process_ga45108066f1eabfd536782f7a19c7da6e}{\index{Contiki processes@{Contiki processes}!process\-\_\-is\-\_\-running@{process\-\_\-is\-\_\-running}}
+\index{process\-\_\-is\-\_\-running@{process\-\_\-is\-\_\-running}!Contiki processes@{Contiki processes}}
+\subsubsection[{process\-\_\-is\-\_\-running}]{\setlength{\rightskip}{0pt plus 5cm}C\-C\-I\-F int process\-\_\-is\-\_\-running (
+\begin{DoxyParamCaption}
+\item[{struct {\bf process} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga45108066f1eabfd536782f7a19c7da6e}
+Check if a process is running.
+
+This function checks if a specific process is running.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The process. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Non-\/zero} & if the process is running. \\
+\hline
+{\em Zero} & if the process is not running. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{group__process_gaa6f7728a7860837ad311380036b538eb}{\index{Contiki processes@{Contiki processes}!process\-\_\-nevents@{process\-\_\-nevents}}
+\index{process\-\_\-nevents@{process\-\_\-nevents}!Contiki processes@{Contiki processes}}
+\subsubsection[{process\-\_\-nevents}]{\setlength{\rightskip}{0pt plus 5cm}int process\-\_\-nevents (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__process_gaa6f7728a7860837ad311380036b538eb}
+Number of events waiting to be processed.
+
+\begin{DoxyReturn}{Returns}
+The number of events that are currently waiting to be processed. 
+\end{DoxyReturn}
+\hypertarget{group__process_ga496ba132ce7a2ec12a8313dc05ab0142}{\index{Contiki processes@{Contiki processes}!process\-\_\-poll@{process\-\_\-poll}}
+\index{process\-\_\-poll@{process\-\_\-poll}!Contiki processes@{Contiki processes}}
+\subsubsection[{process\-\_\-poll}]{\setlength{\rightskip}{0pt plus 5cm}C\-C\-I\-F void process\-\_\-poll (
+\begin{DoxyParamCaption}
+\item[{struct {\bf process} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga496ba132ce7a2ec12a8313dc05ab0142}
+Request a process to be polled.
+
+This function typically is called from an interrupt handler to cause a process to be polled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & A pointer to the process' process structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__process_gaaf5f03bb404a67415ea4ea72a749203f}{\index{Contiki processes@{Contiki processes}!process\-\_\-post@{process\-\_\-post}}
+\index{process\-\_\-post@{process\-\_\-post}!Contiki processes@{Contiki processes}}
+\subsubsection[{process\-\_\-post}]{\setlength{\rightskip}{0pt plus 5cm}C\-C\-I\-F int process\-\_\-post (
+\begin{DoxyParamCaption}
+\item[{struct {\bf process} $\ast$}]{p, }
+\item[{process\-\_\-event\-\_\-t}]{ev, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{group__process_gaaf5f03bb404a67415ea4ea72a749203f}
+Post an asynchronous event.
+
+This function posts an asynchronous event to one or more processes. The handing of the event is deferred until the target process is scheduled by the kernel. An event can be broadcast to all processes, in which case all processes in the system will be scheduled to handle the event.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & The event to be posted.\\
+\hline
+{\em data} & The auxiliary data to be sent with the event\\
+\hline
+{\em p} & The process to which the event should be posted, or P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T if the event should be posted to all processes.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-O\-K} & The event could be posted.\\
+\hline
+{\em P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-F\-U\-L\-L} & The event queue was full and the event could not be posted. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{group__process_ga6b8e9574ecf58706d51b28c26723a94b}{\index{Contiki processes@{Contiki processes}!process\-\_\-post\-\_\-synch@{process\-\_\-post\-\_\-synch}}
+\index{process\-\_\-post\-\_\-synch@{process\-\_\-post\-\_\-synch}!Contiki processes@{Contiki processes}}
+\subsubsection[{process\-\_\-post\-\_\-synch}]{\setlength{\rightskip}{0pt plus 5cm}C\-C\-I\-F void process\-\_\-post\-\_\-synch (
+\begin{DoxyParamCaption}
+\item[{struct {\bf process} $\ast$}]{p, }
+\item[{process\-\_\-event\-\_\-t}]{ev, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga6b8e9574ecf58706d51b28c26723a94b}
+Post a synchronous event to a process.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & A pointer to the process' process structure.\\
+\hline
+{\em ev} & The event to be posted.\\
+\hline
+{\em data} & A pointer to additional data that is posted together with the event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__process_ga4968157ca91c28e26075ab78a1a4fb56}{\index{Contiki processes@{Contiki processes}!process\-\_\-run@{process\-\_\-run}}
+\index{process\-\_\-run@{process\-\_\-run}!Contiki processes@{Contiki processes}}
+\subsubsection[{process\-\_\-run}]{\setlength{\rightskip}{0pt plus 5cm}int process\-\_\-run (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga4968157ca91c28e26075ab78a1a4fb56}
+Run the system once -\/ call poll handlers and process one event.
+
+This function should be called repeatedly from the main() program to actually run the Contiki system. It calls the necessary poll handlers, and processes one event. The function returns the number of events that are waiting in the event queue so that the caller may choose to put the C\-P\-U to sleep when there are no pending events.
+
+\begin{DoxyReturn}{Returns}
+The number of events that are currently waiting in the event queue. 
+\end{DoxyReturn}
+\hypertarget{group__process_ga1ecfc797b48072142b3e22ac1f0bbfdd}{\index{Contiki processes@{Contiki processes}!process\-\_\-start@{process\-\_\-start}}
+\index{process\-\_\-start@{process\-\_\-start}!Contiki processes@{Contiki processes}}
+\subsubsection[{process\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}C\-C\-I\-F void process\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{struct {\bf process} $\ast$}]{p, }
+\item[{const char $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{group__process_ga1ecfc797b48072142b3e22ac1f0bbfdd}
+Start a process.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & A pointer to a process structure.\\
+\hline
+{\em arg} & An argument pointer that can be passed to the new process \\
+\hline
+\end{DoxyParams}

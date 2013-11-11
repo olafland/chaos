@@ -1,0 +1,66 @@
+\hypertarget{energest_8h}{\section{core/sys/energest.h File Reference}
+\label{energest_8h}\index{core/sys/energest.\-h@{core/sys/energest.\-h}}
+}
+{\ttfamily \#include \char`\"{}sys/rtimer.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structenergest__t}{energest\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{energest_8h_ad147ab1b0c694ac4b8da30dca8259659}{\#define {\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-O\-N}(type)~do \{ \} while(0)}\label{energest_8h_ad147ab1b0c694ac4b8da30dca8259659}
+
+\item 
+\hypertarget{energest_8h_afb98fe08c5210107636faddbba2be9d2}{\#define {\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-O\-F\-F}(type)~do \{ \} while(0)}\label{energest_8h_afb98fe08c5210107636faddbba2be9d2}
+
+\item 
+\hypertarget{energest_8h_a8220ec85ff7dc3c5621cf3e6991ffbc8}{\#define {\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-O\-F\-F\-\_\-\-L\-E\-V\-E\-L}(type, level)~do \{ \} while(0)}\label{energest_8h_a8220ec85ff7dc3c5621cf3e6991ffbc8}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries energest\-\_\-type} \{ \\*
+{\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-P\-U}, 
+{\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-P\-M}, 
+{\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-Q}, 
+{\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-E\-D\-\_\-\-G\-R\-E\-E\-N}, 
+\\*
+{\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-E\-D\-\_\-\-Y\-E\-L\-L\-O\-W}, 
+{\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-E\-D\-\_\-\-R\-E\-D}, 
+{\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T}, 
+{\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-I\-S\-T\-E\-N}, 
+\\*
+{\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-R\-E\-A\-D}, 
+{\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-W\-R\-I\-T\-E}, 
+{\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-E\-N\-S\-O\-R\-S}, 
+{\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-E\-R\-I\-A\-L}, 
+\\*
+{\bfseries E\-N\-E\-R\-G\-E\-S\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{energest_8h_ae3e854f23220712e860e954d9f485040}{void {\bfseries energest\-\_\-init} (void)}\label{energest_8h_ae3e854f23220712e860e954d9f485040}
+
+\item 
+\hypertarget{energest_8h_a03345525f79f404ebe37bb2978fdb13b}{unsigned long {\bfseries energest\-\_\-type\-\_\-time} (int type)}\label{energest_8h_a03345525f79f404ebe37bb2978fdb13b}
+
+\item 
+\hypertarget{energest_8h_ab2f45e9b267960c1927bf4ba48cf775d}{void {\bfseries energest\-\_\-type\-\_\-set} (int type, unsigned long value)}\label{energest_8h_ab2f45e9b267960c1927bf4ba48cf775d}
+
+\item 
+\hypertarget{energest_8h_ae568d9ca9cef5a120a7a4a8fb609f1e5}{void {\bfseries energest\-\_\-flush} (void)}\label{energest_8h_ae568d9ca9cef5a120a7a4a8fb609f1e5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}    Header file for the energy estimation mechanism
+\end{DoxyVerb}
+ \begin{DoxyAuthor}{Author}
+Adam Dunkels \href{mailto:adam@sics.se}{\tt adam@sics.\-se} 
+\end{DoxyAuthor}

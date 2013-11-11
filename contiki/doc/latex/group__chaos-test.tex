@@ -1,0 +1,41 @@
+\hypertarget{group__chaos-test}{\section{Simple application for testing Chaos}
+\label{group__chaos-test}\index{Simple application for testing Chaos@{Simple application for testing Chaos}}
+}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__chaos-test-variables}{Application variables}
+\item 
+\hyperlink{group__chaos-test-processes}{Application processes and functions}
+\item 
+\hyperlink{group__chaos-test-settings}{Application settings}
+\item 
+\hyperlink{group__chaos-test-defines}{Application internal defines}
+\end{DoxyCompactItemize}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{chaos-test_8c}{chaos-\/test.\-c}
+\item 
+file \hyperlink{chaos-test_8h}{chaos-\/test.\-h}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This application runs Chaos periodically. A round is started by one node (initiator), the application prints statistics at the end of the round.
+
+The application schedules Chaos periodically with a fixed period \hyperlink{group__chaos-test-settings_ga9eb9256366e6e80d689339627c9b016a}{C\-H\-A\-O\-S\-\_\-\-P\-E\-R\-I\-O\-D}.
+
+The duration of each Chaos phase is given by \hyperlink{group__chaos-test-settings_ga41b1c21c8fdb8d06878a6da529bd0da7}{C\-H\-A\-O\-S\-\_\-\-D\-U\-R\-A\-T\-I\-O\-N}.
+
+During each Chaos phase, the maximum number of transmissions in Chaos (N) is set to \hyperlink{group__chaos-test-settings_ga50f8fba62aef680d9929caefea7ca7e4}{N\-\_\-\-T\-X}.
+
+The initiator of the floods is the node having node\-Id \hyperlink{group__chaos-test-settings_ga2e373237aef3ee2b0fdb15cd0b8c5390}{I\-N\-I\-T\-I\-A\-T\-O\-R\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D}.
+
+The packet to be flooded has the format specified by data structure \hyperlink{structchaos__data__struct}{chaos\-\_\-data\-\_\-struct}.
+
+Receivers synchronize by computing the reference time during each Chaos phase.
+
+To synchronize fast, at startup receivers run Chaos with a significantly shorter period (\hyperlink{group__chaos-test-settings_ga4d273518d37ce068cf9a0a99a80f3d6b}{C\-H\-A\-O\-S\-\_\-\-I\-N\-I\-T\-\_\-\-P\-E\-R\-I\-O\-D}) and longer duration (\hyperlink{group__chaos-test-settings_ga9029d010ebd88a3f038aa1a496da1e0a}{C\-H\-A\-O\-S\-\_\-\-I\-N\-I\-T\-\_\-\-D\-U\-R\-A\-T\-I\-O\-N}).
+
+Receivers exit the bootstrapping phase when they have computed the reference time for \hyperlink{group__chaos-test-settings_ga115f8d5d589cf7d28c1a67902105c766}{C\-H\-A\-O\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-\_\-\-P\-E\-R\-I\-O\-D\-S} consecutive Chaos phases. 

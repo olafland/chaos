@@ -1,0 +1,85 @@
+\hypertarget{chaos_8c}{\section{core/dev/chaos.c File Reference}
+\label{chaos_8c}\index{core/dev/chaos.\-c@{core/dev/chaos.\-c}}
+}
+{\ttfamily \#include \char`\"{}chaos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}chaos-\/test.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{chaos_8c_a057a38f6929db92c5fac024888cdee9f}{\#define \hyperlink{chaos_8c_a057a38f6929db92c5fac024888cdee9f}{C\-M\-\_\-\-P\-O\-S}~C\-M\-\_\-1}\label{chaos_8c_a057a38f6929db92c5fac024888cdee9f}
+
+\begin{DoxyCompactList}\small\item\em a bunch of define for gcc 4.\-6 \end{DoxyCompactList}\item 
+\hypertarget{chaos_8c_a2eeb26f795626627b6f2740c711c89b6}{\#define {\bfseries C\-M\-\_\-\-N\-E\-G}~C\-M\-\_\-2}\label{chaos_8c_a2eeb26f795626627b6f2740c711c89b6}
+
+\item 
+\hypertarget{chaos_8c_afe275e54dc4064d17dad69588f753256}{\#define {\bfseries C\-M\-\_\-\-B\-O\-T\-H}~C\-M\-\_\-3}\label{chaos_8c_afe275e54dc4064d17dad69588f753256}
+
+\item 
+\hypertarget{chaos_8c_a49ba7cd72765ca63e3b780487743e678}{\#define {\bfseries C\-H\-A\-O\-S\-\_\-\-F\-L\-A\-G\-S\-\_\-\-L\-O\-G\-\_\-\-S\-I\-Z\-E}~70}\label{chaos_8c_a49ba7cd72765ca63e3b780487743e678}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{chaos_8c_af4346fb85a92b6c2ac8b59a8f77e8b14}{void {\bfseries chaos\-\_\-data\-\_\-processing} (void)}\label{chaos_8c_af4346fb85a92b6c2ac8b59a8f77e8b14}
+
+\item 
+\hypertarget{chaos_8c_a8b9f88d283bd50c8a1f5e60b73729a62}{{\bfseries interrupt} (T\-I\-M\-E\-R\-B1\-\_\-\-V\-E\-C\-T\-O\-R)}\label{chaos_8c_a8b9f88d283bd50c8a1f5e60b73729a62}
+
+\item 
+\hypertarget{chaos_8c_acf1e668f7bc1ae52cfd0c0834a425990}{{\bfseries P\-R\-O\-C\-E\-S\-S} (chaos\-\_\-process,\char`\"{}Chaos busy-\/waiting \hyperlink{structprocess}{process}\char`\"{})}\label{chaos_8c_acf1e668f7bc1ae52cfd0c0834a425990}
+
+\item 
+\hypertarget{chaos_8c_a44490d296cbced89f0bf56944487cca3}{{\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-T\-H\-R\-E\-A\-D} (chaos\-\_\-process, ev, data)}\label{chaos_8c_a44490d296cbced89f0bf56944487cca3}
+
+\item 
+void \hyperlink{group__chaos__main_ga2d039f5b73355d8b2bb6fd0462fe7702}{chaos\-\_\-start} (uint8\-\_\-t $\ast$data\-\_\-, uint8\-\_\-t initiator\-\_\-, uint8\-\_\-t tx\-\_\-max\-\_\-)
+\begin{DoxyCompactList}\small\item\em Start Chaos and stall all other application tasks. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__main_ga4359f0462206ab49f417cb8f89eb4d1f}{chaos\-\_\-stop} (void)
+\begin{DoxyCompactList}\small\item\em Stop Chaos and resume all other application tasks. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__main_gab2e2126a4762a97c6396ce51221eaea7}{get\-\_\-rx\-\_\-cnt} (void)
+\begin{DoxyCompactList}\small\item\em Get the last received counter. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__sync_ga2cb03b56f27f6f7f0b4ebf0ec6ba8333}{get\-\_\-relay\-\_\-cnt} (void)
+\begin{DoxyCompactList}\small\item\em Get the last relay counter. \end{DoxyCompactList}\item 
+rtimer\-\_\-clock\-\_\-t \hyperlink{group__chaos__sync_ga00e1a87bdb504b0819a7b5d6c637eaa8}{get\-\_\-\-T\-\_\-slot\-\_\-h} (void)
+\begin{DoxyCompactList}\small\item\em Get the local estimation of T\-\_\-slot, in D\-C\-O clock ticks. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__sync_gae7e475746ec86ae6dd8ca9ece642faf8}{is\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated} (void)
+\begin{DoxyCompactList}\small\item\em Provide information about current synchronization status. \end{DoxyCompactList}\item 
+rtimer\-\_\-clock\-\_\-t \hyperlink{group__chaos__main_ga88daf788efaacdc2705c58a822d97129}{get\-\_\-t\-\_\-first\-\_\-rx\-\_\-l} (void)
+\begin{DoxyCompactList}\small\item\em Get low-\/frequency time of first packet reception during the last Chaos phase. \end{DoxyCompactList}\item 
+rtimer\-\_\-clock\-\_\-t \hyperlink{group__chaos__sync_gaa37a5474c90f7747d0f5054dc1a03764}{get\-\_\-t\-\_\-ref\-\_\-l} (void)
+\begin{DoxyCompactList}\small\item\em Get low-\/frequency synchronization reference time. \end{DoxyCompactList}\item 
+void \hyperlink{group__chaos__sync_gac14ac43f69412b67d2d326b32c2d9014}{set\-\_\-t\-\_\-ref\-\_\-l} (rtimer\-\_\-clock\-\_\-t t)
+\begin{DoxyCompactList}\small\item\em Set low-\/frequency synchronization reference time. \end{DoxyCompactList}\item 
+void \hyperlink{group__chaos__sync_ga189faa7cc7395e8895e1ddcbd645f14e}{set\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated} (uint8\-\_\-t updated)
+\begin{DoxyCompactList}\small\item\em Set the current synchronization status. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__main_ga16ddcf3313115b5697723299590ca8f5}{get\-\_\-state} (void)
+\begin{DoxyCompactList}\small\item\em Get the current Chaos state. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos__interrupts_ga8f75a32d8b354934163c8eb70841590f}{void {\bfseries chaos\-\_\-begin\-\_\-rx} (void)}\label{group__chaos__interrupts_ga8f75a32d8b354934163c8eb70841590f}
+
+\item 
+\hypertarget{group__chaos__interrupts_gaa5045bdacc2f1ea6e4b04c7a19649c48}{void {\bfseries chaos\-\_\-end\-\_\-rx} (void)}\label{group__chaos__interrupts_gaa5045bdacc2f1ea6e4b04c7a19649c48}
+
+\item 
+\hypertarget{group__chaos__interrupts_gada53a7a38863b33ed5038d808a8f4ff5}{void {\bfseries chaos\-\_\-begin\-\_\-tx} (void)}\label{group__chaos__interrupts_gada53a7a38863b33ed5038d808a8f4ff5}
+
+\item 
+\hypertarget{group__chaos__interrupts_ga3ca8eca1033538551e79f4823d963ee0}{void {\bfseries chaos\-\_\-end\-\_\-tx} (void)}\label{group__chaos__interrupts_ga3ca8eca1033538551e79f4823d963ee0}
+
+\item 
+\hypertarget{group__chaos__interrupts_ga834e38553fc06e089a762cfa3b8bf093}{void {\bfseries print\-\_\-flags\-\_\-tx} (void)}\label{group__chaos__interrupts_ga834e38553fc06e089a762cfa3b8bf093}
+
+\item 
+\hypertarget{group__chaos__interrupts_ga5e84271255a7a9c0fa043c0300c3ab5e}{void {\bfseries print\-\_\-flags\-\_\-rx} (void)}\label{group__chaos__interrupts_ga5e84271255a7a9c0fa043c0300c3ab5e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}    Chaos core, source file.
+\end{DoxyVerb}
+ \begin{DoxyAuthor}{Author}
+Olaf Landsiedel \href{mailto:olafl@chalmers.se}{\tt olafl@chalmers.\-se} 
+
+Federico Ferrari \href{mailto:ferrari@tik.ee.ethz.ch}{\tt ferrari@tik.\-ee.\-ethz.\-ch}
+\end{DoxyAuthor}

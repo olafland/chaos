@@ -1,0 +1,146 @@
+\hypertarget{group__timer}{\section{Timer library}
+\label{group__timer}\index{Timer library@{Timer library}}
+}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{timer_8c}{timer.\-c}
+\item 
+file \hyperlink{timer_8h}{timer.\-h}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtimer}{timer}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__timer_ga6614d96fdfcd95c95ec6e6f63071ff51}{timer\-\_\-set} (struct \hyperlink{structtimer}{timer} $\ast$t, clock\-\_\-time\-\_\-t interval)
+\item 
+void \hyperlink{group__timer_gaedaf3e48c2b04229b85455fb948468d6}{timer\-\_\-reset} (struct \hyperlink{structtimer}{timer} $\ast$t)
+\item 
+void \hyperlink{group__timer_gacb807bd57e5489b386b876af5c1f163a}{timer\-\_\-restart} (struct \hyperlink{structtimer}{timer} $\ast$t)
+\item 
+int \hyperlink{group__timer_ga6d71dececfce707c668e6257aad5906e}{timer\-\_\-expired} (struct \hyperlink{structtimer}{timer} $\ast$t)
+\item 
+clock\-\_\-time\-\_\-t \hyperlink{group__timer_gaa10c14f8082ea8b10dfbefb81e1fa2e0}{timer\-\_\-remaining} (struct \hyperlink{structtimer}{timer} $\ast$t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Contiki kernel does not provide support for timed events. Rather, an application that wants to use timers needs to explicitly use the timer library.
+
+The timer library provides functions for setting, resetting and restarting timers, and for checking if a timer has expired. An application must \char`\"{}manually\char`\"{} check if its timers have expired; this is not done automatically.
+
+A timer is declared as a {\ttfamily struct} {\ttfamily timer} and all access to the timer is made by a pointer to the declared timer.
+
+\begin{DoxyNote}{Note}
+The timer library is not able to post events when a timer expires. The \hyperlink{group__etimer}{Event timers} should be used for this purpose.
+
+The timer library uses the \hyperlink{group__clock}{Clock library} to measure time. Intervals should be specified in the format used by the clock library.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__etimer}{Event timers} 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__timer_ga6d71dececfce707c668e6257aad5906e}{\index{Timer library@{Timer library}!timer\-\_\-expired@{timer\-\_\-expired}}
+\index{timer\-\_\-expired@{timer\-\_\-expired}!Timer library@{Timer library}}
+\subsubsection[{timer\-\_\-expired}]{\setlength{\rightskip}{0pt plus 5cm}int timer\-\_\-expired (
+\begin{DoxyParamCaption}
+\item[{struct {\bf timer} $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{group__timer_ga6d71dececfce707c668e6257aad5906e}
+Check if a timer has expired.
+
+This function tests if a timer has expired and returns true or false depending on its status.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & A pointer to the timer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if the timer has expired, zero otherwise. 
+\end{DoxyReturn}
+\hypertarget{group__timer_gaa10c14f8082ea8b10dfbefb81e1fa2e0}{\index{Timer library@{Timer library}!timer\-\_\-remaining@{timer\-\_\-remaining}}
+\index{timer\-\_\-remaining@{timer\-\_\-remaining}!Timer library@{Timer library}}
+\subsubsection[{timer\-\_\-remaining}]{\setlength{\rightskip}{0pt plus 5cm}clock\-\_\-time\-\_\-t timer\-\_\-remaining (
+\begin{DoxyParamCaption}
+\item[{struct {\bf timer} $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{group__timer_gaa10c14f8082ea8b10dfbefb81e1fa2e0}
+The time until the timer expires
+
+This function returns the time until the timer expires.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & A pointer to the timer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The time until the timer expires 
+\end{DoxyReturn}
+\hypertarget{group__timer_gaedaf3e48c2b04229b85455fb948468d6}{\index{Timer library@{Timer library}!timer\-\_\-reset@{timer\-\_\-reset}}
+\index{timer\-\_\-reset@{timer\-\_\-reset}!Timer library@{Timer library}}
+\subsubsection[{timer\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}void timer\-\_\-reset (
+\begin{DoxyParamCaption}
+\item[{struct {\bf timer} $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{group__timer_gaedaf3e48c2b04229b85455fb948468d6}
+Reset the timer with the same interval.
+
+This function resets the timer with the same interval that was given to the \hyperlink{group__timer_ga6614d96fdfcd95c95ec6e6f63071ff51}{timer\-\_\-set()} function. The start point of the interval is the exact time that the timer last expired. Therefore, this function will cause the timer to be stable over time, unlike the \hyperlink{group__timer_gacb807bd57e5489b386b876af5c1f163a}{timer\-\_\-restart()} function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & A pointer to the timer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__timer_gacb807bd57e5489b386b876af5c1f163a}{timer\-\_\-restart()} 
+\end{DoxySeeAlso}
+\hypertarget{group__timer_gacb807bd57e5489b386b876af5c1f163a}{\index{Timer library@{Timer library}!timer\-\_\-restart@{timer\-\_\-restart}}
+\index{timer\-\_\-restart@{timer\-\_\-restart}!Timer library@{Timer library}}
+\subsubsection[{timer\-\_\-restart}]{\setlength{\rightskip}{0pt plus 5cm}void timer\-\_\-restart (
+\begin{DoxyParamCaption}
+\item[{struct {\bf timer} $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{group__timer_gacb807bd57e5489b386b876af5c1f163a}
+Restart the timer from the current point in time
+
+This function restarts a timer with the same interval that was given to the \hyperlink{group__timer_ga6614d96fdfcd95c95ec6e6f63071ff51}{timer\-\_\-set()} function. The timer will start at the current time.
+
+\begin{DoxyNote}{Note}
+A periodic timer will drift if this function is used to reset it. For preioric timers, use the \hyperlink{group__timer_gaedaf3e48c2b04229b85455fb948468d6}{timer\-\_\-reset()} function instead.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em t} & A pointer to the timer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__timer_gaedaf3e48c2b04229b85455fb948468d6}{timer\-\_\-reset()} 
+\end{DoxySeeAlso}
+\hypertarget{group__timer_ga6614d96fdfcd95c95ec6e6f63071ff51}{\index{Timer library@{Timer library}!timer\-\_\-set@{timer\-\_\-set}}
+\index{timer\-\_\-set@{timer\-\_\-set}!Timer library@{Timer library}}
+\subsubsection[{timer\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}void timer\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{struct {\bf timer} $\ast$}]{t, }
+\item[{clock\-\_\-time\-\_\-t}]{interval}
+\end{DoxyParamCaption}
+)}}\label{group__timer_ga6614d96fdfcd95c95ec6e6f63071ff51}
+Set a timer.
+
+This function is used to set a timer for a time sometime in the future. The function \hyperlink{group__timer_ga6d71dececfce707c668e6257aad5906e}{timer\-\_\-expired()} will evaluate to true after the timer has expired.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & A pointer to the timer \\
+\hline
+{\em interval} & The interval before the timer expires. \\
+\hline
+\end{DoxyParams}

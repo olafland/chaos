@@ -1,0 +1,91 @@
+\hypertarget{classserial_1_1serialutil_1_1_file_like}{\section{serial.\-serialutil.\-File\-Like Class Reference}
+\label{classserial_1_1serialutil_1_1_file_like}\index{serial.\-serialutil.\-File\-Like@{serial.\-serialutil.\-File\-Like}}
+}
+Inheritance diagram for serial.\-serialutil.\-File\-Like\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classserial_1_1serialutil_1_1_file_like}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classserial_1_1serialutil_1_1_file_like_a02ccce9ac927311b73130cb084ce3b4f}{def {\bfseries read}}\label{classserial_1_1serialutil_1_1_file_like_a02ccce9ac927311b73130cb084ce3b4f}
+
+\item 
+\hypertarget{classserial_1_1serialutil_1_1_file_like_a4ff22b47bd5fdc0fac01b9a409384e5b}{def {\bfseries write}}\label{classserial_1_1serialutil_1_1_file_like_a4ff22b47bd5fdc0fac01b9a409384e5b}
+
+\item 
+def \hyperlink{classserial_1_1serialutil_1_1_file_like_a35da6b9eacf5d3b7dd7ee0acd27ea719}{readline}
+\item 
+def \hyperlink{classserial_1_1serialutil_1_1_file_like_af5ce1f0e6f2b3358cb0b635f89b6dc75}{readlines}
+\item 
+def \hyperlink{classserial_1_1serialutil_1_1_file_like_a47d04aa3d47054b1fb285d120b0cbbf9}{xreadlines}
+\item 
+\hypertarget{classserial_1_1serialutil_1_1_file_like_a563678bf0045c4d3efa1787b521c45f5}{def {\bfseries writelines}}\label{classserial_1_1serialutil_1_1_file_like_a563678bf0045c4d3efa1787b521c45f5}
+
+\item 
+def \hyperlink{classserial_1_1serialutil_1_1_file_like_ad928665200ce30593f7a86c52e1fb061}{flush}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}An abstract file like class.
+
+This class implements readline and readlines based on read and
+writelines based on write.
+This class is used to provide the above functions for to Serial
+port objects.
+
+Note that when the serial port was opened with _NO_ timeout that
+readline blocks until it sees a newline (or the specified size is
+reached) and that readlines would never return and therefore
+refuses to work (it raises an exception in this case)!
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\hypertarget{classserial_1_1serialutil_1_1_file_like_ad928665200ce30593f7a86c52e1fb061}{\index{serial\-::serialutil\-::\-File\-Like@{serial\-::serialutil\-::\-File\-Like}!flush@{flush}}
+\index{flush@{flush}!serial::serialutil::FileLike@{serial\-::serialutil\-::\-File\-Like}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}def serial.\-serialutil.\-File\-Like.\-flush (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classserial_1_1serialutil_1_1_file_like_ad928665200ce30593f7a86c52e1fb061}
+\begin{DoxyVerb}flush of file like objects\end{DoxyVerb}
+ \hypertarget{classserial_1_1serialutil_1_1_file_like_a35da6b9eacf5d3b7dd7ee0acd27ea719}{\index{serial\-::serialutil\-::\-File\-Like@{serial\-::serialutil\-::\-File\-Like}!readline@{readline}}
+\index{readline@{readline}!serial::serialutil::FileLike@{serial\-::serialutil\-::\-File\-Like}}
+\subsubsection[{readline}]{\setlength{\rightskip}{0pt plus 5cm}def serial.\-serialutil.\-File\-Like.\-readline (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{size = {\ttfamily None}, }
+\item[{}]{eol = {\ttfamily '\textbackslash{}n'}}
+\end{DoxyParamCaption}
+)}}\label{classserial_1_1serialutil_1_1_file_like_a35da6b9eacf5d3b7dd7ee0acd27ea719}
+\begin{DoxyVerb}read a line which is terminated with end-of-line (eol) character
+('\n' by default) or until timeout\end{DoxyVerb}
+ \hypertarget{classserial_1_1serialutil_1_1_file_like_af5ce1f0e6f2b3358cb0b635f89b6dc75}{\index{serial\-::serialutil\-::\-File\-Like@{serial\-::serialutil\-::\-File\-Like}!readlines@{readlines}}
+\index{readlines@{readlines}!serial::serialutil::FileLike@{serial\-::serialutil\-::\-File\-Like}}
+\subsubsection[{readlines}]{\setlength{\rightskip}{0pt plus 5cm}def serial.\-serialutil.\-File\-Like.\-readlines (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{sizehint = {\ttfamily None}, }
+\item[{}]{eol = {\ttfamily '\textbackslash{}n'}}
+\end{DoxyParamCaption}
+)}}\label{classserial_1_1serialutil_1_1_file_like_af5ce1f0e6f2b3358cb0b635f89b6dc75}
+\begin{DoxyVerb}read a list of lines, until timeout
+sizehint is ignored\end{DoxyVerb}
+ \hypertarget{classserial_1_1serialutil_1_1_file_like_a47d04aa3d47054b1fb285d120b0cbbf9}{\index{serial\-::serialutil\-::\-File\-Like@{serial\-::serialutil\-::\-File\-Like}!xreadlines@{xreadlines}}
+\index{xreadlines@{xreadlines}!serial::serialutil::FileLike@{serial\-::serialutil\-::\-File\-Like}}
+\subsubsection[{xreadlines}]{\setlength{\rightskip}{0pt plus 5cm}def serial.\-serialutil.\-File\-Like.\-xreadlines (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{sizehint = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}}\label{classserial_1_1serialutil_1_1_file_like_a47d04aa3d47054b1fb285d120b0cbbf9}
+\begin{DoxyVerb}just call readlines - here for compatibility\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+tools/sky/serial/serialutil.\-py\end{DoxyCompactItemize}

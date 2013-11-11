@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['read',['read',['../classserial_1_1serialposix_1_1_serial.html#a173d66c3d3cd356d8f90b51f0f750604',1,'serial::serialposix::Serial']]],
+  ['readline',['readline',['../classserial_1_1serialutil_1_1_file_like.html#a35da6b9eacf5d3b7dd7ee0acd27ea719',1,'serial::serialutil::FileLike']]],
+  ['readlines',['readlines',['../classserial_1_1serialutil_1_1_file_like.html#af5ce1f0e6f2b3358cb0b635f89b6dc75',1,'serial::serialutil::FileLike']]],
+  ['ringbuf',['ringbuf',['../structringbuf.html',1,'ringbuf'],['../group__ringbuf.html',1,'(Global Namespace)']]],
+  ['ringbuf_2ec',['ringbuf.c',['../ringbuf_8c.html',1,'']]],
+  ['ringbuf_2eh',['ringbuf.h',['../ringbuf_8h.html',1,'']]],
+  ['ringbuf_5felements',['ringbuf_elements',['../group__ringbuf.html#ga8b3f31407ae7e5a98f9cedcb6f5bd82b',1,'ringbuf_elements(struct ringbuf *r):&#160;ringbuf.c'],['../group__ringbuf.html#ga8b3f31407ae7e5a98f9cedcb6f5bd82b',1,'ringbuf_elements(struct ringbuf *r):&#160;ringbuf.c']]],
+  ['ringbuf_5fget',['ringbuf_get',['../group__ringbuf.html#ga2972cc12c40c75e5c883e831ff8c14ab',1,'ringbuf_get(struct ringbuf *r):&#160;ringbuf.c'],['../group__ringbuf.html#ga2972cc12c40c75e5c883e831ff8c14ab',1,'ringbuf_get(struct ringbuf *r):&#160;ringbuf.c']]],
+  ['ringbuf_5finit',['ringbuf_init',['../group__ringbuf.html#ga5e40b0459813787a4e67fceb0aab5fd6',1,'ringbuf_init(struct ringbuf *r, uint8_t *dataptr, uint8_t size):&#160;ringbuf.c'],['../group__ringbuf.html#ga5e40b0459813787a4e67fceb0aab5fd6',1,'ringbuf_init(struct ringbuf *r, uint8_t *a, uint8_t size_power_of_two):&#160;ringbuf.c']]],
+  ['ringbuf_5fput',['ringbuf_put',['../group__ringbuf.html#ga2a370b54ed5d194e188a94e505b48eeb',1,'ringbuf_put(struct ringbuf *r, uint8_t c):&#160;ringbuf.c'],['../group__ringbuf.html#ga2a370b54ed5d194e188a94e505b48eeb',1,'ringbuf_put(struct ringbuf *r, uint8_t c):&#160;ringbuf.c']]],
+  ['ringbuf_5fsize',['ringbuf_size',['../group__ringbuf.html#ga0c16200911b10f8137499825b5803b8d',1,'ringbuf_size(struct ringbuf *r):&#160;ringbuf.c'],['../group__ringbuf.html#ga0c16200911b10f8137499825b5803b8d',1,'ringbuf_size(struct ringbuf *r):&#160;ringbuf.c']]],
+  ['real_2dtime_20task_20scheduling',['Real-time task scheduling',['../group__rt.html',1,'']]],
+  ['rtimer',['rtimer',['../structrtimer.html',1,'']]],
+  ['rtimer_2darch_2ec',['rtimer-arch.c',['../rtimer-arch_8c.html',1,'']]],
+  ['rtimer_2darch_2eh',['rtimer-arch.h',['../rtimer-arch_8h.html',1,'']]],
+  ['rtimer_2ec',['rtimer.c',['../rtimer_8c.html',1,'']]],
+  ['rtimer_2eh',['rtimer.h',['../rtimer_8h.html',1,'']]],
+  ['rtimer_5finit',['rtimer_init',['../group__rt.html#ga655b7809b449b92eb2579db5f5c10e78',1,'rtimer.c']]],
+  ['rtimer_5fnow',['RTIMER_NOW',['../group__rt.html#gae646864933baa81ca646c96fa6f9f803',1,'rtimer.h']]],
+  ['rtimer_5frun_5fnext',['rtimer_run_next',['../group__rt.html#gaa9322a37b5a9b7ff51018fa67e39ad3b',1,'rtimer.c']]],
+  ['rtimer_5fset',['rtimer_set',['../group__rt.html#ga6a437542171f242142c80b4c3d8e4bfa',1,'rtimer.c']]],
+  ['rtimer_5ftime',['RTIMER_TIME',['../group__rt.html#ga2884a0b98e88b6723e54e8ed0a878c61',1,'rtimer.h']]]
+];

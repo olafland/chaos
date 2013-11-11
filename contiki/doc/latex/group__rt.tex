@@ -1,0 +1,178 @@
+\hypertarget{group__rt}{\section{Real-\/time task scheduling}
+\label{group__rt}\index{Real-\/time task scheduling@{Real-\/time task scheduling}}
+}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{rtimer_8c}{rtimer.\-c}
+\item 
+file \hyperlink{rtimer_8h}{rtimer.\-h}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrtimer}{rtimer}
+\begin{DoxyCompactList}\small\item\em Representation of a real-\/time task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__rt_gad72dbcf6d0153db1b8d8a58001feed83}{\#define {\bfseries D\-E\-B\-U\-G}~0}\label{group__rt_gad72dbcf6d0153db1b8d8a58001feed83}
+
+\item 
+\hypertarget{group__rt_ga1f464e950a4fa11e8821b5c725921a15}{\#define {\bfseries P\-R\-I\-N\-T\-F}(...)}\label{group__rt_ga1f464e950a4fa11e8821b5c725921a15}
+
+\item 
+\hypertarget{group__rt_gabd8aed15a76f89a2b3ff298acd3ca938}{\#define {\bfseries R\-T\-I\-M\-E\-R\-\_\-\-C\-L\-O\-C\-K\-\_\-\-L\-T}(a, b)~((signed short)((a)-\/(b)) $<$ 0)}\label{group__rt_gabd8aed15a76f89a2b3ff298acd3ca938}
+
+\item 
+\#define \hyperlink{group__rt_gae646864933baa81ca646c96fa6f9f803}{R\-T\-I\-M\-E\-R\-\_\-\-N\-O\-W}()
+\begin{DoxyCompactList}\small\item\em Get the current clock time. \end{DoxyCompactList}\item 
+\hypertarget{group__rt_ga5eb87d55e442336fe3f055e9befecddc}{\#define {\bfseries R\-T\-I\-M\-E\-R\-\_\-\-N\-O\-W\-\_\-\-D\-C\-O}()~rtimer\-\_\-arch\-\_\-now\-\_\-dco()}\label{group__rt_ga5eb87d55e442336fe3f055e9befecddc}
+
+\item 
+\#define \hyperlink{group__rt_ga2884a0b98e88b6723e54e8ed0a878c61}{R\-T\-I\-M\-E\-R\-\_\-\-T\-I\-M\-E}(task)
+\begin{DoxyCompactList}\small\item\em Get the time that a task last was executed. \end{DoxyCompactList}\item 
+\hypertarget{group__rt_gac5b67590efc1e4abad23b658b69bf87c}{\#define {\bfseries R\-T\-I\-M\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D}~R\-T\-I\-M\-E\-R\-\_\-\-A\-R\-C\-H\-\_\-\-S\-E\-C\-O\-N\-D}\label{group__rt_gac5b67590efc1e4abad23b658b69bf87c}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__rt_gae85ab49c2b0d4ae8700f0ba03b189893}{typedef unsigned short {\bfseries rtimer\-\_\-clock\-\_\-t}}\label{group__rt_gae85ab49c2b0d4ae8700f0ba03b189893}
+
+\item 
+\hypertarget{group__rt_gab199e54177db05efb8a05a1d0f541e80}{typedef void($\ast$ {\bfseries rtimer\-\_\-callback\-\_\-t} )(struct \hyperlink{structrtimer}{rtimer} $\ast$t, void $\ast$ptr)}\label{group__rt_gab199e54177db05efb8a05a1d0f541e80}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries R\-T\-I\-M\-E\-R\-\_\-\-O\-K}, 
+{\bfseries R\-T\-I\-M\-E\-R\-\_\-\-E\-R\-R\-\_\-\-F\-U\-L\-L}, 
+{\bfseries R\-T\-I\-M\-E\-R\-\_\-\-E\-R\-R\-\_\-\-T\-I\-M\-E}, 
+{\bfseries R\-T\-I\-M\-E\-R\-\_\-\-E\-R\-R\-\_\-\-A\-L\-R\-E\-A\-D\-Y\-\_\-\-S\-C\-H\-E\-D\-U\-L\-E\-D}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__rt_ga655b7809b449b92eb2579db5f5c10e78}{rtimer\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the real-\/time scheduler. \end{DoxyCompactList}\item 
+int \hyperlink{group__rt_ga6a437542171f242142c80b4c3d8e4bfa}{rtimer\-\_\-set} (struct \hyperlink{structrtimer}{rtimer} $\ast$task, rtimer\-\_\-clock\-\_\-t time, rtimer\-\_\-clock\-\_\-t duration, rtimer\-\_\-callback\-\_\-t func, void $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Post a real-\/time task. \end{DoxyCompactList}\item 
+\hypertarget{group__rt_ga3007f52b4104251bcc2491237c66de39}{int {\bfseries rtimer\-\_\-set\-\_\-long} (struct \hyperlink{structrtimer}{rtimer} $\ast$\hyperlink{structrtimer}{rtimer}, rtimer\-\_\-clock\-\_\-t ref\-\_\-time, unsigned long offset, rtimer\-\_\-callback\-\_\-t func, void $\ast$ptr)}\label{group__rt_ga3007f52b4104251bcc2491237c66de39}
+
+\item 
+\hypertarget{group__rt_ga4f90133fee9050ec6554eb766e4c96a5}{unsigned long {\bfseries rtimer\-\_\-time\-\_\-to\-\_\-expire} (void)}\label{group__rt_ga4f90133fee9050ec6554eb766e4c96a5}
+
+\item 
+void \hyperlink{group__rt_gaa9322a37b5a9b7ff51018fa67e39ad3b}{rtimer\-\_\-run\-\_\-next} (void)
+\begin{DoxyCompactList}\small\item\em Execute the next real-\/time task and schedule the next task, if any. \end{DoxyCompactList}\item 
+\hypertarget{group__rt_gaa52e494f9a26390231d998237b1b849a}{void {\bfseries rtimer\-\_\-arch\-\_\-init} (void)}\label{group__rt_gaa52e494f9a26390231d998237b1b849a}
+
+\item 
+\hypertarget{group__rt_gac69ae14f718f5f7b78b101a034d67c3a}{void {\bfseries rtimer\-\_\-arch\-\_\-schedule} (rtimer\-\_\-clock\-\_\-t t)}\label{group__rt_gac69ae14f718f5f7b78b101a034d67c3a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The real-\/time module handles the scheduling and execution of real-\/time tasks (with predictable execution times). 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__rt_gae646864933baa81ca646c96fa6f9f803}{\index{Real-\/time task scheduling@{Real-\/time task scheduling}!R\-T\-I\-M\-E\-R\-\_\-\-N\-O\-W@{R\-T\-I\-M\-E\-R\-\_\-\-N\-O\-W}}
+\index{R\-T\-I\-M\-E\-R\-\_\-\-N\-O\-W@{R\-T\-I\-M\-E\-R\-\_\-\-N\-O\-W}!Real-time task scheduling@{Real-\/time task scheduling}}
+\subsubsection[{R\-T\-I\-M\-E\-R\-\_\-\-N\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-I\-M\-E\-R\-\_\-\-N\-O\-W(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__rt_gae646864933baa81ca646c96fa6f9f803}
+
+
+Get the current clock time. 
+
+\begin{DoxyReturn}{Returns}
+The current time \begin{DoxyVerb}        This function returns what the real-time module thinks
+        is the current time. The current time is used to set
+        the timeouts for real-time tasks.\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\hypertarget{group__rt_ga2884a0b98e88b6723e54e8ed0a878c61}{\index{Real-\/time task scheduling@{Real-\/time task scheduling}!R\-T\-I\-M\-E\-R\-\_\-\-T\-I\-M\-E@{R\-T\-I\-M\-E\-R\-\_\-\-T\-I\-M\-E}}
+\index{R\-T\-I\-M\-E\-R\-\_\-\-T\-I\-M\-E@{R\-T\-I\-M\-E\-R\-\_\-\-T\-I\-M\-E}!Real-time task scheduling@{Real-\/time task scheduling}}
+\subsubsection[{R\-T\-I\-M\-E\-R\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-I\-M\-E\-R\-\_\-\-T\-I\-M\-E(
+\begin{DoxyParamCaption}
+\item[{}]{task}
+\end{DoxyParamCaption}
+)}}\label{group__rt_ga2884a0b98e88b6723e54e8ed0a878c61}
+
+
+Get the time that a task last was executed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & The task \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The time that a task last was executed \begin{DoxyVerb}        This function returns the time that the task was last
+        executed. This typically is used to get a periodic
+        execution of a task without clock drift.\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__rt_ga655b7809b449b92eb2579db5f5c10e78}{\index{Real-\/time task scheduling@{Real-\/time task scheduling}!rtimer\-\_\-init@{rtimer\-\_\-init}}
+\index{rtimer\-\_\-init@{rtimer\-\_\-init}!Real-time task scheduling@{Real-\/time task scheduling}}
+\subsubsection[{rtimer\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void rtimer\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__rt_ga655b7809b449b92eb2579db5f5c10e78}
+
+
+Initialize the real-\/time scheduler. 
+
+This function initializes the real-\/time scheduler and must be called at boot-\/up, before any other functions from the real-\/time scheduler is called. \hypertarget{group__rt_gaa9322a37b5a9b7ff51018fa67e39ad3b}{\index{Real-\/time task scheduling@{Real-\/time task scheduling}!rtimer\-\_\-run\-\_\-next@{rtimer\-\_\-run\-\_\-next}}
+\index{rtimer\-\_\-run\-\_\-next@{rtimer\-\_\-run\-\_\-next}!Real-time task scheduling@{Real-\/time task scheduling}}
+\subsubsection[{rtimer\-\_\-run\-\_\-next}]{\setlength{\rightskip}{0pt plus 5cm}void rtimer\-\_\-run\-\_\-next (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__rt_gaa9322a37b5a9b7ff51018fa67e39ad3b}
+
+
+Execute the next real-\/time task and schedule the next task, if any. 
+
+This function is called by the architecture dependent code to execute and schedule the next real-\/time task. \hypertarget{group__rt_ga6a437542171f242142c80b4c3d8e4bfa}{\index{Real-\/time task scheduling@{Real-\/time task scheduling}!rtimer\-\_\-set@{rtimer\-\_\-set}}
+\index{rtimer\-\_\-set@{rtimer\-\_\-set}!Real-time task scheduling@{Real-\/time task scheduling}}
+\subsubsection[{rtimer\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}int rtimer\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rtimer} $\ast$}]{task, }
+\item[{rtimer\-\_\-clock\-\_\-t}]{time, }
+\item[{rtimer\-\_\-clock\-\_\-t}]{duration, }
+\item[{rtimer\-\_\-callback\-\_\-t}]{func, }
+\item[{void $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)}}\label{group__rt_ga6a437542171f242142c80b4c3d8e4bfa}
+
+
+Post a real-\/time task. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & A pointer to the task variable previously declared with R\-T\-I\-M\-E\-R\-\_\-\-T\-A\-S\-K(). \\
+\hline
+{\em time} & The time when the task is to be executed. \\
+\hline
+{\em duration} & Unused argument. \\
+\hline
+{\em func} & A function to be called when the task is executed. \\
+\hline
+{\em ptr} & An opaque pointer that will be supplied as an argument to the callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero (true) if the task could be scheduled, zero (false) if the task could not be scheduled.
+\end{DoxyReturn}
+This function schedules a real-\/time task at a specified time in the future. 

@@ -1,0 +1,81 @@
+\hypertarget{group__clock}{\section{Clock library}
+\label{group__clock}\index{Clock library@{Clock library}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__clock_gae3ced0551b26c9b99cb45a86f34d100a}{C\-L\-O\-C\-K\-\_\-\-S\-E\-C\-O\-N\-D}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__clock_ga78ab77b57cf2e00089f0a3a22508524c}{clock\-\_\-init} (void)
+\item 
+C\-C\-I\-F clock\-\_\-time\-\_\-t \hyperlink{group__clock_ga50c22f9b9d60dd1f9e59b63a3a6676b1}{clock\-\_\-time} (void)
+\item 
+void \hyperlink{group__clock_ga2a4bbf8e0008809dfd6c38040941a536}{clock\-\_\-delay} (unsigned int)
+\item 
+\hypertarget{group__clock_gae57f21c49f465372a8bf2ac3fbe03ba8}{int {\bfseries clock\-\_\-fine\-\_\-max} (void)}\label{group__clock_gae57f21c49f465372a8bf2ac3fbe03ba8}
+
+\item 
+\hypertarget{group__clock_gadca1ca5f3c484a278d6c4876f7c54bdb}{unsigned short {\bfseries clock\-\_\-fine} (void)}\label{group__clock_gadca1ca5f3c484a278d6c4876f7c54bdb}
+
+\item 
+\hypertarget{group__clock_ga8bbd5d5a773349139eee79d365af36ab}{C\-C\-I\-F unsigned long {\bfseries clock\-\_\-seconds} (void)}\label{group__clock_ga8bbd5d5a773349139eee79d365af36ab}
+
+\item 
+\hypertarget{group__clock_ga32d282ad58e03f762e3cbe30d41b024a}{void {\bfseries etimer\-\_\-interrupt} (void)}\label{group__clock_ga32d282ad58e03f762e3cbe30d41b024a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The clock library is the interface between Contiki and the platform specific clock functionality. The clock library performs a single function\-: measuring time. Additionally, the clock library provides a macro, C\-L\-O\-C\-K\-\_\-\-S\-E\-C\-O\-N\-D, which corresponds to one second of system time.
+
+\begin{DoxyNote}{Note}
+The clock library need in many cases not be used directly. Rather, the \hyperlink{group__timer}{timer library} or the \hyperlink{group__etimer}{event timers} should be used.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__timer}{Timer library} 
+
+\hyperlink{group__etimer}{Event timers} 
+\end{DoxySeeAlso}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__clock_gae3ced0551b26c9b99cb45a86f34d100a}{\index{Clock library@{Clock library}!C\-L\-O\-C\-K\-\_\-\-S\-E\-C\-O\-N\-D@{C\-L\-O\-C\-K\-\_\-\-S\-E\-C\-O\-N\-D}}
+\index{C\-L\-O\-C\-K\-\_\-\-S\-E\-C\-O\-N\-D@{C\-L\-O\-C\-K\-\_\-\-S\-E\-C\-O\-N\-D}!Clock library@{Clock library}}
+\subsubsection[{C\-L\-O\-C\-K\-\_\-\-S\-E\-C\-O\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-L\-O\-C\-K\-\_\-\-S\-E\-C\-O\-N\-D}}\label{group__clock_gae3ced0551b26c9b99cb45a86f34d100a}
+A second, measured in system clock time. 
+
+\subsection{Function Documentation}
+\hypertarget{group__clock_ga2a4bbf8e0008809dfd6c38040941a536}{\index{Clock library@{Clock library}!clock\-\_\-delay@{clock\-\_\-delay}}
+\index{clock\-\_\-delay@{clock\-\_\-delay}!Clock library@{Clock library}}
+\subsubsection[{clock\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}void clock\-\_\-delay (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i}
+\end{DoxyParamCaption}
+)}}\label{group__clock_ga2a4bbf8e0008809dfd6c38040941a536}
+Delay the C\-P\-U for a multiple of 2.\-83 us. \hypertarget{group__clock_ga78ab77b57cf2e00089f0a3a22508524c}{\index{Clock library@{Clock library}!clock\-\_\-init@{clock\-\_\-init}}
+\index{clock\-\_\-init@{clock\-\_\-init}!Clock library@{Clock library}}
+\subsubsection[{clock\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void clock\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__clock_ga78ab77b57cf2e00089f0a3a22508524c}
+Initialize the clock library.
+
+This function initializes the clock library and should be called from the main() function of the system. \hypertarget{group__clock_ga50c22f9b9d60dd1f9e59b63a3a6676b1}{\index{Clock library@{Clock library}!clock\-\_\-time@{clock\-\_\-time}}
+\index{clock\-\_\-time@{clock\-\_\-time}!Clock library@{Clock library}}
+\subsubsection[{clock\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}C\-C\-I\-F clock\-\_\-time\-\_\-t clock\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__clock_ga50c22f9b9d60dd1f9e59b63a3a6676b1}
+Get the current clock time.
+
+This function returns the current system clock time.
+
+\begin{DoxyReturn}{Returns}
+The current clock time, measured in system ticks. 
+\end{DoxyReturn}

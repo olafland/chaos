@@ -1,0 +1,325 @@
+\hypertarget{group__pt}{\section{Pt}
+\label{group__pt}\index{Pt@{Pt}}
+}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__lc}{Local continuations}
+\item 
+\hyperlink{group__ptsem}{Protothread semaphores}
+\end{DoxyCompactItemize}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{pt_8h}{pt.\-h}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpt}{pt}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__pt_ga7b5319b5b65761a845fcd1500fde4cdc}{\#define {\bfseries P\-T\-\_\-\-W\-A\-I\-T\-I\-N\-G}~0}\label{group__pt_ga7b5319b5b65761a845fcd1500fde4cdc}
+
+\item 
+\hypertarget{group__pt_gae469332907e0617d72d5e2dd4297119d}{\#define {\bfseries P\-T\-\_\-\-Y\-I\-E\-L\-D\-E\-D}~1}\label{group__pt_gae469332907e0617d72d5e2dd4297119d}
+
+\item 
+\hypertarget{group__pt_gacfae9053e5c107a1aed6b228c917d2ea}{\#define {\bfseries P\-T\-\_\-\-E\-X\-I\-T\-E\-D}~2}\label{group__pt_gacfae9053e5c107a1aed6b228c917d2ea}
+
+\item 
+\hypertarget{group__pt_ga9ff1e8936a8a26bff54c05f8a989b93b}{\#define {\bfseries P\-T\-\_\-\-E\-N\-D\-E\-D}~3}\label{group__pt_ga9ff1e8936a8a26bff54c05f8a989b93b}
+
+\end{DoxyCompactItemize}
+\subsection*{Initialization}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pt_gae6bae7dc0225468c8a5ac269df549892}{P\-T\-\_\-\-I\-N\-I\-T}(\hyperlink{structpt}{pt})
+\end{DoxyCompactItemize}
+\subsection*{Declaration and definition}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pt_ga3d4c8bd4aada659eb34f5d2ffd3e7901}{P\-T\-\_\-\-T\-H\-R\-E\-A\-D}(name\-\_\-args)
+\item 
+\#define \hyperlink{group__pt_ga2ffbb9e554e08a343ae2f9de4bedfdfc}{P\-T\-\_\-\-B\-E\-G\-I\-N}(\hyperlink{structpt}{pt})
+\item 
+\#define \hyperlink{group__pt_ga7b04a0035bef29d905496c23bae066d2}{P\-T\-\_\-\-E\-N\-D}(\hyperlink{structpt}{pt})
+\end{DoxyCompactItemize}
+\subsection*{Blocked wait}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pt_ga99e43010ec61327164466aa2d902de45}{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L}(\hyperlink{structpt}{pt}, condition)
+\item 
+\#define \hyperlink{group__pt_gaad14bbbf092b90aa0a5a4f9169504a8d}{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-W\-H\-I\-L\-E}(\hyperlink{structpt}{pt}, cond)
+\end{DoxyCompactItemize}
+\subsection*{Hierarchical protothreads}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pt_ga2f8f70c30b9ee08a103fbd69a4365c4c}{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-T\-H\-R\-E\-A\-D}(\hyperlink{structpt}{pt}, thread)
+\item 
+\#define \hyperlink{group__pt_ga9e97a0b4d5cc7764d8e19758f5da53ae}{P\-T\-\_\-\-S\-P\-A\-W\-N}(\hyperlink{structpt}{pt}, child, thread)
+\end{DoxyCompactItemize}
+\subsection*{Exiting and restarting}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pt_gacd3ac045f0a4ae63412e3b3d8780e8ab}{P\-T\-\_\-\-R\-E\-S\-T\-A\-R\-T}(\hyperlink{structpt}{pt})
+\item 
+\#define \hyperlink{group__pt_ga905451249dca72ce0385bf2a9ff178ee}{P\-T\-\_\-\-E\-X\-I\-T}(\hyperlink{structpt}{pt})
+\end{DoxyCompactItemize}
+\subsection*{Calling a protothread}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pt_gafa82b860a64b67d25ab3abc21811896f}{P\-T\-\_\-\-S\-C\-H\-E\-D\-U\-L\-E}(f)
+\end{DoxyCompactItemize}
+\subsection*{Yielding from a protothread}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pt_ga155cba6121323726d02c00284428fed6}{P\-T\-\_\-\-Y\-I\-E\-L\-D}(\hyperlink{structpt}{pt})
+\item 
+\#define \hyperlink{group__pt_gae3c821e3a388615528efda9d23c7d115}{P\-T\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L}(\hyperlink{structpt}{pt}, cond)
+\begin{DoxyCompactList}\small\item\em Yield from the protothread until a condition occurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__pt_ga2ffbb9e554e08a343ae2f9de4bedfdfc}{\index{Pt@{Pt}!P\-T\-\_\-\-B\-E\-G\-I\-N@{P\-T\-\_\-\-B\-E\-G\-I\-N}}
+\index{P\-T\-\_\-\-B\-E\-G\-I\-N@{P\-T\-\_\-\-B\-E\-G\-I\-N}!Pt@{Pt}}
+\subsubsection[{P\-T\-\_\-\-B\-E\-G\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-B\-E\-G\-I\-N(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}}
+\end{DoxyParamCaption}
+)}}\label{group__pt_ga2ffbb9e554e08a343ae2f9de4bedfdfc}
+Declare the start of a protothread inside the C function implementing the protothread.
+
+This macro is used to declare the starting point of a protothread. It should be placed at the start of the function in which the protothread runs. All C statements above the \hyperlink{group__pt_ga2ffbb9e554e08a343ae2f9de4bedfdfc}{P\-T\-\_\-\-B\-E\-G\-I\-N()} invokation will be executed each time the protothread is scheduled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pt_ga7b04a0035bef29d905496c23bae066d2}{\index{Pt@{Pt}!P\-T\-\_\-\-E\-N\-D@{P\-T\-\_\-\-E\-N\-D}}
+\index{P\-T\-\_\-\-E\-N\-D@{P\-T\-\_\-\-E\-N\-D}!Pt@{Pt}}
+\subsubsection[{P\-T\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-E\-N\-D(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}}
+\end{DoxyParamCaption}
+)}}\label{group__pt_ga7b04a0035bef29d905496c23bae066d2}
+Declare the end of a protothread.
+
+This macro is used for declaring that a protothread ends. It must always be used together with a matching \hyperlink{group__pt_ga2ffbb9e554e08a343ae2f9de4bedfdfc}{P\-T\-\_\-\-B\-E\-G\-I\-N()} macro.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pt_ga905451249dca72ce0385bf2a9ff178ee}{\index{Pt@{Pt}!P\-T\-\_\-\-E\-X\-I\-T@{P\-T\-\_\-\-E\-X\-I\-T}}
+\index{P\-T\-\_\-\-E\-X\-I\-T@{P\-T\-\_\-\-E\-X\-I\-T}!Pt@{Pt}}
+\subsubsection[{P\-T\-\_\-\-E\-X\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-E\-X\-I\-T(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}}
+\end{DoxyParamCaption}
+)}}\label{group__pt_ga905451249dca72ce0385bf2a9ff178ee}
+Exit the protothread.
+
+This macro causes the protothread to exit. If the protothread was spawned by another protothread, the parent protothread will become unblocked and can continue to run.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pt_gae6bae7dc0225468c8a5ac269df549892}{\index{Pt@{Pt}!P\-T\-\_\-\-I\-N\-I\-T@{P\-T\-\_\-\-I\-N\-I\-T}}
+\index{P\-T\-\_\-\-I\-N\-I\-T@{P\-T\-\_\-\-I\-N\-I\-T}!Pt@{Pt}}
+\subsubsection[{P\-T\-\_\-\-I\-N\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-I\-N\-I\-T(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}}
+\end{DoxyParamCaption}
+)}}\label{group__pt_gae6bae7dc0225468c8a5ac269df549892}
+Initialize a protothread.
+
+Initializes a protothread. Initialization must be done prior to starting to execute the protothread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__pt_ga9e97a0b4d5cc7764d8e19758f5da53ae}{P\-T\-\_\-\-S\-P\-A\-W\-N()} 
+\end{DoxySeeAlso}
+\hypertarget{group__pt_gacd3ac045f0a4ae63412e3b3d8780e8ab}{\index{Pt@{Pt}!P\-T\-\_\-\-R\-E\-S\-T\-A\-R\-T@{P\-T\-\_\-\-R\-E\-S\-T\-A\-R\-T}}
+\index{P\-T\-\_\-\-R\-E\-S\-T\-A\-R\-T@{P\-T\-\_\-\-R\-E\-S\-T\-A\-R\-T}!Pt@{Pt}}
+\subsubsection[{P\-T\-\_\-\-R\-E\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-R\-E\-S\-T\-A\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}}
+\end{DoxyParamCaption}
+)}}\label{group__pt_gacd3ac045f0a4ae63412e3b3d8780e8ab}
+Restart the protothread.
+
+This macro will block and cause the running protothread to restart its execution at the place of the \hyperlink{group__pt_ga2ffbb9e554e08a343ae2f9de4bedfdfc}{P\-T\-\_\-\-B\-E\-G\-I\-N()} call.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pt_gafa82b860a64b67d25ab3abc21811896f}{\index{Pt@{Pt}!P\-T\-\_\-\-S\-C\-H\-E\-D\-U\-L\-E@{P\-T\-\_\-\-S\-C\-H\-E\-D\-U\-L\-E}}
+\index{P\-T\-\_\-\-S\-C\-H\-E\-D\-U\-L\-E@{P\-T\-\_\-\-S\-C\-H\-E\-D\-U\-L\-E}!Pt@{Pt}}
+\subsubsection[{P\-T\-\_\-\-S\-C\-H\-E\-D\-U\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-S\-C\-H\-E\-D\-U\-L\-E(
+\begin{DoxyParamCaption}
+\item[{}]{f}
+\end{DoxyParamCaption}
+)}}\label{group__pt_gafa82b860a64b67d25ab3abc21811896f}
+Schedule a protothread.
+
+This function schedules a protothread. The return value of the function is non-\/zero if the protothread is running or zero if the protothread has exited.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & The call to the C function implementing the protothread to be scheduled \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pt_ga9e97a0b4d5cc7764d8e19758f5da53ae}{\index{Pt@{Pt}!P\-T\-\_\-\-S\-P\-A\-W\-N@{P\-T\-\_\-\-S\-P\-A\-W\-N}}
+\index{P\-T\-\_\-\-S\-P\-A\-W\-N@{P\-T\-\_\-\-S\-P\-A\-W\-N}!Pt@{Pt}}
+\subsubsection[{P\-T\-\_\-\-S\-P\-A\-W\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-S\-P\-A\-W\-N(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}, }
+\item[{}]{child, }
+\item[{}]{thread}
+\end{DoxyParamCaption}
+)}}\label{group__pt_ga9e97a0b4d5cc7764d8e19758f5da53ae}
+Spawn a child protothread and wait until it exits.
+
+This macro spawns a child protothread and waits until it exits. The macro can only be used within a protothread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+{\em child} & A pointer to the child protothread's control structure. \\
+\hline
+{\em thread} & The child protothread with arguments \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pt_ga3d4c8bd4aada659eb34f5d2ffd3e7901}{\index{Pt@{Pt}!P\-T\-\_\-\-T\-H\-R\-E\-A\-D@{P\-T\-\_\-\-T\-H\-R\-E\-A\-D}}
+\index{P\-T\-\_\-\-T\-H\-R\-E\-A\-D@{P\-T\-\_\-\-T\-H\-R\-E\-A\-D}!Pt@{Pt}}
+\subsubsection[{P\-T\-\_\-\-T\-H\-R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-T\-H\-R\-E\-A\-D(
+\begin{DoxyParamCaption}
+\item[{}]{name\-\_\-args}
+\end{DoxyParamCaption}
+)}}\label{group__pt_ga3d4c8bd4aada659eb34f5d2ffd3e7901}
+Declaration of a protothread.
+
+This macro is used to declare a protothread. All protothreads must be declared with this macro.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-\_\-args} & The name and arguments of the C function implementing the protothread. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pt_ga2f8f70c30b9ee08a103fbd69a4365c4c}{\index{Pt@{Pt}!P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-T\-H\-R\-E\-A\-D@{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-T\-H\-R\-E\-A\-D}}
+\index{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-T\-H\-R\-E\-A\-D@{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-T\-H\-R\-E\-A\-D}!Pt@{Pt}}
+\subsubsection[{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-T\-H\-R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-T\-H\-R\-E\-A\-D(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}, }
+\item[{}]{thread}
+\end{DoxyParamCaption}
+)}}\label{group__pt_ga2f8f70c30b9ee08a103fbd69a4365c4c}
+Block and wait until a child protothread completes.
+
+This macro schedules a child protothread. The current protothread will block until the child protothread completes.
+
+\begin{DoxyNote}{Note}
+The child protothread must be manually initialized with the \hyperlink{group__pt_gae6bae7dc0225468c8a5ac269df549892}{P\-T\-\_\-\-I\-N\-I\-T()} function before this function is used.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+{\em thread} & The child protothread with arguments\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__pt_ga9e97a0b4d5cc7764d8e19758f5da53ae}{P\-T\-\_\-\-S\-P\-A\-W\-N()} 
+\end{DoxySeeAlso}
+\hypertarget{group__pt_ga99e43010ec61327164466aa2d902de45}{\index{Pt@{Pt}!P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L@{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L}}
+\index{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L@{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L}!Pt@{Pt}}
+\subsubsection[{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}, }
+\item[{}]{condition}
+\end{DoxyParamCaption}
+)}}\label{group__pt_ga99e43010ec61327164466aa2d902de45}
+Block and wait until condition is true.
+
+This macro blocks the protothread until the specified condition is true.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+{\em condition} & The condition. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pt_gaad14bbbf092b90aa0a5a4f9169504a8d}{\index{Pt@{Pt}!P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-W\-H\-I\-L\-E@{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-W\-H\-I\-L\-E}}
+\index{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-W\-H\-I\-L\-E@{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-W\-H\-I\-L\-E}!Pt@{Pt}}
+\subsubsection[{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-W\-H\-I\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-W\-H\-I\-L\-E(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}, }
+\item[{}]{cond}
+\end{DoxyParamCaption}
+)}}\label{group__pt_gaad14bbbf092b90aa0a5a4f9169504a8d}
+Block and wait while condition is true.
+
+This function blocks and waits while condition is true. See \hyperlink{group__pt_ga99e43010ec61327164466aa2d902de45}{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+{\em cond} & The condition. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pt_ga155cba6121323726d02c00284428fed6}{\index{Pt@{Pt}!P\-T\-\_\-\-Y\-I\-E\-L\-D@{P\-T\-\_\-\-Y\-I\-E\-L\-D}}
+\index{P\-T\-\_\-\-Y\-I\-E\-L\-D@{P\-T\-\_\-\-Y\-I\-E\-L\-D}!Pt@{Pt}}
+\subsubsection[{P\-T\-\_\-\-Y\-I\-E\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-Y\-I\-E\-L\-D(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}}
+\end{DoxyParamCaption}
+)}}\label{group__pt_ga155cba6121323726d02c00284428fed6}
+Yield from the current protothread.
+
+This function will yield the protothread, thereby allowing other processing to take place in the system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pt_gae3c821e3a388615528efda9d23c7d115}{\index{Pt@{Pt}!P\-T\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L@{P\-T\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L}}
+\index{P\-T\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L@{P\-T\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L}!Pt@{Pt}}
+\subsubsection[{P\-T\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}, }
+\item[{}]{cond}
+\end{DoxyParamCaption}
+)}}\label{group__pt_gae3c821e3a388615528efda9d23c7d115}
+
+
+Yield from the protothread until a condition occurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+{\em cond} & The condition. \begin{DoxyVerb}        This function will yield the protothread, until the
+        specified condition evaluates to true.\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}

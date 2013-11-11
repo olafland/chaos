@@ -1,0 +1,112 @@
+\hypertarget{group__chaos__sync}{\section{Interface related to time synchronization}
+\label{group__chaos__sync}\index{Interface related to time synchronization@{Interface related to time synchronization}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{group__chaos__sync_ga2cb03b56f27f6f7f0b4ebf0ec6ba8333}{get\-\_\-relay\-\_\-cnt} (void)
+\begin{DoxyCompactList}\small\item\em Get the last relay counter. \end{DoxyCompactList}\item 
+rtimer\-\_\-clock\-\_\-t \hyperlink{group__chaos__sync_ga00e1a87bdb504b0819a7b5d6c637eaa8}{get\-\_\-\-T\-\_\-slot\-\_\-h} (void)
+\begin{DoxyCompactList}\small\item\em Get the local estimation of T\-\_\-slot, in D\-C\-O clock ticks. \end{DoxyCompactList}\item 
+rtimer\-\_\-clock\-\_\-t \hyperlink{group__chaos__sync_gaa37a5474c90f7747d0f5054dc1a03764}{get\-\_\-t\-\_\-ref\-\_\-l} (void)
+\begin{DoxyCompactList}\small\item\em Get low-\/frequency synchronization reference time. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__sync_gae7e475746ec86ae6dd8ca9ece642faf8}{is\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated} (void)
+\begin{DoxyCompactList}\small\item\em Provide information about current synchronization status. \end{DoxyCompactList}\item 
+void \hyperlink{group__chaos__sync_gac14ac43f69412b67d2d326b32c2d9014}{set\-\_\-t\-\_\-ref\-\_\-l} (rtimer\-\_\-clock\-\_\-t t)
+\begin{DoxyCompactList}\small\item\em Set low-\/frequency synchronization reference time. \end{DoxyCompactList}\item 
+void \hyperlink{group__chaos__sync_ga189faa7cc7395e8895e1ddcbd645f14e}{set\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated} (uint8\-\_\-t updated)
+\begin{DoxyCompactList}\small\item\em Set the current synchronization status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__chaos__sync_ga2cb03b56f27f6f7f0b4ebf0ec6ba8333}{\index{Interface related to time synchronization@{Interface related to time synchronization}!get\-\_\-relay\-\_\-cnt@{get\-\_\-relay\-\_\-cnt}}
+\index{get\-\_\-relay\-\_\-cnt@{get\-\_\-relay\-\_\-cnt}!Interface related to time synchronization@{Interface related to time synchronization}}
+\subsubsection[{get\-\_\-relay\-\_\-cnt}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t get\-\_\-relay\-\_\-cnt (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__chaos__sync_ga2cb03b56f27f6f7f0b4ebf0ec6ba8333}
+
+
+Get the last relay counter. 
+
+\begin{DoxyReturn}{Returns}
+Value of the relay counter embedded in the first packet received during the last Chaos phase. 
+\end{DoxyReturn}
+\hypertarget{group__chaos__sync_gaa37a5474c90f7747d0f5054dc1a03764}{\index{Interface related to time synchronization@{Interface related to time synchronization}!get\-\_\-t\-\_\-ref\-\_\-l@{get\-\_\-t\-\_\-ref\-\_\-l}}
+\index{get\-\_\-t\-\_\-ref\-\_\-l@{get\-\_\-t\-\_\-ref\-\_\-l}!Interface related to time synchronization@{Interface related to time synchronization}}
+\subsubsection[{get\-\_\-t\-\_\-ref\-\_\-l}]{\setlength{\rightskip}{0pt plus 5cm}rtimer\-\_\-clock\-\_\-t get\-\_\-t\-\_\-ref\-\_\-l (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__chaos__sync_gaa37a5474c90f7747d0f5054dc1a03764}
+
+
+Get low-\/frequency synchronization reference time. 
+
+\begin{DoxyReturn}{Returns}
+Low-\/frequency reference time (i.\-e., time at which the initiator started the flood). 
+\end{DoxyReturn}
+\hypertarget{group__chaos__sync_ga00e1a87bdb504b0819a7b5d6c637eaa8}{\index{Interface related to time synchronization@{Interface related to time synchronization}!get\-\_\-\-T\-\_\-slot\-\_\-h@{get\-\_\-\-T\-\_\-slot\-\_\-h}}
+\index{get\-\_\-\-T\-\_\-slot\-\_\-h@{get\-\_\-\-T\-\_\-slot\-\_\-h}!Interface related to time synchronization@{Interface related to time synchronization}}
+\subsubsection[{get\-\_\-\-T\-\_\-slot\-\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}rtimer\-\_\-clock\-\_\-t get\-\_\-\-T\-\_\-slot\-\_\-h (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__chaos__sync_ga00e1a87bdb504b0819a7b5d6c637eaa8}
+
+
+Get the local estimation of T\-\_\-slot, in D\-C\-O clock ticks. 
+
+\begin{DoxyReturn}{Returns}
+Local estimation of T\-\_\-slot. 
+\end{DoxyReturn}
+\hypertarget{group__chaos__sync_gae7e475746ec86ae6dd8ca9ece642faf8}{\index{Interface related to time synchronization@{Interface related to time synchronization}!is\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated@{is\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated}}
+\index{is\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated@{is\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated}!Interface related to time synchronization@{Interface related to time synchronization}}
+\subsubsection[{is\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t is\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__chaos__sync_gae7e475746ec86ae6dd8ca9ece642faf8}
+
+
+Provide information about current synchronization status. 
+
+\begin{DoxyReturn}{Returns}
+Not zero if the synchronization reference time was updated during the last Chaos phase, zero otherwise. 
+\end{DoxyReturn}
+\hypertarget{group__chaos__sync_gac14ac43f69412b67d2d326b32c2d9014}{\index{Interface related to time synchronization@{Interface related to time synchronization}!set\-\_\-t\-\_\-ref\-\_\-l@{set\-\_\-t\-\_\-ref\-\_\-l}}
+\index{set\-\_\-t\-\_\-ref\-\_\-l@{set\-\_\-t\-\_\-ref\-\_\-l}!Interface related to time synchronization@{Interface related to time synchronization}}
+\subsubsection[{set\-\_\-t\-\_\-ref\-\_\-l}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-t\-\_\-ref\-\_\-l (
+\begin{DoxyParamCaption}
+\item[{rtimer\-\_\-clock\-\_\-t}]{t}
+\end{DoxyParamCaption}
+)}}\label{group__chaos__sync_gac14ac43f69412b67d2d326b32c2d9014}
+
+
+Set low-\/frequency synchronization reference time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Updated reference time. Useful to manually update the reference time if a packet has not been received. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__chaos__sync_ga189faa7cc7395e8895e1ddcbd645f14e}{\index{Interface related to time synchronization@{Interface related to time synchronization}!set\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated@{set\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated}}
+\index{set\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated@{set\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated}!Interface related to time synchronization@{Interface related to time synchronization}}
+\subsubsection[{set\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{updated}
+\end{DoxyParamCaption}
+)}}\label{group__chaos__sync_ga189faa7cc7395e8895e1ddcbd645f14e}
+
+
+Set the current synchronization status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em updated} & Not zero if a node has to be considered synchronized, zero otherwise. \\
+\hline
+\end{DoxyParams}

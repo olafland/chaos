@@ -1,0 +1,79 @@
+\hypertarget{process_8c}{\section{core/sys/process.c File Reference}
+\label{process_8c}\index{core/sys/process.\-c@{core/sys/process.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}sys/process.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sys/arg.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structevent__data}{event\-\_\-data}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__process_ga437239861f9ea9ebec1d1226d4d97aa6}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-N\-O\-N\-E}~0}\label{group__process_ga437239861f9ea9ebec1d1226d4d97aa6}
+
+\item 
+\hypertarget{group__process_ga1a012e4a68ade6aa0eef2ab61b649d8a}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-U\-N\-N\-I\-N\-G}~1}\label{group__process_ga1a012e4a68ade6aa0eef2ab61b649d8a}
+
+\item 
+\hypertarget{group__process_ga8b440ee2f4859a533b9b2164d252027f}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-A\-L\-L\-E\-D}~2}\label{group__process_ga8b440ee2f4859a533b9b2164d252027f}
+
+\item 
+\hypertarget{group__process_gad72dbcf6d0153db1b8d8a58001feed83}{\#define {\bfseries D\-E\-B\-U\-G}~0}\label{group__process_gad72dbcf6d0153db1b8d8a58001feed83}
+
+\item 
+\hypertarget{group__process_ga1f464e950a4fa11e8821b5c725921a15}{\#define {\bfseries P\-R\-I\-N\-T\-F}(...)}\label{group__process_ga1f464e950a4fa11e8821b5c725921a15}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}{\bf Functions called from application programs}\par
+\begin{DoxyCompactItemize}
+\item 
+process\-\_\-event\-\_\-t \hyperlink{group__process_ga24326129d48a7afaf618e3e01f75c086}{process\-\_\-alloc\-\_\-event} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a global event number. \end{DoxyCompactList}\item 
+void \hyperlink{group__process_ga1ecfc797b48072142b3e22ac1f0bbfdd}{process\-\_\-start} (struct \hyperlink{structprocess}{process} $\ast$p, const char $\ast$arg)
+\item 
+void \hyperlink{group__process_ga7f3c7706ec62fbcbdf018f799b21cd66}{process\-\_\-exit} (struct \hyperlink{structprocess}{process} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Cause a process to exit. \end{DoxyCompactList}\item 
+int \hyperlink{group__process_gaaf5f03bb404a67415ea4ea72a749203f}{process\-\_\-post} (struct \hyperlink{structprocess}{process} $\ast$p, process\-\_\-event\-\_\-t ev, process\-\_\-data\-\_\-t data)
+\item 
+void \hyperlink{group__process_ga6b8e9574ecf58706d51b28c26723a94b}{process\-\_\-post\-\_\-synch} (struct \hyperlink{structprocess}{process} $\ast$p, process\-\_\-event\-\_\-t ev, process\-\_\-data\-\_\-t data)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Functions called by the system and boot-\/up code}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__process_gaab238b68c176e90138159f41af9133f1}{process\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the process module. \end{DoxyCompactList}\item 
+int \hyperlink{group__process_ga4968157ca91c28e26075ab78a1a4fb56}{process\-\_\-run} (void)
+\item 
+int \hyperlink{group__process_gaa6f7728a7860837ad311380036b538eb}{process\-\_\-nevents} (void)
+\item 
+int \hyperlink{group__process_ga45108066f1eabfd536782f7a19c7da6e}{process\-\_\-is\-\_\-running} (struct \hyperlink{structprocess}{process} $\ast$p)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Functions called from device drivers}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__process_ga496ba132ce7a2ec12a8313dc05ab0142}{process\-\_\-poll} (struct \hyperlink{structprocess}{process} $\ast$p)
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__process_ga69c8a4d6b7be8c8fdaf3d9d42716786f}{struct \hyperlink{structprocess}{process} $\ast$ {\bfseries process\-\_\-list} = N\-U\-L\-L}\label{group__process_ga69c8a4d6b7be8c8fdaf3d9d42716786f}
+
+\item 
+\hypertarget{group__process_ga6093569fbb63502df10fd8ddb83727bf}{struct \hyperlink{structprocess}{process} $\ast$ {\bfseries process\-\_\-current} = N\-U\-L\-L}\label{group__process_ga6093569fbb63502df10fd8ddb83727bf}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}    Implementation of the Contiki process kernel.
+\end{DoxyVerb}
+ \begin{DoxyAuthor}{Author}
+Adam Dunkels \href{mailto:adam@sics.se}{\tt adam@sics.\-se} 
+\end{DoxyAuthor}

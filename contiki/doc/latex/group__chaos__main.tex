@@ -1,0 +1,113 @@
+\hypertarget{group__chaos__main}{\section{Interface related to flooding}
+\label{group__chaos__main}\index{Interface related to flooding@{Interface related to flooding}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__chaos__main_ga2d039f5b73355d8b2bb6fd0462fe7702}{chaos\-\_\-start} (uint8\-\_\-t $\ast$data\-\_\-, uint8\-\_\-t initiator\-\_\-, uint8\-\_\-t tx\-\_\-max\-\_\-)
+\begin{DoxyCompactList}\small\item\em Start Chaos and stall all other application tasks. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__main_ga4359f0462206ab49f417cb8f89eb4d1f}{chaos\-\_\-stop} (void)
+\begin{DoxyCompactList}\small\item\em Stop Chaos and resume all other application tasks. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__main_gab2e2126a4762a97c6396ce51221eaea7}{get\-\_\-rx\-\_\-cnt} (void)
+\begin{DoxyCompactList}\small\item\em Get the last received counter. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__main_ga16ddcf3313115b5697723299590ca8f5}{get\-\_\-state} (void)
+\begin{DoxyCompactList}\small\item\em Get the current Chaos state. \end{DoxyCompactList}\item 
+rtimer\-\_\-clock\-\_\-t \hyperlink{group__chaos__main_ga88daf788efaacdc2705c58a822d97129}{get\-\_\-t\-\_\-first\-\_\-rx\-\_\-l} (void)
+\begin{DoxyCompactList}\small\item\em Get low-\/frequency time of first packet reception during the last Chaos phase. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__chaos__main_ga2d039f5b73355d8b2bb6fd0462fe7702}{\index{Interface related to flooding@{Interface related to flooding}!chaos\-\_\-start@{chaos\-\_\-start}}
+\index{chaos\-\_\-start@{chaos\-\_\-start}!Interface related to flooding@{Interface related to flooding}}
+\subsubsection[{chaos\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void chaos\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{data\-\_\-, }
+\item[{uint8\-\_\-t}]{initiator\-\_\-, }
+\item[{uint8\-\_\-t}]{tx\-\_\-max\-\_\-}
+\end{DoxyParamCaption}
+)}}\label{group__chaos__main_ga2d039f5b73355d8b2bb6fd0462fe7702}
+
+
+Start Chaos and stall all other application tasks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\-\_\-} & A pointer to the flooding data. \begin{DoxyVerb}              At the initiator, Chaos reads from the given memory
+              location data provided by the application.
+
+              At a receiver, Chaos writes to the given memory
+              location data for the application.
+\end{DoxyVerb}
+ \\
+\hline
+{\em data\-\_\-len\-\_\-} & Length of the flooding data, in bytes. \\
+\hline
+{\em initiator\-\_\-} & Not zero if the node is the initiator, zero if it is a receiver. \\
+\hline
+{\em sync\-\_\-} & Not zero if Chaos must provide time synchronization, zero otherwise. \\
+\hline
+{\em tx\-\_\-max\-\_\-} & Maximum number of transmissions (N). \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__chaos__main_ga4359f0462206ab49f417cb8f89eb4d1f}{\index{Interface related to flooding@{Interface related to flooding}!chaos\-\_\-stop@{chaos\-\_\-stop}}
+\index{chaos\-\_\-stop@{chaos\-\_\-stop}!Interface related to flooding@{Interface related to flooding}}
+\subsubsection[{chaos\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t chaos\-\_\-stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__chaos__main_ga4359f0462206ab49f417cb8f89eb4d1f}
+
+
+Stop Chaos and resume all other application tasks. 
+
+\begin{DoxyReturn}{Returns}
+Number of times the packet has been received during last Chaos phase. If it is zero, the packet was not successfully received. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__chaos__main_gab2e2126a4762a97c6396ce51221eaea7}{get\-\_\-rx\-\_\-cnt} 
+\end{DoxySeeAlso}
+\hypertarget{group__chaos__main_gab2e2126a4762a97c6396ce51221eaea7}{\index{Interface related to flooding@{Interface related to flooding}!get\-\_\-rx\-\_\-cnt@{get\-\_\-rx\-\_\-cnt}}
+\index{get\-\_\-rx\-\_\-cnt@{get\-\_\-rx\-\_\-cnt}!Interface related to flooding@{Interface related to flooding}}
+\subsubsection[{get\-\_\-rx\-\_\-cnt}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t get\-\_\-rx\-\_\-cnt (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__chaos__main_gab2e2126a4762a97c6396ce51221eaea7}
+
+
+Get the last received counter. 
+
+\begin{DoxyReturn}{Returns}
+Number of times the packet has been received during last Chaos phase. If it is zero, the packet was not successfully received. 
+\end{DoxyReturn}
+\hypertarget{group__chaos__main_ga16ddcf3313115b5697723299590ca8f5}{\index{Interface related to flooding@{Interface related to flooding}!get\-\_\-state@{get\-\_\-state}}
+\index{get\-\_\-state@{get\-\_\-state}!Interface related to flooding@{Interface related to flooding}}
+\subsubsection[{get\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t get\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__chaos__main_ga16ddcf3313115b5697723299590ca8f5}
+
+
+Get the current Chaos state. 
+
+\begin{DoxyReturn}{Returns}
+Current Chaos state, one of the possible values of \hyperlink{chaos_8h_a8997028aa544da8dfa00544cad0c44c7}{chaos\-\_\-state}. 
+\end{DoxyReturn}
+\hypertarget{group__chaos__main_ga88daf788efaacdc2705c58a822d97129}{\index{Interface related to flooding@{Interface related to flooding}!get\-\_\-t\-\_\-first\-\_\-rx\-\_\-l@{get\-\_\-t\-\_\-first\-\_\-rx\-\_\-l}}
+\index{get\-\_\-t\-\_\-first\-\_\-rx\-\_\-l@{get\-\_\-t\-\_\-first\-\_\-rx\-\_\-l}!Interface related to flooding@{Interface related to flooding}}
+\subsubsection[{get\-\_\-t\-\_\-first\-\_\-rx\-\_\-l}]{\setlength{\rightskip}{0pt plus 5cm}rtimer\-\_\-clock\-\_\-t get\-\_\-t\-\_\-first\-\_\-rx\-\_\-l (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__chaos__main_ga88daf788efaacdc2705c58a822d97129}
+
+
+Get low-\/frequency time of first packet reception during the last Chaos phase. 
+
+\begin{DoxyReturn}{Returns}
+Low-\/frequency time of first packet reception during the last Chaos phase. 
+\end{DoxyReturn}

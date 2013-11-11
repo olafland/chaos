@@ -1,0 +1,49 @@
+\hypertarget{group__chaos__sfd}{\section{Management of S\-F\-D interrupts}
+\label{group__chaos__sfd}\index{Management of S\-F\-D interrupts@{Management of S\-F\-D interrupts}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__chaos__sfd_ga770ed5e9afbb20260ce2791cd3159736}{S\-F\-D\-\_\-\-C\-A\-P\-\_\-\-I\-N\-I\-T}(edge)
+\begin{DoxyCompactList}\small\item\em Capture instants of S\-F\-D events on timer B1. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos__sfd_ga6ba78a35b5699258b8686d954dcbfd68}{\#define \hyperlink{group__chaos__sfd_ga6ba78a35b5699258b8686d954dcbfd68}{E\-N\-A\-B\-L\-E\-\_\-\-S\-F\-D\-\_\-\-I\-N\-T}()~do \{ T\-B\-C\-C\-T\-L1 $|$= C\-C\-I\-E; \} while (0)}\label{group__chaos__sfd_ga6ba78a35b5699258b8686d954dcbfd68}
+
+\begin{DoxyCompactList}\small\item\em Enable generation of interrupts due to S\-F\-D events. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos__sfd_ga5d2af32ec554abaa0bcaa31d91632af1}{\#define \hyperlink{group__chaos__sfd_ga5d2af32ec554abaa0bcaa31d91632af1}{D\-I\-S\-A\-B\-L\-E\-\_\-\-S\-F\-D\-\_\-\-I\-N\-T}()~do \{ T\-B\-C\-C\-T\-L1 \&= $\sim$C\-C\-I\-E; \} while (0)}\label{group__chaos__sfd_ga5d2af32ec554abaa0bcaa31d91632af1}
+
+\begin{DoxyCompactList}\small\item\em Disable generation of interrupts due to S\-F\-D events. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos__sfd_ga86745c888328a99fd33f1c9a25b88543}{\#define \hyperlink{group__chaos__sfd_ga86745c888328a99fd33f1c9a25b88543}{C\-L\-E\-A\-R\-\_\-\-S\-F\-D\-\_\-\-I\-N\-T}()~do \{ T\-B\-C\-C\-T\-L1 \&= $\sim$C\-C\-I\-F\-G; \} while (0)}\label{group__chaos__sfd_ga86745c888328a99fd33f1c9a25b88543}
+
+\begin{DoxyCompactList}\small\item\em Clear interrupt flag due to S\-F\-D events. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos__sfd_gaf48c215ee6fbfcb0186132170f683ff9}{\#define \hyperlink{group__chaos__sfd_gaf48c215ee6fbfcb0186132170f683ff9}{I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D\-\_\-\-S\-F\-D\-\_\-\-I\-N\-T}()~!!(T\-B\-C\-C\-T\-L1 \& C\-C\-I\-E)}\label{group__chaos__sfd_gaf48c215ee6fbfcb0186132170f683ff9}
+
+\begin{DoxyCompactList}\small\item\em Check if generation of interrupts due to S\-F\-D events is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__chaos__sfd_ga770ed5e9afbb20260ce2791cd3159736}{\index{Management of S\-F\-D interrupts@{Management of S\-F\-D interrupts}!S\-F\-D\-\_\-\-C\-A\-P\-\_\-\-I\-N\-I\-T@{S\-F\-D\-\_\-\-C\-A\-P\-\_\-\-I\-N\-I\-T}}
+\index{S\-F\-D\-\_\-\-C\-A\-P\-\_\-\-I\-N\-I\-T@{S\-F\-D\-\_\-\-C\-A\-P\-\_\-\-I\-N\-I\-T}!Management of SFD interrupts@{Management of S\-F\-D interrupts}}
+\subsubsection[{S\-F\-D\-\_\-\-C\-A\-P\-\_\-\-I\-N\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-F\-D\-\_\-\-C\-A\-P\-\_\-\-I\-N\-I\-T(
+\begin{DoxyParamCaption}
+\item[{}]{edge}
+\end{DoxyParamCaption}
+)}}\label{group__chaos__sfd_ga770ed5e9afbb20260ce2791cd3159736}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{\(\backslash\)
+    P4SEL |= BV(SFD);\(\backslash\)
+    TBCCTL1 = edge | CAP | SCS;\(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+
+
+Capture instants of S\-F\-D events on timer B1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & Edge used for capture. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,401 @@
+\hypertarget{chaos_8h}{\section{core/dev/chaos.h File Reference}
+\label{chaos_8h}\index{core/dev/chaos.\-h@{core/dev/chaos.\-h}}
+}
+{\ttfamily \#include \char`\"{}contiki.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dev/watchdog.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dev/cc2420\-\_\-const.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dev/leds.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dev/spi.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$legacymsp430.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}lib/random.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{chaos_8h_aa2af104abb8b0cf264fa245ea5202302}{P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-C\-Y\-C\-L\-E\-S}~40000
+\item 
+\#define \hyperlink{chaos_8h_a334635dbcbc3e4b0b03428b5472c2eda}{C\-H\-A\-O\-S\-\_\-\-D\-E\-B\-U\-G}~1
+\item 
+\hypertarget{chaos_8h_a6ba06776c90fd0d39971fc7cd87451c2}{\#define {\bfseries L\-O\-G\-\_\-\-F\-L\-A\-G\-S}~1}\label{chaos_8h_a6ba06776c90fd0d39971fc7cd87451c2}
+
+\item 
+\#define \hyperlink{chaos_8h_ac61e7d49d71d5ce842b2e720a562eb80}{C\-H\-A\-O\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-W\-I\-N\-D\-O\-W}~32
+\item 
+\hypertarget{chaos_8h_aa48c0162c88ea6c1e7f124e34d551e07}{\#define {\bfseries F\-I\-N\-A\-L\-\_\-\-C\-H\-A\-O\-S\-\_\-\-F\-L\-O\-O\-D}~1}\label{chaos_8h_aa48c0162c88ea6c1e7f124e34d551e07}
+
+\item 
+\hypertarget{chaos_8h_a45ba202b05caf39795aeca91b0ae547e}{\#define {\bfseries T\-I\-M\-E\-O\-U\-T}~1}\label{chaos_8h_a45ba202b05caf39795aeca91b0ae547e}
+
+\item 
+\hypertarget{chaos_8h_adf00566e18a18b4ae1007fc32b5804ee}{\#define {\bfseries M\-I\-N\-\_\-\-S\-L\-O\-T\-S\-\_\-\-T\-I\-M\-E\-O\-U\-T}~3}\label{chaos_8h_adf00566e18a18b4ae1007fc32b5804ee}
+
+\item 
+\hypertarget{chaos_8h_a86904ea1433387abdbc9dd5e64ffb26d}{\#define {\bfseries M\-A\-X\-\_\-\-S\-L\-O\-T\-S\-\_\-\-T\-I\-M\-E\-O\-U\-T}~7}\label{chaos_8h_a86904ea1433387abdbc9dd5e64ffb26d}
+
+\item 
+\hypertarget{chaos_8h_a7c174f33fab4f8b74733617815ab8a9f}{\#define {\bfseries C\-C2420\-\_\-\-T\-X\-P\-O\-W\-E\-R}~C\-C2420\-\_\-\-T\-X\-P\-O\-W\-E\-R\-\_\-\-M\-A\-X}\label{chaos_8h_a7c174f33fab4f8b74733617815ab8a9f}
+
+\item 
+\hypertarget{chaos_8h_a739a31f9b993f7f9e20988d43d2cff06}{\#define {\bfseries B\-Y\-T\-E\-S\-\_\-\-T\-I\-M\-E\-O\-U\-T}~32}\label{chaos_8h_a739a31f9b993f7f9e20988d43d2cff06}
+
+\item 
+\#define \hyperlink{chaos_8h_a0178fa0350084350f45ae1b841579f77}{C\-L\-O\-C\-K\-\_\-\-P\-H\-I}~(F\-\_\-\-C\-P\-U / R\-T\-I\-M\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D)
+\item 
+\hypertarget{chaos_8h_ab59049521526600f6d24fe3023259c0a}{\#define {\bfseries C\-H\-A\-O\-S\-\_\-\-H\-E\-A\-D\-E\-R}~0xfe}\label{chaos_8h_ab59049521526600f6d24fe3023259c0a}
+
+\item 
+\hypertarget{chaos_8h_aa6ada58d34e989604f2d16eaf44fc4c4}{\#define {\bfseries C\-H\-A\-O\-S\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-L\-E\-N}~sizeof(uint8\-\_\-t)}\label{chaos_8h_aa6ada58d34e989604f2d16eaf44fc4c4}
+
+\item 
+\hypertarget{chaos_8h_afa9aa682e9158af806193f636496ae0d}{\#define {\bfseries C\-H\-A\-O\-S\-\_\-\-R\-E\-L\-A\-Y\-\_\-\-C\-N\-T\-\_\-\-L\-E\-N}~sizeof(uint8\-\_\-t)}\label{chaos_8h_afa9aa682e9158af806193f636496ae0d}
+
+\item 
+\hypertarget{chaos_8h_a94833cb4956e33b3f2f98f9992b2dde4}{\#define {\bfseries C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-O\-N}()~(\hyperlink{group__chaos__main_ga16ddcf3313115b5697723299590ca8f5}{get\-\_\-state}() != \hyperlink{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a26413c04b91b50d2f9767a8f157a4093}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-F\-F})}\label{chaos_8h_a94833cb4956e33b3f2f98f9992b2dde4}
+
+\item 
+\hypertarget{chaos_8h_a4532715c40a74153dc64ecd6ca3a0d5c}{\#define {\bfseries F\-O\-O\-T\-E\-R\-\_\-\-L\-E\-N}~2}\label{chaos_8h_a4532715c40a74153dc64ecd6ca3a0d5c}
+
+\item 
+\hypertarget{chaos_8h_a83fdbb9b1696ab44a5ee79b4753a5343}{\#define {\bfseries F\-O\-O\-T\-E\-R1\-\_\-\-C\-R\-C\-\_\-\-O\-K}~0x80}\label{chaos_8h_a83fdbb9b1696ab44a5ee79b4753a5343}
+
+\item 
+\hypertarget{chaos_8h_af51175f3f8a505d2764461823796d399}{\#define {\bfseries F\-O\-O\-T\-E\-R1\-\_\-\-C\-O\-R\-R\-E\-L\-A\-T\-I\-O\-N}~0x7f}\label{chaos_8h_af51175f3f8a505d2764461823796d399}
+
+\item 
+\hypertarget{chaos_8h_acd54b77567a38dda64d852dd6ee378a8}{\#define {\bfseries P\-A\-C\-K\-E\-T\-\_\-\-L\-E\-N}~(\hyperlink{group__chaos-test-defines_gaf02e45f15080b8ec9dd7b286157617ff}{D\-A\-T\-A\-\_\-\-L\-E\-N} + F\-O\-O\-T\-E\-R\-\_\-\-L\-E\-N + C\-H\-A\-O\-S\-\_\-\-R\-E\-L\-A\-Y\-\_\-\-C\-N\-T\-\_\-\-L\-E\-N + C\-H\-A\-O\-S\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-L\-E\-N)}\label{chaos_8h_acd54b77567a38dda64d852dd6ee378a8}
+
+\item 
+\hypertarget{chaos_8h_a31b87f9a0ade24fada928c3278a6648a}{\#define {\bfseries C\-H\-A\-O\-S\-\_\-\-L\-E\-N\-\_\-\-F\-I\-E\-L\-D}~packet\mbox{[}0\mbox{]}}\label{chaos_8h_a31b87f9a0ade24fada928c3278a6648a}
+
+\item 
+\hypertarget{chaos_8h_a5f4f0d935efa0ca5ebeec653b15d947d}{\#define {\bfseries C\-H\-A\-O\-S\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-E\-L\-D}~packet\mbox{[}1\mbox{]}}\label{chaos_8h_a5f4f0d935efa0ca5ebeec653b15d947d}
+
+\item 
+\hypertarget{chaos_8h_a2927ce656b3d31f94a05921ecb3d3fef}{\#define {\bfseries C\-H\-A\-O\-S\-\_\-\-D\-A\-T\-A\-\_\-\-F\-I\-E\-L\-D}~packet\mbox{[}2\mbox{]}}\label{chaos_8h_a2927ce656b3d31f94a05921ecb3d3fef}
+
+\item 
+\hypertarget{chaos_8h_a5fd3fcd584b9c0337eeb66d94dc8b380}{\#define {\bfseries C\-H\-A\-O\-S\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-F\-I\-E\-L\-D}~packet\mbox{[}2+B\-Y\-T\-E\-S\-\_\-\-T\-I\-M\-E\-O\-U\-T\mbox{]}}\label{chaos_8h_a5fd3fcd584b9c0337eeb66d94dc8b380}
+
+\item 
+\hypertarget{chaos_8h_ae420cb0ee7cc214fa34d708f3666fe2d}{\#define {\bfseries C\-H\-A\-O\-S\-\_\-\-R\-E\-L\-A\-Y\-\_\-\-C\-N\-T\-\_\-\-F\-I\-E\-L\-D}~packet\mbox{[}P\-A\-C\-K\-E\-T\-\_\-\-L\-E\-N -\/ F\-O\-O\-T\-E\-R\-\_\-\-L\-E\-N\mbox{]}}\label{chaos_8h_ae420cb0ee7cc214fa34d708f3666fe2d}
+
+\item 
+\hypertarget{chaos_8h_a93256cf7fdf7ecb4015152693a4cf235}{\#define {\bfseries C\-H\-A\-O\-S\-\_\-\-R\-S\-S\-I\-\_\-\-F\-I\-E\-L\-D}~packet\mbox{[}P\-A\-C\-K\-E\-T\-\_\-\-L\-E\-N -\/ 1\mbox{]}}\label{chaos_8h_a93256cf7fdf7ecb4015152693a4cf235}
+
+\item 
+\hypertarget{chaos_8h_a54900391d0878e8a306fee4441baf8aa}{\#define {\bfseries C\-H\-A\-O\-S\-\_\-\-C\-R\-C\-\_\-\-F\-I\-E\-L\-D}~packet\mbox{[}P\-A\-C\-K\-E\-T\-\_\-\-L\-E\-N\mbox{]}}\label{chaos_8h_a54900391d0878e8a306fee4441baf8aa}
+
+\item 
+\#define \hyperlink{group__chaos__capture_ga1ba6973ff6fa6b3ee590efc341ea62eb}{C\-A\-P\-T\-U\-R\-E\-\_\-\-N\-E\-X\-T\-\_\-\-C\-L\-O\-C\-K\-\_\-\-T\-I\-C\-K}(t\-\_\-cap\-\_\-h, t\-\_\-cap\-\_\-l)
+\begin{DoxyCompactList}\small\item\em Capture next low-\/frequency clock tick and D\-C\-O clock value at that instant. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__chaos__sfd_ga770ed5e9afbb20260ce2791cd3159736}{S\-F\-D\-\_\-\-C\-A\-P\-\_\-\-I\-N\-I\-T}(edge)
+\begin{DoxyCompactList}\small\item\em Capture instants of S\-F\-D events on timer B1. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos__sfd_ga6ba78a35b5699258b8686d954dcbfd68}{\#define \hyperlink{group__chaos__sfd_ga6ba78a35b5699258b8686d954dcbfd68}{E\-N\-A\-B\-L\-E\-\_\-\-S\-F\-D\-\_\-\-I\-N\-T}()~do \{ T\-B\-C\-C\-T\-L1 $|$= C\-C\-I\-E; \} while (0)}\label{group__chaos__sfd_ga6ba78a35b5699258b8686d954dcbfd68}
+
+\begin{DoxyCompactList}\small\item\em Enable generation of interrupts due to S\-F\-D events. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos__sfd_ga5d2af32ec554abaa0bcaa31d91632af1}{\#define \hyperlink{group__chaos__sfd_ga5d2af32ec554abaa0bcaa31d91632af1}{D\-I\-S\-A\-B\-L\-E\-\_\-\-S\-F\-D\-\_\-\-I\-N\-T}()~do \{ T\-B\-C\-C\-T\-L1 \&= $\sim$C\-C\-I\-E; \} while (0)}\label{group__chaos__sfd_ga5d2af32ec554abaa0bcaa31d91632af1}
+
+\begin{DoxyCompactList}\small\item\em Disable generation of interrupts due to S\-F\-D events. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos__sfd_ga86745c888328a99fd33f1c9a25b88543}{\#define \hyperlink{group__chaos__sfd_ga86745c888328a99fd33f1c9a25b88543}{C\-L\-E\-A\-R\-\_\-\-S\-F\-D\-\_\-\-I\-N\-T}()~do \{ T\-B\-C\-C\-T\-L1 \&= $\sim$C\-C\-I\-F\-G; \} while (0)}\label{group__chaos__sfd_ga86745c888328a99fd33f1c9a25b88543}
+
+\begin{DoxyCompactList}\small\item\em Clear interrupt flag due to S\-F\-D events. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos__sfd_gaf48c215ee6fbfcb0186132170f683ff9}{\#define \hyperlink{group__chaos__sfd_gaf48c215ee6fbfcb0186132170f683ff9}{I\-S\-\_\-\-E\-N\-A\-B\-L\-E\-D\-\_\-\-S\-F\-D\-\_\-\-I\-N\-T}()~!!(T\-B\-C\-C\-T\-L1 \& C\-C\-I\-E)}\label{group__chaos__sfd_gaf48c215ee6fbfcb0186132170f683ff9}
+
+\begin{DoxyCompactList}\small\item\em Check if generation of interrupts due to S\-F\-D events is enabled. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos__internal_ga06ff8df2351884e681feb85cda3b7045}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N}(a, b)~do \{ P\#\#a\#\#O\-U\-T $|$=  B\-V(b); \} while (0)}\label{group__chaos__internal_ga06ff8df2351884e681feb85cda3b7045}
+
+\item 
+\hypertarget{group__chaos__internal_gad41c97f646b9e37f6c4f967910b5f012}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N}(a, b)~do \{ P\#\#a\#\#O\-U\-T \&= $\sim$B\-V(b); \} while (0)}\label{group__chaos__internal_gad41c97f646b9e37f6c4f967910b5f012}
+
+\item 
+\hypertarget{group__chaos__internal_gaa45796bc706ece2f2f96bda54df162f8}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N}(a, b)~do \{ P\#\#a\#\#O\-U\-T $^\wedge$=  B\-V(b); \} while (0)}\label{group__chaos__internal_gaa45796bc706ece2f2f96bda54df162f8}
+
+\item 
+\hypertarget{group__chaos__internal_ga11177cf033a258d640e767fc09e10fdb}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N}(a, b)~do \{ P\#\#a\#\#S\-E\-L \&= $\sim$B\-V(b); P\#\#a\#\#D\-I\-R \&= $\sim$B\-V(b); \} while (0)}\label{group__chaos__internal_ga11177cf033a258d640e767fc09e10fdb}
+
+\item 
+\hypertarget{group__chaos__internal_gaf542b15cf4ab5aab9a6e39fc40e09f13}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T}(a, b)~do \{ P\#\#a\#\#S\-E\-L \&= $\sim$B\-V(b); P\#\#a\#\#D\-I\-R $|$=  B\-V(b); \} while (0)}\label{group__chaos__internal_gaf542b15cf4ab5aab9a6e39fc40e09f13}
+
+\item 
+\hypertarget{group__chaos__internal_gad446a170ca0e9f0f3f57e24e3199a406}{\#define {\bfseries P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T}(a, b)~(    P\#\#a\#\#I\-N  \&   B\-V(b))}\label{group__chaos__internal_gad446a170ca0e9f0f3f57e24e3199a406}
+
+\item 
+\hypertarget{group__chaos__internal_gad8148e4e191d853cd938b5f5db7770c9}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-U\-S\-E\-R\-I\-N\-T}~S\-E\-T\-\_\-\-P\-I\-N(2,7)}\label{group__chaos__internal_gad8148e4e191d853cd938b5f5db7770c9}
+
+\item 
+\hypertarget{group__chaos__internal_gaf50dd28e301252221584ba3d18b01410}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-U\-S\-E\-R\-I\-N\-T}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(2,7)}\label{group__chaos__internal_gaf50dd28e301252221584ba3d18b01410}
+
+\item 
+\hypertarget{group__chaos__internal_ga916a9186bb4f182e5af266d4dc90cff7}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-U\-S\-E\-R\-I\-N\-T}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(2,7)}\label{group__chaos__internal_ga916a9186bb4f182e5af266d4dc90cff7}
+
+\item 
+\hypertarget{group__chaos__internal_gaa39505be5534abf8580acdbfdf1235bd}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-U\-S\-E\-R\-I\-N\-T\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(2,7)}\label{group__chaos__internal_gaa39505be5534abf8580acdbfdf1235bd}
+
+\item 
+\hypertarget{group__chaos__internal_gad77f955775b5eea291071fecad3d0c1b}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-U\-S\-E\-R\-I\-N\-T\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(2,7)}\label{group__chaos__internal_gad77f955775b5eea291071fecad3d0c1b}
+
+\item 
+\hypertarget{group__chaos__internal_ga30d361bf620ac4442ff19d4743a5d9f2}{\#define {\bfseries P\-I\-N\-\_\-\-U\-S\-E\-R\-I\-N\-T\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(2,7)}\label{group__chaos__internal_ga30d361bf620ac4442ff19d4743a5d9f2}
+
+\item 
+\hypertarget{group__chaos__internal_ga1909ecbab5c4c09bb52418812c297925}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-G\-I\-O2}~S\-E\-T\-\_\-\-P\-I\-N(2,3)}\label{group__chaos__internal_ga1909ecbab5c4c09bb52418812c297925}
+
+\item 
+\hypertarget{group__chaos__internal_gaaddd7bcc324b82054cfc6fab52ea04a8}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-G\-I\-O2}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(2,3)}\label{group__chaos__internal_gaaddd7bcc324b82054cfc6fab52ea04a8}
+
+\item 
+\hypertarget{group__chaos__internal_gac2026e3db014a7bb8d1b73dfbc4667d6}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-G\-I\-O2}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(2,3)}\label{group__chaos__internal_gac2026e3db014a7bb8d1b73dfbc4667d6}
+
+\item 
+\hypertarget{group__chaos__internal_gad156fdd1b2dfc8dd611851f20a473e9b}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-G\-I\-O2\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(2,3)}\label{group__chaos__internal_gad156fdd1b2dfc8dd611851f20a473e9b}
+
+\item 
+\hypertarget{group__chaos__internal_gaf3dc5da27a868271c23e74eb154eccc9}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-G\-I\-O2\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(2,3)}\label{group__chaos__internal_gaf3dc5da27a868271c23e74eb154eccc9}
+
+\item 
+\hypertarget{group__chaos__internal_ga65467f55f5f794db7c8e5632da8ac657}{\#define {\bfseries P\-I\-N\-\_\-\-G\-I\-O2\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(2,3)}\label{group__chaos__internal_ga65467f55f5f794db7c8e5632da8ac657}
+
+\item 
+\hypertarget{group__chaos__internal_gaf651b41e6c086eac871b0c3e42c8bdfa}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C0}~S\-E\-T\-\_\-\-P\-I\-N(6,0)}\label{group__chaos__internal_gaf651b41e6c086eac871b0c3e42c8bdfa}
+
+\item 
+\hypertarget{group__chaos__internal_ga00c8bcab557d9f470960221a0faf7704}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C0}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(6,0)}\label{group__chaos__internal_ga00c8bcab557d9f470960221a0faf7704}
+
+\item 
+\hypertarget{group__chaos__internal_gadaaddfb6856dfeee2660bad8fbcdcc63}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C0}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(6,0)}\label{group__chaos__internal_gadaaddfb6856dfeee2660bad8fbcdcc63}
+
+\item 
+\hypertarget{group__chaos__internal_ga96ba5b963a4f3f42502b9c7b791684f2}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C0\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(6,0)}\label{group__chaos__internal_ga96ba5b963a4f3f42502b9c7b791684f2}
+
+\item 
+\hypertarget{group__chaos__internal_gaf88d6905492ec51bf4b6764bcf2b09a5}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C0\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(6,0)}\label{group__chaos__internal_gaf88d6905492ec51bf4b6764bcf2b09a5}
+
+\item 
+\hypertarget{group__chaos__internal_ga36b481203cb07d9f3eaebc2716d992fb}{\#define {\bfseries P\-I\-N\-\_\-\-A\-D\-C0\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(6,0)}\label{group__chaos__internal_ga36b481203cb07d9f3eaebc2716d992fb}
+
+\item 
+\hypertarget{group__chaos__internal_ga8fda716103a0ece8568194f7d2b8f1cf}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C1}~S\-E\-T\-\_\-\-P\-I\-N(6,1)}\label{group__chaos__internal_ga8fda716103a0ece8568194f7d2b8f1cf}
+
+\item 
+\hypertarget{group__chaos__internal_gab163c7cb46720c474fb5062e4b1e7b1b}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C1}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(6,1)}\label{group__chaos__internal_gab163c7cb46720c474fb5062e4b1e7b1b}
+
+\item 
+\hypertarget{group__chaos__internal_gadbc63ddea7b3b19198e7536c479081ef}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C1}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(6,1)}\label{group__chaos__internal_gadbc63ddea7b3b19198e7536c479081ef}
+
+\item 
+\hypertarget{group__chaos__internal_ga570f30427c6e1291e77f76233749a1d1}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C1\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(6,1)}\label{group__chaos__internal_ga570f30427c6e1291e77f76233749a1d1}
+
+\item 
+\hypertarget{group__chaos__internal_ga0182283cf6a731271dd097f99adcd6db}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C1\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(6,1)}\label{group__chaos__internal_ga0182283cf6a731271dd097f99adcd6db}
+
+\item 
+\hypertarget{group__chaos__internal_ga6ced4ddf619e6802ce362de6c4f4bf37}{\#define {\bfseries P\-I\-N\-\_\-\-A\-D\-C1\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(6,1)}\label{group__chaos__internal_ga6ced4ddf619e6802ce362de6c4f4bf37}
+
+\item 
+\hypertarget{group__chaos__internal_gabd42bab3312f286f0867c3d4f9436251}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C2}~S\-E\-T\-\_\-\-P\-I\-N(6,2)}\label{group__chaos__internal_gabd42bab3312f286f0867c3d4f9436251}
+
+\item 
+\hypertarget{group__chaos__internal_gadda3062005f03851380105afdde81228}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C2}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(6,2)}\label{group__chaos__internal_gadda3062005f03851380105afdde81228}
+
+\item 
+\hypertarget{group__chaos__internal_ga7e214e65f723135edb6b31ba2c1f8b77}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C2}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(6,2)}\label{group__chaos__internal_ga7e214e65f723135edb6b31ba2c1f8b77}
+
+\item 
+\hypertarget{group__chaos__internal_ga0a2ba4d712fad1cec93cc0874b21d2f6}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C2\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(6,2)}\label{group__chaos__internal_ga0a2ba4d712fad1cec93cc0874b21d2f6}
+
+\item 
+\hypertarget{group__chaos__internal_gacdb25193366b7bfb38b2a5a6092d2379}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C2\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(6,2)}\label{group__chaos__internal_gacdb25193366b7bfb38b2a5a6092d2379}
+
+\item 
+\hypertarget{group__chaos__internal_ga263deaaf27eac90abf8569d4af12352e}{\#define {\bfseries P\-I\-N\-\_\-\-A\-D\-C2\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(6,2)}\label{group__chaos__internal_ga263deaaf27eac90abf8569d4af12352e}
+
+\item 
+\hypertarget{group__chaos__internal_ga29c23245607503b0f680a8ef73a40fdb}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C6}~S\-E\-T\-\_\-\-P\-I\-N(6,6)}\label{group__chaos__internal_ga29c23245607503b0f680a8ef73a40fdb}
+
+\item 
+\hypertarget{group__chaos__internal_gaad6c1e4ab5260c447fe612ea6b7b5489}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C6}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(6,6)}\label{group__chaos__internal_gaad6c1e4ab5260c447fe612ea6b7b5489}
+
+\item 
+\hypertarget{group__chaos__internal_gac0932613fe080adcf57a630b2732e3bd}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C6}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(6,6)}\label{group__chaos__internal_gac0932613fe080adcf57a630b2732e3bd}
+
+\item 
+\hypertarget{group__chaos__internal_ga7582fffb8f295bce528713e60d9b5394}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C6\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(6,6)}\label{group__chaos__internal_ga7582fffb8f295bce528713e60d9b5394}
+
+\item 
+\hypertarget{group__chaos__internal_ga045eb405a46d0377dd34662d4b56d5b3}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C6\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(6,6)}\label{group__chaos__internal_ga045eb405a46d0377dd34662d4b56d5b3}
+
+\item 
+\hypertarget{group__chaos__internal_gad5dc1712f4d54b0759d0d1b8f50eb91a}{\#define {\bfseries P\-I\-N\-\_\-\-A\-D\-C6\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(6,6)}\label{group__chaos__internal_gad5dc1712f4d54b0759d0d1b8f50eb91a}
+
+\item 
+\hypertarget{group__chaos__internal_ga289d3de66a286061c6c8b8c52ebd1924}{\#define {\bfseries S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C7}~S\-E\-T\-\_\-\-P\-I\-N(6,7)}\label{group__chaos__internal_ga289d3de66a286061c6c8b8c52ebd1924}
+
+\item 
+\hypertarget{group__chaos__internal_ga2b944db8ca404c3dd61f2c932716e7ef}{\#define {\bfseries U\-N\-S\-E\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C7}~U\-N\-S\-E\-T\-\_\-\-P\-I\-N(6,7)}\label{group__chaos__internal_ga2b944db8ca404c3dd61f2c932716e7ef}
+
+\item 
+\hypertarget{group__chaos__internal_gaaaa929c46347e7d25dd0821e56a65e61}{\#define {\bfseries T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C7}~T\-O\-G\-G\-L\-E\-\_\-\-P\-I\-N(6,7)}\label{group__chaos__internal_gaaaa929c46347e7d25dd0821e56a65e61}
+
+\item 
+\hypertarget{group__chaos__internal_ga1d1725175cb15247c08cf55b0e1161b3}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C7\-\_\-\-I\-N}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-I\-N(6,7)}\label{group__chaos__internal_ga1d1725175cb15247c08cf55b0e1161b3}
+
+\item 
+\hypertarget{group__chaos__internal_ga0e5981ac04e9306f3613570a4e60f3a5}{\#define {\bfseries I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-A\-D\-C7\-\_\-\-O\-U\-T}~I\-N\-I\-T\-\_\-\-P\-I\-N\-\_\-\-O\-U\-T(6,7)}\label{group__chaos__internal_ga0e5981ac04e9306f3613570a4e60f3a5}
+
+\item 
+\hypertarget{group__chaos__internal_ga4bb4e9b8ce59c07dc7d3eca26b11f041}{\#define {\bfseries P\-I\-N\-\_\-\-A\-D\-C7\-\_\-\-I\-S\-\_\-\-S\-E\-T}~P\-I\-N\-\_\-\-I\-S\-\_\-\-S\-E\-T(6,7)}\label{group__chaos__internal_ga4bb4e9b8ce59c07dc7d3eca26b11f041}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries C\-H\-A\-O\-S\-\_\-\-I\-N\-I\-T\-I\-A\-T\-O\-R} = 1, 
+{\bfseries C\-H\-A\-O\-S\-\_\-\-R\-E\-C\-E\-I\-V\-E\-R} = 0
+ \}
+\item 
+enum \{ {\bfseries C\-H\-A\-O\-S\-\_\-\-S\-Y\-N\-C} = 1, 
+{\bfseries C\-H\-A\-O\-S\-\_\-\-N\-O\-\_\-\-S\-Y\-N\-C} = 0
+ \}
+\item 
+enum \{ {\bfseries C\-H\-A\-O\-S\-\_\-\-C\-O\-M\-P\-L\-E\-T\-E} = 1, 
+{\bfseries C\-H\-A\-O\-S\-\_\-\-I\-N\-C\-O\-M\-P\-L\-E\-T\-E} = 0
+ \}
+\item 
+enum \hyperlink{chaos_8h_a8997028aa544da8dfa00544cad0c44c7}{chaos\-\_\-state} \{ \\*
+\hyperlink{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a26413c04b91b50d2f9767a8f157a4093}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-F\-F}, 
+\hyperlink{chaos_8h_a8997028aa544da8dfa00544cad0c44c7abb5fc2e1977fc26853fdb0d081b21e92}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-W\-A\-I\-T\-I\-N\-G}, 
+\hyperlink{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a017d2d2c0c040f887e027f1c83fd5590}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-C\-E\-I\-V\-I\-N\-G}, 
+\hyperlink{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a5fa442426f2128cc425ffd9dc219e5b1}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D}, 
+\\*
+\hyperlink{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a3a4d337be4f3819f1e81dd275bfb51c9}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G}, 
+\hyperlink{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a82f63ee9a13805b33130b7ede0b7da11}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-E\-D}, 
+\hyperlink{chaos_8h_a8997028aa544da8dfa00544cad0c44c7acf92f1f61964fdd433eec5279d8bda45}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-A\-B\-O\-R\-T\-E\-D}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{chaos_8h_af8c6f50e91e5efc197834a4f3f6a5302}{{\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-N\-A\-M\-E} (chaos\-\_\-process)}\label{chaos_8h_af8c6f50e91e5efc197834a4f3f6a5302}
+
+\item 
+void \hyperlink{group__chaos__main_ga2d039f5b73355d8b2bb6fd0462fe7702}{chaos\-\_\-start} (uint8\-\_\-t $\ast$data\-\_\-, uint8\-\_\-t initiator\-\_\-, uint8\-\_\-t tx\-\_\-max\-\_\-)
+\begin{DoxyCompactList}\small\item\em Start Chaos and stall all other application tasks. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__main_ga4359f0462206ab49f417cb8f89eb4d1f}{chaos\-\_\-stop} (void)
+\begin{DoxyCompactList}\small\item\em Stop Chaos and resume all other application tasks. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__main_gab2e2126a4762a97c6396ce51221eaea7}{get\-\_\-rx\-\_\-cnt} (void)
+\begin{DoxyCompactList}\small\item\em Get the last received counter. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__main_ga16ddcf3313115b5697723299590ca8f5}{get\-\_\-state} (void)
+\begin{DoxyCompactList}\small\item\em Get the current Chaos state. \end{DoxyCompactList}\item 
+rtimer\-\_\-clock\-\_\-t \hyperlink{group__chaos__main_ga88daf788efaacdc2705c58a822d97129}{get\-\_\-t\-\_\-first\-\_\-rx\-\_\-l} (void)
+\begin{DoxyCompactList}\small\item\em Get low-\/frequency time of first packet reception during the last Chaos phase. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__sync_ga2cb03b56f27f6f7f0b4ebf0ec6ba8333}{get\-\_\-relay\-\_\-cnt} (void)
+\begin{DoxyCompactList}\small\item\em Get the last relay counter. \end{DoxyCompactList}\item 
+rtimer\-\_\-clock\-\_\-t \hyperlink{group__chaos__sync_ga00e1a87bdb504b0819a7b5d6c637eaa8}{get\-\_\-\-T\-\_\-slot\-\_\-h} (void)
+\begin{DoxyCompactList}\small\item\em Get the local estimation of T\-\_\-slot, in D\-C\-O clock ticks. \end{DoxyCompactList}\item 
+rtimer\-\_\-clock\-\_\-t \hyperlink{group__chaos__sync_gaa37a5474c90f7747d0f5054dc1a03764}{get\-\_\-t\-\_\-ref\-\_\-l} (void)
+\begin{DoxyCompactList}\small\item\em Get low-\/frequency synchronization reference time. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__chaos__sync_gae7e475746ec86ae6dd8ca9ece642faf8}{is\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated} (void)
+\begin{DoxyCompactList}\small\item\em Provide information about current synchronization status. \end{DoxyCompactList}\item 
+void \hyperlink{group__chaos__sync_gac14ac43f69412b67d2d326b32c2d9014}{set\-\_\-t\-\_\-ref\-\_\-l} (rtimer\-\_\-clock\-\_\-t t)
+\begin{DoxyCompactList}\small\item\em Set low-\/frequency synchronization reference time. \end{DoxyCompactList}\item 
+void \hyperlink{group__chaos__sync_ga189faa7cc7395e8895e1ddcbd645f14e}{set\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated} (uint8\-\_\-t updated)
+\begin{DoxyCompactList}\small\item\em Set the current synchronization status. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos__timeouts_gac6c0ba345d1b6112d1045079ae7737b0}{void {\bfseries chaos\-\_\-schedule\-\_\-rx\-\_\-timeout} (void)}\label{group__chaos__timeouts_gac6c0ba345d1b6112d1045079ae7737b0}
+
+\item 
+\hypertarget{group__chaos__timeouts_ga897be1c8ebd1c3e3d3a88634a5ed9145}{void {\bfseries chaos\-\_\-stop\-\_\-rx\-\_\-timeout} (void)}\label{group__chaos__timeouts_ga897be1c8ebd1c3e3d3a88634a5ed9145}
+
+\item 
+\hypertarget{group__chaos__interrupts_ga8f75a32d8b354934163c8eb70841590f}{void {\bfseries chaos\-\_\-begin\-\_\-rx} (void)}\label{group__chaos__interrupts_ga8f75a32d8b354934163c8eb70841590f}
+
+\item 
+\hypertarget{group__chaos__interrupts_gaa5045bdacc2f1ea6e4b04c7a19649c48}{void {\bfseries chaos\-\_\-end\-\_\-rx} (void)}\label{group__chaos__interrupts_gaa5045bdacc2f1ea6e4b04c7a19649c48}
+
+\item 
+\hypertarget{group__chaos__interrupts_gada53a7a38863b33ed5038d808a8f4ff5}{void {\bfseries chaos\-\_\-begin\-\_\-tx} (void)}\label{group__chaos__interrupts_gada53a7a38863b33ed5038d808a8f4ff5}
+
+\item 
+\hypertarget{group__chaos__interrupts_ga3ca8eca1033538551e79f4823d963ee0}{void {\bfseries chaos\-\_\-end\-\_\-tx} (void)}\label{group__chaos__interrupts_ga3ca8eca1033538551e79f4823d963ee0}
+
+\item 
+\hypertarget{group__chaos__interrupts_gae6921825b655971fe89c74a6f0c42262}{void {\bfseries print\-\_\-tirq} (void)}\label{group__chaos__interrupts_gae6921825b655971fe89c74a6f0c42262}
+
+\item 
+\hypertarget{group__chaos__interrupts_ga834e38553fc06e089a762cfa3b8bf093}{void {\bfseries print\-\_\-flags\-\_\-tx} (void)}\label{group__chaos__interrupts_ga834e38553fc06e089a762cfa3b8bf093}
+
+\item 
+\hypertarget{group__chaos__interrupts_ga5e84271255a7a9c0fa043c0300c3ab5e}{void {\bfseries print\-\_\-flags\-\_\-rx} (void)}\label{group__chaos__interrupts_ga5e84271255a7a9c0fa043c0300c3ab5e}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{chaos_8h_af40d5b444c1f305c0afe8533e8bd2998}{unsigned int {\bfseries high\-\_\-\-T\-\_\-irq}}\label{chaos_8h_af40d5b444c1f305c0afe8533e8bd2998}
+
+\item 
+\hypertarget{chaos_8h_a9e790cdd62e4b64c8c6bab0c488cd21e}{unsigned int {\bfseries rx\-\_\-timeout}}\label{chaos_8h_a9e790cdd62e4b64c8c6bab0c488cd21e}
+
+\item 
+\hypertarget{chaos_8h_adcafe518b2da6e215dde27670f84da62}{unsigned int {\bfseries bad\-\_\-length}}\label{chaos_8h_adcafe518b2da6e215dde27670f84da62}
+
+\item 
+\hypertarget{chaos_8h_a56919e9bcb22eb8c44fdca799972e5b2}{unsigned int {\bfseries bad\-\_\-header}}\label{chaos_8h_a56919e9bcb22eb8c44fdca799972e5b2}
+
+\item 
+\hypertarget{chaos_8h_a1c0cf5125d4bde7750a8a6c760a3efd2}{unsigned int {\bfseries bad\-\_\-crc}}\label{chaos_8h_a1c0cf5125d4bde7750a8a6c760a3efd2}
+
+\item 
+\hypertarget{chaos_8h_aa6dd8d2e2de0a98a83d9eff74ea46eb7}{unsigned int {\bfseries rc\-\_\-update}}\label{chaos_8h_aa6dd8d2e2de0a98a83d9eff74ea46eb7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}    Chaos core, header file.
+\end{DoxyVerb}
+ \begin{DoxyAuthor}{Author}
+Olaf Landsiedel \href{mailto:olafl@chalmers.se}{\tt olafl@chalmers.\-se} 
+
+Federico Ferrari \href{mailto:ferrari@tik.ee.ethz.ch}{\tt ferrari@tik.\-ee.\-ethz.\-ch}
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{chaos_8h_a334635dbcbc3e4b0b03428b5472c2eda}{\index{chaos.\-h@{chaos.\-h}!C\-H\-A\-O\-S\-\_\-\-D\-E\-B\-U\-G@{C\-H\-A\-O\-S\-\_\-\-D\-E\-B\-U\-G}}
+\index{C\-H\-A\-O\-S\-\_\-\-D\-E\-B\-U\-G@{C\-H\-A\-O\-S\-\_\-\-D\-E\-B\-U\-G}!chaos.h@{chaos.\-h}}
+\subsubsection[{C\-H\-A\-O\-S\-\_\-\-D\-E\-B\-U\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-A\-O\-S\-\_\-\-D\-E\-B\-U\-G~1}}\label{chaos_8h_a334635dbcbc3e4b0b03428b5472c2eda}
+If not zero, nodes print additional debug information (disabled by default). \hypertarget{chaos_8h_ac61e7d49d71d5ce842b2e720a562eb80}{\index{chaos.\-h@{chaos.\-h}!C\-H\-A\-O\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-W\-I\-N\-D\-O\-W@{C\-H\-A\-O\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-W\-I\-N\-D\-O\-W}}
+\index{C\-H\-A\-O\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-W\-I\-N\-D\-O\-W@{C\-H\-A\-O\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-W\-I\-N\-D\-O\-W}!chaos.h@{chaos.\-h}}
+\subsubsection[{C\-H\-A\-O\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-W\-I\-N\-D\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-A\-O\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-W\-I\-N\-D\-O\-W~32}}\label{chaos_8h_ac61e7d49d71d5ce842b2e720a562eb80}
+Size of the window used to average estimations of slot lengths. \hypertarget{chaos_8h_a0178fa0350084350f45ae1b841579f77}{\index{chaos.\-h@{chaos.\-h}!C\-L\-O\-C\-K\-\_\-\-P\-H\-I@{C\-L\-O\-C\-K\-\_\-\-P\-H\-I}}
+\index{C\-L\-O\-C\-K\-\_\-\-P\-H\-I@{C\-L\-O\-C\-K\-\_\-\-P\-H\-I}!chaos.h@{chaos.\-h}}
+\subsubsection[{C\-L\-O\-C\-K\-\_\-\-P\-H\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-L\-O\-C\-K\-\_\-\-P\-H\-I~(F\-\_\-\-C\-P\-U / R\-T\-I\-M\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D)}}\label{chaos_8h_a0178fa0350084350f45ae1b841579f77}
+Ratio between the frequencies of the D\-C\-O and the low-\/frequency clocks \hypertarget{chaos_8h_aa2af104abb8b0cf264fa245ea5202302}{\index{chaos.\-h@{chaos.\-h}!P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-C\-Y\-C\-L\-E\-S@{P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-C\-Y\-C\-L\-E\-S}}
+\index{P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-C\-Y\-C\-L\-E\-S@{P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-C\-Y\-C\-L\-E\-S}!chaos.h@{chaos.\-h}}
+\subsubsection[{P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-C\-Y\-C\-L\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-C\-Y\-C\-L\-E\-S~40000}}\label{chaos_8h_aa2af104abb8b0cf264fa245ea5202302}
+Number of clock (D\-C\-O) cycles reserved for flags and payload processing. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{chaos_8h_a8997028aa544da8dfa00544cad0c44c7}{\index{chaos.\-h@{chaos.\-h}!chaos\-\_\-state@{chaos\-\_\-state}}
+\index{chaos\-\_\-state@{chaos\-\_\-state}!chaos.h@{chaos.\-h}}
+\subsubsection[{chaos\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf chaos\-\_\-state}}}\label{chaos_8h_a8997028aa544da8dfa00544cad0c44c7}
+List of possible Chaos states. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-F\-F@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-F\-F}!chaos.\-h@{chaos.\-h}}\index{chaos.\-h@{chaos.\-h}!C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-F\-F@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-F\-F}}\item[{\em 
+\hypertarget{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a26413c04b91b50d2f9767a8f157a4093}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-F\-F}\label{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a26413c04b91b50d2f9767a8f157a4093}
+}]Chaos is not executing \index{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-W\-A\-I\-T\-I\-N\-G@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-W\-A\-I\-T\-I\-N\-G}!chaos.\-h@{chaos.\-h}}\index{chaos.\-h@{chaos.\-h}!C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-W\-A\-I\-T\-I\-N\-G@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-W\-A\-I\-T\-I\-N\-G}}\item[{\em 
+\hypertarget{chaos_8h_a8997028aa544da8dfa00544cad0c44c7abb5fc2e1977fc26853fdb0d081b21e92}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-W\-A\-I\-T\-I\-N\-G}\label{chaos_8h_a8997028aa544da8dfa00544cad0c44c7abb5fc2e1977fc26853fdb0d081b21e92}
+}]Chaos is waiting for a packet being flooded \index{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-C\-E\-I\-V\-I\-N\-G@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-C\-E\-I\-V\-I\-N\-G}!chaos.\-h@{chaos.\-h}}\index{chaos.\-h@{chaos.\-h}!C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-C\-E\-I\-V\-I\-N\-G@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-C\-E\-I\-V\-I\-N\-G}}\item[{\em 
+\hypertarget{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a017d2d2c0c040f887e027f1c83fd5590}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-C\-E\-I\-V\-I\-N\-G}\label{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a017d2d2c0c040f887e027f1c83fd5590}
+}]Chaos is receiving a packet \index{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D}!chaos.\-h@{chaos.\-h}}\index{chaos.\-h@{chaos.\-h}!C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D}}\item[{\em 
+\hypertarget{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a5fa442426f2128cc425ffd9dc219e5b1}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D}\label{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a5fa442426f2128cc425ffd9dc219e5b1}
+}]Chaos has just finished receiving a packet \index{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G}!chaos.\-h@{chaos.\-h}}\index{chaos.\-h@{chaos.\-h}!C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G}}\item[{\em 
+\hypertarget{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a3a4d337be4f3819f1e81dd275bfb51c9}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G}\label{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a3a4d337be4f3819f1e81dd275bfb51c9}
+}]Chaos is transmitting a packet \index{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-E\-D@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-E\-D}!chaos.\-h@{chaos.\-h}}\index{chaos.\-h@{chaos.\-h}!C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-E\-D@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-E\-D}}\item[{\em 
+\hypertarget{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a82f63ee9a13805b33130b7ede0b7da11}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-E\-D}\label{chaos_8h_a8997028aa544da8dfa00544cad0c44c7a82f63ee9a13805b33130b7ede0b7da11}
+}]Chaos has just finished transmitting a packet \index{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-A\-B\-O\-R\-T\-E\-D@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-A\-B\-O\-R\-T\-E\-D}!chaos.\-h@{chaos.\-h}}\index{chaos.\-h@{chaos.\-h}!C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-A\-B\-O\-R\-T\-E\-D@{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-A\-B\-O\-R\-T\-E\-D}}\item[{\em 
+\hypertarget{chaos_8h_a8997028aa544da8dfa00544cad0c44c7acf92f1f61964fdd433eec5279d8bda45}{C\-H\-A\-O\-S\-\_\-\-S\-T\-A\-T\-E\-\_\-\-A\-B\-O\-R\-T\-E\-D}\label{chaos_8h_a8997028aa544da8dfa00544cad0c44c7acf92f1f61964fdd433eec5279d8bda45}
+}]Chaos has just aborted a packet reception \end{description}
+\end{Desc}

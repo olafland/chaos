@@ -1,0 +1,49 @@
+\hypertarget{group__chaos__capture}{\section{Timer capture of clock ticks}
+\label{group__chaos__capture}\index{Timer capture of clock ticks@{Timer capture of clock ticks}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__chaos__capture_ga1ba6973ff6fa6b3ee590efc341ea62eb}{C\-A\-P\-T\-U\-R\-E\-\_\-\-N\-E\-X\-T\-\_\-\-C\-L\-O\-C\-K\-\_\-\-T\-I\-C\-K}(t\-\_\-cap\-\_\-h, t\-\_\-cap\-\_\-l)
+\begin{DoxyCompactList}\small\item\em Capture next low-\/frequency clock tick and D\-C\-O clock value at that instant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__chaos__capture_ga1ba6973ff6fa6b3ee590efc341ea62eb}{\index{Timer capture of clock ticks@{Timer capture of clock ticks}!C\-A\-P\-T\-U\-R\-E\-\_\-\-N\-E\-X\-T\-\_\-\-C\-L\-O\-C\-K\-\_\-\-T\-I\-C\-K@{C\-A\-P\-T\-U\-R\-E\-\_\-\-N\-E\-X\-T\-\_\-\-C\-L\-O\-C\-K\-\_\-\-T\-I\-C\-K}}
+\index{C\-A\-P\-T\-U\-R\-E\-\_\-\-N\-E\-X\-T\-\_\-\-C\-L\-O\-C\-K\-\_\-\-T\-I\-C\-K@{C\-A\-P\-T\-U\-R\-E\-\_\-\-N\-E\-X\-T\-\_\-\-C\-L\-O\-C\-K\-\_\-\-T\-I\-C\-K}!Timer capture of clock ticks@{Timer capture of clock ticks}}
+\subsubsection[{C\-A\-P\-T\-U\-R\-E\-\_\-\-N\-E\-X\-T\-\_\-\-C\-L\-O\-C\-K\-\_\-\-T\-I\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-A\-P\-T\-U\-R\-E\-\_\-\-N\-E\-X\-T\-\_\-\-C\-L\-O\-C\-K\-\_\-\-T\-I\-C\-K(
+\begin{DoxyParamCaption}
+\item[{}]{t\-\_\-cap\-\_\-h, }
+\item[{}]{t\-\_\-cap\-\_\-l}
+\end{DoxyParamCaption}
+)}}\label{group__chaos__capture_ga1ba6973ff6fa6b3ee590efc341ea62eb}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{\(\backslash\)
+        \textcolor{comment}{/* Enable capture mode for timers B6 and A2 (ACLK) */}\(\backslash\)
+        TBCCTL6 = CCIS0 | \hyperlink{chaos_8c_a057a38f6929db92c5fac024888cdee9f}{CM\_POS} | CAP | SCS; \(\backslash\)
+        TACCTL2 = CCIS0 | \hyperlink{chaos_8c_a057a38f6929db92c5fac024888cdee9f}{CM\_POS} | CAP | SCS; \(\backslash\)
+        \textcolor{comment}{/* Wait until both timers capture the next clock tick */}\(\backslash\)
+        while (!((TBCCTL6 & CCIFG) && (TACCTL2 & CCIFG))); \(\backslash\)
+        \textcolor{comment}{/* Store the capture timer values */}\(\backslash\)
+        t\_cap\_h = TBCCR6; \(\backslash\)
+        t\_cap\_l = TACCR2; \(\backslash\)
+        \textcolor{comment}{/* Disable capture mode */}\(\backslash\)
+        TBCCTL6 = 0; \(\backslash\)
+        TACCTL2 = 0; \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+
+
+Capture next low-\/frequency clock tick and D\-C\-O clock value at that instant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\-\_\-cap\-\_\-h} & variable for storing value of D\-C\-O clock value \\
+\hline
+{\em t\-\_\-cap\-\_\-l} & variable for storing value of low-\/frequency clock value \\
+\hline
+\end{DoxyParams}

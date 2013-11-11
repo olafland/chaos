@@ -1,0 +1,133 @@
+\hypertarget{group__loader}{\section{The Contiki program loader}
+\label{group__loader}\index{The Contiki program loader@{The Contiki program loader}}
+}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{loader_8h}{loader.\-h}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__loader_gada90181a874ad4b37fe5283ec10b5c90}{L\-O\-A\-D\-E\-R\-\_\-\-O\-K}~0
+\item 
+\#define \hyperlink{group__loader_gad5a4f283b71698888678614760e7dd5c}{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-R\-E\-A\-D}~1
+\item 
+\#define \hyperlink{group__loader_ga66119a904ce6df0db0fe380777f34c4f}{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-H\-D\-R}~2
+\item 
+\#define \hyperlink{group__loader_ga9bb8f88bc9020a446acf2077ed2ebb4d}{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-S}~3
+\item 
+\#define \hyperlink{group__loader_ga788ed46b967186e58090a57d492a0299}{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-F\-M\-T}~4
+\item 
+\#define \hyperlink{group__loader_gac07de34f89df76808d17eb77658f9474}{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-M\-E\-M}~5
+\item 
+\#define \hyperlink{group__loader_ga32cb97b8b6ee978b8e7c7ee60fc80e3a}{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-P\-E\-N}~6
+\item 
+\#define \hyperlink{group__loader_gadf7cc6b3021aa0bd92473fc7158e4dfc}{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-A\-R\-C\-H}~7
+\item 
+\#define \hyperlink{group__loader_gafce664c06397d97605532c0b47b0a6a1}{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}~8
+\item 
+\#define \hyperlink{group__loader_ga07f9d3f314685be3e12c4877ee3aac1c}{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-N\-O\-L\-O\-A\-D\-E\-R}~9
+\item 
+\#define \hyperlink{group__loader_ga5aacf975957270e22195f6ae35bc5628}{L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D}(name, arg)~\hyperlink{group__loader_ga07f9d3f314685be3e12c4877ee3aac1c}{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-N\-O\-L\-O\-A\-D\-E\-R}
+\item 
+\#define \hyperlink{group__loader_gaea5b57e2eba5e46d289f12988c1942e0}{L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D}()
+\item 
+\#define \hyperlink{group__loader_ga77a2b6658478bdb5aa836554dfe54c32}{L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D\-\_\-\-D\-S\-C}(name)~N\-U\-L\-L
+\item 
+\#define \hyperlink{group__loader_gaa905120b0fdf2ad0932f679175ffbf9f}{L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D\-\_\-\-D\-S\-C}(dsc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Contiki program loader is an abstract interface for loading and starting programs. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__loader_gadf7cc6b3021aa0bd92473fc7158e4dfc}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-A\-R\-C\-H@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-A\-R\-C\-H}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-A\-R\-C\-H@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-A\-R\-C\-H}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-A\-R\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-A\-R\-C\-H~7}}\label{group__loader_gadf7cc6b3021aa0bd92473fc7158e4dfc}
+Wrong architecture. \hypertarget{group__loader_ga788ed46b967186e58090a57d492a0299}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-F\-M\-T@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-F\-M\-T}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-F\-M\-T@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-F\-M\-T}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-F\-M\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-F\-M\-T~4}}\label{group__loader_ga788ed46b967186e58090a57d492a0299}
+Data format error. \hypertarget{group__loader_ga66119a904ce6df0db0fe380777f34c4f}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-H\-D\-R@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-H\-D\-R}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-H\-D\-R@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-H\-D\-R}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-H\-D\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-H\-D\-R~2}}\label{group__loader_ga66119a904ce6df0db0fe380777f34c4f}
+Header error. \hypertarget{group__loader_gac07de34f89df76808d17eb77658f9474}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-M\-E\-M@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-M\-E\-M}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-M\-E\-M@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-M\-E\-M}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-M\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-M\-E\-M~5}}\label{group__loader_gac07de34f89df76808d17eb77658f9474}
+Not enough memory. \hypertarget{group__loader_ga07f9d3f314685be3e12c4877ee3aac1c}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-N\-O\-L\-O\-A\-D\-E\-R@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-N\-O\-L\-O\-A\-D\-E\-R}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-N\-O\-L\-O\-A\-D\-E\-R@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-N\-O\-L\-O\-A\-D\-E\-R}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-N\-O\-L\-O\-A\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-N\-O\-L\-O\-A\-D\-E\-R~9}}\label{group__loader_ga07f9d3f314685be3e12c4877ee3aac1c}
+Program loading not supported. \hypertarget{group__loader_ga32cb97b8b6ee978b8e7c7ee60fc80e3a}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-P\-E\-N@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-P\-E\-N}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-P\-E\-N@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-P\-E\-N}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-P\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-P\-E\-N~6}}\label{group__loader_ga32cb97b8b6ee978b8e7c7ee60fc80e3a}
+Could not open file. \hypertarget{group__loader_ga9bb8f88bc9020a446acf2077ed2ebb4d}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-S@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-S}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-S@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-S}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-O\-S~3}}\label{group__loader_ga9bb8f88bc9020a446acf2077ed2ebb4d}
+Wrong O\-S. \hypertarget{group__loader_gad5a4f283b71698888678614760e7dd5c}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-R\-E\-A\-D@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-R\-E\-A\-D}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-R\-E\-A\-D@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-R\-E\-A\-D}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-R\-E\-A\-D~1}}\label{group__loader_gad5a4f283b71698888678614760e7dd5c}
+Read error. \hypertarget{group__loader_gafce664c06397d97605532c0b47b0a6a1}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N~8}}\label{group__loader_gafce664c06397d97605532c0b47b0a6a1}
+Wrong O\-S version. \hypertarget{group__loader_ga5aacf975957270e22195f6ae35bc5628}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D@{L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D@{L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D(
+\begin{DoxyParamCaption}
+\item[{}]{name, }
+\item[{}]{arg}
+\end{DoxyParamCaption}
+)~{\bf L\-O\-A\-D\-E\-R\-\_\-\-E\-R\-R\-\_\-\-N\-O\-L\-O\-A\-D\-E\-R}}}\label{group__loader_ga5aacf975957270e22195f6ae35bc5628}
+Load and execute a program.
+
+This macro is used for loading and executing a program, and requires support from the architecture dependent code. The actual program loading is made by architecture specific functions.
+
+\begin{DoxyNote}{Note}
+A program loaded with \hyperlink{group__loader_ga5aacf975957270e22195f6ae35bc5628}{L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D()} must call the \hyperlink{group__loader_gaea5b57e2eba5e46d289f12988c1942e0}{L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D()} function to unload itself.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the program to be loaded.\\
+\hline
+{\em arg} & A pointer argument that is passed to the program.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A loader error, or L\-O\-A\-D\-E\-R\-\_\-\-O\-K if loading was successful. 
+\end{DoxyReturn}
+\hypertarget{group__loader_ga77a2b6658478bdb5aa836554dfe54c32}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D\-\_\-\-D\-S\-C@{L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D\-\_\-\-D\-S\-C}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D\-\_\-\-D\-S\-C@{L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D\-\_\-\-D\-S\-C}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D\-\_\-\-D\-S\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-L\-O\-A\-D\-\_\-\-D\-S\-C(
+\begin{DoxyParamCaption}
+\item[{}]{name}
+\end{DoxyParamCaption}
+)~N\-U\-L\-L}}\label{group__loader_ga77a2b6658478bdb5aa836554dfe54c32}
+Load a D\-S\-C (program description).
+
+Loads a D\-S\-C (program description) into memory and returns a pointer to the dsc.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the D\-S\-C or N\-U\-L\-L if it could not be loaded. 
+\end{DoxyReturn}
+\hypertarget{group__loader_gada90181a874ad4b37fe5283ec10b5c90}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-O\-K@{L\-O\-A\-D\-E\-R\-\_\-\-O\-K}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-O\-K@{L\-O\-A\-D\-E\-R\-\_\-\-O\-K}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-O\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-O\-K~0}}\label{group__loader_gada90181a874ad4b37fe5283ec10b5c90}
+No error. \hypertarget{group__loader_gaea5b57e2eba5e46d289f12988c1942e0}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D@{L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D@{L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__loader_gaea5b57e2eba5e46d289f12988c1942e0}
+Unload a program from memory.
+
+This macro is used for unloading a program and deallocating any memory that was allocated during the loading of the program. This function must be called by the program itself. \hypertarget{group__loader_gaa905120b0fdf2ad0932f679175ffbf9f}{\index{The Contiki program loader@{The Contiki program loader}!L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D\-\_\-\-D\-S\-C@{L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D\-\_\-\-D\-S\-C}}
+\index{L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D\-\_\-\-D\-S\-C@{L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D\-\_\-\-D\-S\-C}!The Contiki program loader@{The Contiki program loader}}
+\subsubsection[{L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D\-\_\-\-D\-S\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-A\-D\-E\-R\-\_\-\-U\-N\-L\-O\-A\-D\-\_\-\-D\-S\-C(
+\begin{DoxyParamCaption}
+\item[{}]{dsc}
+\end{DoxyParamCaption}
+)}}\label{group__loader_gaa905120b0fdf2ad0932f679175ffbf9f}
+Unload a D\-S\-C (program description).
+
+Unload a D\-S\-C from memory and deallocate any memory that was allocated when it was loaded. 

@@ -1,0 +1,78 @@
+\hypertarget{cc_8h}{\section{core/sys/cc.h File Reference}
+\label{cc_8h}\index{core/sys/cc.\-h@{core/sys/cc.\-h}}
+}
+{\ttfamily \#include \char`\"{}contiki-\/conf.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cc_8h_a556f2735307ab9c1272eae4e2f891012}{C\-C\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-A\-R\-G}
+\item 
+\#define \hyperlink{cc_8h_a7ef85043e1d55c2cee9ba3c289699b42}{C\-C\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-P\-O\-I\-N\-T\-E\-R\-\_\-\-A\-R\-G\-S}~0
+\item 
+\#define \hyperlink{cc_8h_ab81105e5bb440a5f17579e7abf3415f5}{C\-C\-\_\-\-F\-A\-S\-T\-C\-A\-L\-L}
+\item 
+\#define \hyperlink{cc_8h_a5d6c44249c8f1e06f99d021389017cc3}{C\-C\-\_\-\-C\-O\-N\-S\-T\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}~const
+\item 
+\#define \hyperlink{cc_8h_a3f7804f5a43f6ea473f1c570761723ec}{C\-C\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-C\-H\-A\-R\-\_\-\-B\-U\-G\-S}~0
+\item 
+\#define \hyperlink{cc_8h_af29abcb57156ec0292fa15c7cc7e0eca}{C\-C\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-H\-A\-S\-H}~0
+\item 
+\hypertarget{cc_8h_abce663a89f993120fd445befa106c8e4}{\#define {\bfseries C\-C\-\_\-\-I\-N\-L\-I\-N\-E}}\label{cc_8h_abce663a89f993120fd445befa106c8e4}
+
+\item 
+\#define \hyperlink{cc_8h_a874cde5f1073882b4318efa41908be05}{C\-C\-\_\-\-A\-S\-S\-I\-G\-N\-\_\-\-A\-G\-G\-R\-E\-G\-A\-T\-E}(dest, src)~$\ast$dest = $\ast$src
+\item 
+\hypertarget{cc_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{\#define {\bfseries N\-U\-L\-L}~0}\label{cc_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}
+
+\item 
+\hypertarget{cc_8h_a417f005190d35d4eb1093926bd8f4e47}{\#define {\bfseries C\-C\-\_\-\-C\-O\-N\-C\-A\-T2}(s1, s2)~s1\#\#s2}\label{cc_8h_a417f005190d35d4eb1093926bd8f4e47}
+
+\item 
+\#define \hyperlink{cc_8h_a79624e93060c0dbee5ba2542d79cb442}{C\-C\-\_\-\-C\-O\-N\-C\-A\-T}(s1, s2)~C\-C\-\_\-\-C\-O\-N\-C\-A\-T2(s1, s2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Default definitions of C compiler quirk work-\/arounds. \begin{DoxyAuthor}{Author}
+Adam Dunkels \href{mailto:adam@dunkels.com}{\tt adam@dunkels.\-com}
+\end{DoxyAuthor}
+This file is used for making use of extra functionality of some C compilers used for Contiki, and defining work-\/arounds for various quirks and problems with some other C compilers. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{cc_8h_a874cde5f1073882b4318efa41908be05}{\index{cc.\-h@{cc.\-h}!C\-C\-\_\-\-A\-S\-S\-I\-G\-N\-\_\-\-A\-G\-G\-R\-E\-G\-A\-T\-E@{C\-C\-\_\-\-A\-S\-S\-I\-G\-N\-\_\-\-A\-G\-G\-R\-E\-G\-A\-T\-E}}
+\index{C\-C\-\_\-\-A\-S\-S\-I\-G\-N\-\_\-\-A\-G\-G\-R\-E\-G\-A\-T\-E@{C\-C\-\_\-\-A\-S\-S\-I\-G\-N\-\_\-\-A\-G\-G\-R\-E\-G\-A\-T\-E}!cc.h@{cc.\-h}}
+\subsubsection[{C\-C\-\_\-\-A\-S\-S\-I\-G\-N\-\_\-\-A\-G\-G\-R\-E\-G\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-C\-\_\-\-A\-S\-S\-I\-G\-N\-\_\-\-A\-G\-G\-R\-E\-G\-A\-T\-E(
+\begin{DoxyParamCaption}
+\item[{}]{dest, }
+\item[{}]{src}
+\end{DoxyParamCaption}
+)~$\ast$dest = $\ast$src}}\label{cc_8h_a874cde5f1073882b4318efa41908be05}
+Configure if the C compiler supports the assignment of struct value. \hypertarget{cc_8h_a79624e93060c0dbee5ba2542d79cb442}{\index{cc.\-h@{cc.\-h}!C\-C\-\_\-\-C\-O\-N\-C\-A\-T@{C\-C\-\_\-\-C\-O\-N\-C\-A\-T}}
+\index{C\-C\-\_\-\-C\-O\-N\-C\-A\-T@{C\-C\-\_\-\-C\-O\-N\-C\-A\-T}!cc.h@{cc.\-h}}
+\subsubsection[{C\-C\-\_\-\-C\-O\-N\-C\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-C\-\_\-\-C\-O\-N\-C\-A\-T(
+\begin{DoxyParamCaption}
+\item[{}]{s1, }
+\item[{}]{s2}
+\end{DoxyParamCaption}
+)~C\-C\-\_\-\-C\-O\-N\-C\-A\-T2(s1, s2)}}\label{cc_8h_a79624e93060c0dbee5ba2542d79cb442}
+A C preprocessing macro for concatenating to strings.
+
+We need use two macros (C\-C\-\_\-\-C\-O\-N\-C\-A\-T and C\-C\-\_\-\-C\-O\-N\-C\-A\-T2) in order to allow concatenation of two \#defined macros. \hypertarget{cc_8h_a5d6c44249c8f1e06f99d021389017cc3}{\index{cc.\-h@{cc.\-h}!C\-C\-\_\-\-C\-O\-N\-S\-T\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N@{C\-C\-\_\-\-C\-O\-N\-S\-T\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}}
+\index{C\-C\-\_\-\-C\-O\-N\-S\-T\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N@{C\-C\-\_\-\-C\-O\-N\-S\-T\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}!cc.h@{cc.\-h}}
+\subsubsection[{C\-C\-\_\-\-C\-O\-N\-S\-T\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-C\-\_\-\-C\-O\-N\-S\-T\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N~const}}\label{cc_8h_a5d6c44249c8f1e06f99d021389017cc3}
+Configure if the C compiler have problems with const function pointers \hypertarget{cc_8h_af29abcb57156ec0292fa15c7cc7e0eca}{\index{cc.\-h@{cc.\-h}!C\-C\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-H\-A\-S\-H@{C\-C\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-H\-A\-S\-H}}
+\index{C\-C\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-H\-A\-S\-H@{C\-C\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-H\-A\-S\-H}!cc.h@{cc.\-h}}
+\subsubsection[{C\-C\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-H\-A\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-C\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-H\-A\-S\-H~0}}\label{cc_8h_af29abcb57156ec0292fa15c7cc7e0eca}
+Configure if C compiler supports double hash marks in C macros. \hypertarget{cc_8h_ab81105e5bb440a5f17579e7abf3415f5}{\index{cc.\-h@{cc.\-h}!C\-C\-\_\-\-F\-A\-S\-T\-C\-A\-L\-L@{C\-C\-\_\-\-F\-A\-S\-T\-C\-A\-L\-L}}
+\index{C\-C\-\_\-\-F\-A\-S\-T\-C\-A\-L\-L@{C\-C\-\_\-\-F\-A\-S\-T\-C\-A\-L\-L}!cc.h@{cc.\-h}}
+\subsubsection[{C\-C\-\_\-\-F\-A\-S\-T\-C\-A\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-C\-\_\-\-F\-A\-S\-T\-C\-A\-L\-L}}\label{cc_8h_ab81105e5bb440a5f17579e7abf3415f5}
+Configure if the C compiler supports fastcall function declarations. \hypertarget{cc_8h_a7ef85043e1d55c2cee9ba3c289699b42}{\index{cc.\-h@{cc.\-h}!C\-C\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-P\-O\-I\-N\-T\-E\-R\-\_\-\-A\-R\-G\-S@{C\-C\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-P\-O\-I\-N\-T\-E\-R\-\_\-\-A\-R\-G\-S}}
+\index{C\-C\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-P\-O\-I\-N\-T\-E\-R\-\_\-\-A\-R\-G\-S@{C\-C\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-P\-O\-I\-N\-T\-E\-R\-\_\-\-A\-R\-G\-S}!cc.h@{cc.\-h}}
+\subsubsection[{C\-C\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-P\-O\-I\-N\-T\-E\-R\-\_\-\-A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-C\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-P\-O\-I\-N\-T\-E\-R\-\_\-\-A\-R\-G\-S~0}}\label{cc_8h_a7ef85043e1d55c2cee9ba3c289699b42}
+Configure if the C compiler supports the arguments for function pointers. \hypertarget{cc_8h_a556f2735307ab9c1272eae4e2f891012}{\index{cc.\-h@{cc.\-h}!C\-C\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-A\-R\-G@{C\-C\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-A\-R\-G}}
+\index{C\-C\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-A\-R\-G@{C\-C\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-A\-R\-G}!cc.h@{cc.\-h}}
+\subsubsection[{C\-C\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-A\-R\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-C\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-A\-R\-G}}\label{cc_8h_a556f2735307ab9c1272eae4e2f891012}
+Configure if the C compiler supports the \char`\"{}register\char`\"{} keyword for function arguments. \hypertarget{cc_8h_a3f7804f5a43f6ea473f1c570761723ec}{\index{cc.\-h@{cc.\-h}!C\-C\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-C\-H\-A\-R\-\_\-\-B\-U\-G\-S@{C\-C\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-C\-H\-A\-R\-\_\-\-B\-U\-G\-S}}
+\index{C\-C\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-C\-H\-A\-R\-\_\-\-B\-U\-G\-S@{C\-C\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-C\-H\-A\-R\-\_\-\-B\-U\-G\-S}!cc.h@{cc.\-h}}
+\subsubsection[{C\-C\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-C\-H\-A\-R\-\_\-\-B\-U\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-C\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-C\-H\-A\-R\-\_\-\-B\-U\-G\-S~0}}\label{cc_8h_a3f7804f5a43f6ea473f1c570761723ec}
+Configure work-\/around for unsigned char bugs with sdcc. 

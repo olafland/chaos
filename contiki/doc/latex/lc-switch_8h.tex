@@ -1,0 +1,33 @@
+\hypertarget{lc-switch_8h}{\section{core/sys/lc-\/switch.h File Reference}
+\label{lc-switch_8h}\index{core/sys/lc-\/switch.\-h@{core/sys/lc-\/switch.\-h}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__lc_ga2c1bb4fa6d7a6ff951a41c73fc721109}{\#define {\bfseries L\-C\-\_\-\-I\-N\-I\-T}(s)~s = 0;}\label{group__lc_ga2c1bb4fa6d7a6ff951a41c73fc721109}
+
+\item 
+\hypertarget{group__lc_ga1ec8b8f4710dce1fa7fb87d3a31541ae}{\#define {\bfseries L\-C\-\_\-\-R\-E\-S\-U\-M\-E}(s)~switch(s) \{ case 0\-:}\label{group__lc_ga1ec8b8f4710dce1fa7fb87d3a31541ae}
+
+\item 
+\hypertarget{group__lc_gad8eec328a4868d767f0c00c8d1c6cfc1}{\#define {\bfseries L\-C\-\_\-\-S\-E\-T}(s)~s = \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-; case \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-\-:}\label{group__lc_gad8eec328a4868d767f0c00c8d1c6cfc1}
+
+\item 
+\hypertarget{group__lc_gaca51ceb2f5d855dfde55bcedf8d3b92d}{\#define {\bfseries L\-C\-\_\-\-E\-N\-D}(s)~\}}\label{group__lc_gaca51ceb2f5d855dfde55bcedf8d3b92d}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__lc_ga3983e0c026396d5c4506779d770007ba}{typedef unsigned short {\bfseries lc\-\_\-t}}\label{group__lc_ga3983e0c026396d5c4506779d770007ba}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of local continuations based on switch() statement \begin{DoxyAuthor}{Author}
+Adam Dunkels \href{mailto:adam@sics.se}{\tt adam@sics.\-se}
+\end{DoxyAuthor}
+This implementation of local continuations uses the C switch() statement to resume execution of a function somewhere inside the function's body. The implementation is based on the fact that switch() statements are able to jump directly into the bodies of control structures such as if() or while() statements.
+
+This implementation borrows heavily from Simon Tatham's coroutines implementation in C\-: \href{http://www.chiark.greenend.org.uk/~sgtatham/coroutines.html}{\tt http\-://www.\-chiark.\-greenend.\-org.\-uk/$\sim$sgtatham/coroutines.\-html} 

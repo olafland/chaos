@@ -1,0 +1,73 @@
+\hypertarget{xmem_8c}{\section{platform/sky/dev/xmem.c File Reference}
+\label{xmem_8c}\index{platform/sky/dev/xmem.\-c@{platform/sky/dev/xmem.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$legacymsp430.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}contiki.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dev/spi.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dev/xmem.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dev/watchdog.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{xmem_8c_a1f464e950a4fa11e8821b5c725921a15}{\#define {\bfseries P\-R\-I\-N\-T\-F}(...)~do \{\} while (0)}\label{xmem_8c_a1f464e950a4fa11e8821b5c725921a15}
+
+\item 
+\hypertarget{xmem_8c_aead6244edc4aa21a1967e72102355bb0}{\#define {\bfseries S\-P\-I\-\_\-\-F\-L\-A\-S\-H\-\_\-\-I\-N\-S\-\_\-\-W\-R\-E\-N}~0x06}\label{xmem_8c_aead6244edc4aa21a1967e72102355bb0}
+
+\item 
+\hypertarget{xmem_8c_ae2b667b061cd440e2c3946453ba43583}{\#define {\bfseries S\-P\-I\-\_\-\-F\-L\-A\-S\-H\-\_\-\-I\-N\-S\-\_\-\-W\-R\-D\-I}~0x04}\label{xmem_8c_ae2b667b061cd440e2c3946453ba43583}
+
+\item 
+\hypertarget{xmem_8c_ae5860377b7af31c3b1d17c95d9480d75}{\#define {\bfseries S\-P\-I\-\_\-\-F\-L\-A\-S\-H\-\_\-\-I\-N\-S\-\_\-\-R\-D\-S\-R}~0x05}\label{xmem_8c_ae5860377b7af31c3b1d17c95d9480d75}
+
+\item 
+\hypertarget{xmem_8c_af4f08e9f67af263ea003812ab7410f60}{\#define {\bfseries S\-P\-I\-\_\-\-F\-L\-A\-S\-H\-\_\-\-I\-N\-S\-\_\-\-W\-R\-S\-R}~0x01}\label{xmem_8c_af4f08e9f67af263ea003812ab7410f60}
+
+\item 
+\hypertarget{xmem_8c_a05af2d023ba21b14c7a632c1ac35c0a5}{\#define {\bfseries S\-P\-I\-\_\-\-F\-L\-A\-S\-H\-\_\-\-I\-N\-S\-\_\-\-R\-E\-A\-D}~0x03}\label{xmem_8c_a05af2d023ba21b14c7a632c1ac35c0a5}
+
+\item 
+\hypertarget{xmem_8c_a5407746a678bbcc70b24a652afc15961}{\#define {\bfseries S\-P\-I\-\_\-\-F\-L\-A\-S\-H\-\_\-\-I\-N\-S\-\_\-\-F\-A\-S\-T\-\_\-\-R\-E\-A\-D}~0x0b}\label{xmem_8c_a5407746a678bbcc70b24a652afc15961}
+
+\item 
+\hypertarget{xmem_8c_a834443eb522a89b5c409ae95e947015d}{\#define {\bfseries S\-P\-I\-\_\-\-F\-L\-A\-S\-H\-\_\-\-I\-N\-S\-\_\-\-P\-P}~0x02}\label{xmem_8c_a834443eb522a89b5c409ae95e947015d}
+
+\item 
+\hypertarget{xmem_8c_a735c4379c568e99767b6eb6d123771b3}{\#define {\bfseries S\-P\-I\-\_\-\-F\-L\-A\-S\-H\-\_\-\-I\-N\-S\-\_\-\-S\-E}~0xd8}\label{xmem_8c_a735c4379c568e99767b6eb6d123771b3}
+
+\item 
+\hypertarget{xmem_8c_ac4bcb9990bb72f23743bc11a942a8583}{\#define {\bfseries S\-P\-I\-\_\-\-F\-L\-A\-S\-H\-\_\-\-I\-N\-S\-\_\-\-B\-E}~0xc7}\label{xmem_8c_ac4bcb9990bb72f23743bc11a942a8583}
+
+\item 
+\hypertarget{xmem_8c_a020a65a9ee7c21e5d58b1c5466365916}{\#define {\bfseries S\-P\-I\-\_\-\-F\-L\-A\-S\-H\-\_\-\-I\-N\-S\-\_\-\-D\-P}~0xb9}\label{xmem_8c_a020a65a9ee7c21e5d58b1c5466365916}
+
+\item 
+\hypertarget{xmem_8c_a53da2dc79a56163040e158c3c28c0ed3}{\#define {\bfseries S\-P\-I\-\_\-\-F\-L\-A\-S\-H\-\_\-\-I\-N\-S\-\_\-\-R\-E\-S}~0xab}\label{xmem_8c_a53da2dc79a56163040e158c3c28c0ed3}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{xmem_8c_aa98b163510e84b9e79394397efdb8dde}{void {\bfseries xmem\-\_\-init} (void)}\label{xmem_8c_aa98b163510e84b9e79394397efdb8dde}
+
+\item 
+\hypertarget{xmem_8c_a649d2dc785338dcb11bc1f5467691170}{int {\bfseries xmem\-\_\-pread} (void $\ast$\-\_\-p, int size, unsigned long offset)}\label{xmem_8c_a649d2dc785338dcb11bc1f5467691170}
+
+\item 
+\hypertarget{xmem_8c_ad5e7bbfa1cd8644c49ca8203d05e566b}{int {\bfseries xmem\-\_\-pwrite} (const void $\ast$\-\_\-buf, int size, unsigned long addr)}\label{xmem_8c_ad5e7bbfa1cd8644c49ca8203d05e566b}
+
+\item 
+\hypertarget{xmem_8c_a5768dab698742a38134910c6431389c6}{int {\bfseries xmem\-\_\-erase} (long size, unsigned long addr)}\label{xmem_8c_a5768dab698742a38134910c6431389c6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}    Device driver for the ST M25P80 40MHz 1Mbyte external memory.
+\end{DoxyVerb}
+ \begin{DoxyAuthor}{Author}
+Björn Grönvall \href{mailto:bg@sics.se}{\tt bg@sics.\-se}
+\end{DoxyAuthor}
+Data is written bit inverted ($\sim$-\/operator) to flash so that unwritten data will read as zeros (U\-N\-I\-X style). 

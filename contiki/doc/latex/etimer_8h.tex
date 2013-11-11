@@ -1,0 +1,52 @@
+\hypertarget{etimer_8h}{\section{core/sys/etimer.h File Reference}
+\label{etimer_8h}\index{core/sys/etimer.\-h@{core/sys/etimer.\-h}}
+}
+{\ttfamily \#include \char`\"{}sys/timer.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sys/process.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structetimer}{etimer}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__etimer_ga1439dbb6e50928b95cf90a1a1fbec80b}{{\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-N\-A\-M\-E} (etimer\-\_\-process)}\label{group__etimer_ga1439dbb6e50928b95cf90a1a1fbec80b}
+
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Functions called from application programs}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__etimer_gadb6c83643bbca82b614c50b27c586302}{etimer\-\_\-set} (struct \hyperlink{structetimer}{etimer} $\ast$et, clock\-\_\-time\-\_\-t interval)
+\begin{DoxyCompactList}\small\item\em Set an event timer. \end{DoxyCompactList}\item 
+void \hyperlink{group__etimer_ga4f73b01caad4528df4ddadc9fbd30eac}{etimer\-\_\-reset} (struct \hyperlink{structetimer}{etimer} $\ast$et)
+\begin{DoxyCompactList}\small\item\em Reset an event timer with the same interval as was previously set. \end{DoxyCompactList}\item 
+void \hyperlink{group__etimer_ga185a69f1e6e8607fb6e2bc1a0a4900e6}{etimer\-\_\-restart} (struct \hyperlink{structetimer}{etimer} $\ast$et)
+\begin{DoxyCompactList}\small\item\em Restart an event timer from the current point in time. \end{DoxyCompactList}\item 
+void \hyperlink{group__etimer_gaee6120fc1c980055c90828028eb6b446}{etimer\-\_\-adjust} (struct \hyperlink{structetimer}{etimer} $\ast$et, int td)
+\begin{DoxyCompactList}\small\item\em Adjust the expiration time for an event timer. \end{DoxyCompactList}\item 
+clock\-\_\-time\-\_\-t \hyperlink{group__etimer_gaccc5133cd775e2adf7a96eab15d2e6ec}{etimer\-\_\-expiration\-\_\-time} (struct \hyperlink{structetimer}{etimer} $\ast$et)
+\begin{DoxyCompactList}\small\item\em Get the expiration time for the event timer. \end{DoxyCompactList}\item 
+clock\-\_\-time\-\_\-t \hyperlink{group__etimer_ga1c6f865134a64ecc5011ff5d3bd3b7fe}{etimer\-\_\-start\-\_\-time} (struct \hyperlink{structetimer}{etimer} $\ast$et)
+\begin{DoxyCompactList}\small\item\em Get the start time for the event timer. \end{DoxyCompactList}\item 
+int \hyperlink{group__etimer_gada74975ee3bc980472df748b373d8636}{etimer\-\_\-expired} (struct \hyperlink{structetimer}{etimer} $\ast$et)
+\begin{DoxyCompactList}\small\item\em Check if an event timer has expired. \end{DoxyCompactList}\item 
+void \hyperlink{group__etimer_ga94628979920ab92a3cc0e69e537bef7d}{etimer\-\_\-stop} (struct \hyperlink{structetimer}{etimer} $\ast$et)
+\begin{DoxyCompactList}\small\item\em Stop a pending event timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Functions called from timer interrupts, by the system}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__etimer_ga59f4cb712f2bba21ef307bcf67c83118}{etimer\-\_\-request\-\_\-poll} (void)
+\begin{DoxyCompactList}\small\item\em Make the event timer aware that the clock has changed. \end{DoxyCompactList}\item 
+int \hyperlink{group__etimer_ga1cc1db9f408e7c26035399ceb9ee1c5b}{etimer\-\_\-pending} (void)
+\begin{DoxyCompactList}\small\item\em Check if there are any non-\/expired event timers. \end{DoxyCompactList}\item 
+clock\-\_\-time\-\_\-t \hyperlink{group__etimer_ga904ba7c454cdf40eceaa010ed861006c}{etimer\-\_\-next\-\_\-expiration\-\_\-time} (void)
+\begin{DoxyCompactList}\small\item\em Get next event timer expiration time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Event timer header file. \begin{DoxyAuthor}{Author}
+Adam Dunkels \href{mailto:adam@sics.se}{\tt adam@sics.\-se} 
+\end{DoxyAuthor}

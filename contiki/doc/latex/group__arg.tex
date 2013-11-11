@@ -1,0 +1,64 @@
+\hypertarget{group__arg}{\section{Argument buffer}
+\label{group__arg}\index{Argument buffer@{Argument buffer}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structargbuf}{argbuf}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__arg_ga4b68a41d8ce3f5b431000ae7e61b0849}{void {\bfseries arg\-\_\-init} (void)}\label{group__arg_ga4b68a41d8ce3f5b431000ae7e61b0849}
+
+\item 
+char $\ast$ \hyperlink{group__arg_ga676976f783fae79b700abd0feb860de4}{arg\-\_\-alloc} (char size)
+\item 
+void \hyperlink{group__arg_gaa9a428d1b0a677fc321895add50b6231}{arg\-\_\-free} (char $\ast$arg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The argument buffer can be used when passing an argument from an exiting process to a process that has not been created yet. Since the exiting process will have exited when the new process is started, the argument cannot be passed in any of the processes' addres spaces. In such situations, the argument buffer can be used.
+
+The argument buffer is statically allocated in memory and is globally accessible to all processes.
+
+An argument buffer is allocated with the \hyperlink{group__arg_ga676976f783fae79b700abd0feb860de4}{arg\-\_\-alloc()} function and deallocated with the \hyperlink{group__arg_gaa9a428d1b0a677fc321895add50b6231}{arg\-\_\-free()} function. The \hyperlink{group__arg_gaa9a428d1b0a677fc321895add50b6231}{arg\-\_\-free()} function is designed so that it can take any pointer, not just an argument buffer pointer. If the pointer to \hyperlink{group__arg_gaa9a428d1b0a677fc321895add50b6231}{arg\-\_\-free()} is not an argument buffer, the function does nothing. 
+
+\subsection{Function Documentation}
+\hypertarget{group__arg_ga676976f783fae79b700abd0feb860de4}{\index{Argument buffer@{Argument buffer}!arg\-\_\-alloc@{arg\-\_\-alloc}}
+\index{arg\-\_\-alloc@{arg\-\_\-alloc}!Argument buffer@{Argument buffer}}
+\subsubsection[{arg\-\_\-alloc}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ arg\-\_\-alloc (
+\begin{DoxyParamCaption}
+\item[{char}]{size}
+\end{DoxyParamCaption}
+)}}\label{group__arg_ga676976f783fae79b700abd0feb860de4}
+Allocates an argument buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The requested size of the buffer, in bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to allocated buffer, or N\-U\-L\-L if no buffer could be allocated.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+It currently is not possible to allocate argument buffers of any other size than 128 bytes. 
+\end{DoxyNote}
+\hypertarget{group__arg_gaa9a428d1b0a677fc321895add50b6231}{\index{Argument buffer@{Argument buffer}!arg\-\_\-free@{arg\-\_\-free}}
+\index{arg\-\_\-free@{arg\-\_\-free}!Argument buffer@{Argument buffer}}
+\subsubsection[{arg\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void arg\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{group__arg_gaa9a428d1b0a677fc321895add50b6231}
+Deallocates an argument buffer.
+
+This function deallocates the argument buffer pointed to by the parameter, but only if the buffer actually is an argument buffer and is allocated. It is perfectly safe to call this function with any pointer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & A pointer. \\
+\hline
+\end{DoxyParams}

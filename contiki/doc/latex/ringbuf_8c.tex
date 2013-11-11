@@ -1,0 +1,25 @@
+\hypertarget{ringbuf_8c}{\section{core/lib/ringbuf.c File Reference}
+\label{ringbuf_8c}\index{core/lib/ringbuf.\-c@{core/lib/ringbuf.\-c}}
+}
+{\ttfamily \#include \char`\"{}ringbuf.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__ringbuf_ga5e40b0459813787a4e67fceb0aab5fd6}{ringbuf\-\_\-init} (struct \hyperlink{structringbuf}{ringbuf} $\ast$r, uint8\-\_\-t $\ast$dataptr, uint8\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Initialize a ring buffer. \end{DoxyCompactList}\item 
+int \hyperlink{group__ringbuf_ga2a370b54ed5d194e188a94e505b48eeb}{ringbuf\-\_\-put} (struct \hyperlink{structringbuf}{ringbuf} $\ast$r, uint8\-\_\-t c)
+\begin{DoxyCompactList}\small\item\em Insert a byte into the ring buffer. \end{DoxyCompactList}\item 
+int \hyperlink{group__ringbuf_ga2972cc12c40c75e5c883e831ff8c14ab}{ringbuf\-\_\-get} (struct \hyperlink{structringbuf}{ringbuf} $\ast$r)
+\begin{DoxyCompactList}\small\item\em Get a byte from the ring buffer. \end{DoxyCompactList}\item 
+int \hyperlink{group__ringbuf_ga0c16200911b10f8137499825b5803b8d}{ringbuf\-\_\-size} (struct \hyperlink{structringbuf}{ringbuf} $\ast$r)
+\begin{DoxyCompactList}\small\item\em Get the size of a ring buffer. \end{DoxyCompactList}\item 
+int \hyperlink{group__ringbuf_ga8b3f31407ae7e5a98f9cedcb6f5bd82b}{ringbuf\-\_\-elements} (struct \hyperlink{structringbuf}{ringbuf} $\ast$r)
+\begin{DoxyCompactList}\small\item\em Get the number of elements currently in the ring buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}    Ring buffer library implementation
+\end{DoxyVerb}
+ \begin{DoxyAuthor}{Author}
+Adam Dunkels \href{mailto:adam@sics.se}{\tt adam@sics.\-se} 
+\end{DoxyAuthor}

@@ -1,0 +1,71 @@
+\hypertarget{group__lc}{\section{Local continuations}
+\label{group__lc}\index{Local continuations@{Local continuations}}
+}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{lc-addrlabels_8h}{lc-\/addrlabels.\-h}
+\item 
+file \hyperlink{lc-switch_8h}{lc-\/switch.\-h}
+\item 
+file \hyperlink{lc_8h}{lc.\-h}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__lc_ga2c1bb4fa6d7a6ff951a41c73fc721109}{\#define {\bfseries L\-C\-\_\-\-I\-N\-I\-T}(s)~s = N\-U\-L\-L}\label{group__lc_ga2c1bb4fa6d7a6ff951a41c73fc721109}
+
+\item 
+\#define {\bfseries L\-C\-\_\-\-R\-E\-S\-U\-M\-E}(s)
+\item 
+\hypertarget{group__lc_gad8eec328a4868d767f0c00c8d1c6cfc1}{\#define {\bfseries L\-C\-\_\-\-S\-E\-T}(s)~do \{ (\{ \-\_\-\-\_\-label\-\_\-\-\_\- resume; resume\-: (s) = \&\&resume; \}); \}while(0)}\label{group__lc_gad8eec328a4868d767f0c00c8d1c6cfc1}
+
+\item 
+\hypertarget{group__lc_gaca51ceb2f5d855dfde55bcedf8d3b92d}{\#define {\bfseries L\-C\-\_\-\-E\-N\-D}(s)}\label{group__lc_gaca51ceb2f5d855dfde55bcedf8d3b92d}
+
+\item 
+\hypertarget{group__lc_ga2c1bb4fa6d7a6ff951a41c73fc721109}{\#define {\bfseries L\-C\-\_\-\-I\-N\-I\-T}(s)~s = 0;}\label{group__lc_ga2c1bb4fa6d7a6ff951a41c73fc721109}
+
+\item 
+\hypertarget{group__lc_ga1ec8b8f4710dce1fa7fb87d3a31541ae}{\#define {\bfseries L\-C\-\_\-\-R\-E\-S\-U\-M\-E}(s)~switch(s) \{ case 0\-:}\label{group__lc_ga1ec8b8f4710dce1fa7fb87d3a31541ae}
+
+\item 
+\hypertarget{group__lc_gad8eec328a4868d767f0c00c8d1c6cfc1}{\#define {\bfseries L\-C\-\_\-\-S\-E\-T}(s)~s = \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-; case \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-\-:}\label{group__lc_gad8eec328a4868d767f0c00c8d1c6cfc1}
+
+\item 
+\hypertarget{group__lc_gaca51ceb2f5d855dfde55bcedf8d3b92d}{\#define {\bfseries L\-C\-\_\-\-E\-N\-D}(s)~\}}\label{group__lc_gaca51ceb2f5d855dfde55bcedf8d3b92d}
+
+\item 
+\hypertarget{group__lc_ga28687499cf5b5681fb09ba1c184e09a8}{\#define {\bfseries \-\_\-\-\_\-\-L\-C\-\_\-\-H\-\_\-\-\_\-}}\label{group__lc_ga28687499cf5b5681fb09ba1c184e09a8}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__lc_ga2bdc4b7b4038454a79f1b2a94a6d2a98}{typedef void $\ast$ {\bfseries lc\-\_\-t}}\label{group__lc_ga2bdc4b7b4038454a79f1b2a94a6d2a98}
+
+\item 
+\hypertarget{group__lc_ga3983e0c026396d5c4506779d770007ba}{typedef unsigned short {\bfseries lc\-\_\-t}}\label{group__lc_ga3983e0c026396d5c4506779d770007ba}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Local continuations form the basis for implementing protothreads. A local continuation can be {\itshape set} in a specific function to capture the state of the function. After a local continuation has been set can be {\itshape resumed} in order to restore the state of the function at the point where the local continuation was set. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__lc_ga1ec8b8f4710dce1fa7fb87d3a31541ae}{\index{Local continuations@{Local continuations}!L\-C\-\_\-\-R\-E\-S\-U\-M\-E@{L\-C\-\_\-\-R\-E\-S\-U\-M\-E}}
+\index{L\-C\-\_\-\-R\-E\-S\-U\-M\-E@{L\-C\-\_\-\-R\-E\-S\-U\-M\-E}!Local continuations@{Local continuations}}
+\subsubsection[{L\-C\-\_\-\-R\-E\-S\-U\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-C\-\_\-\-R\-E\-S\-U\-M\-E(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}}\label{group__lc_ga1ec8b8f4710dce1fa7fb87d3a31541ae}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                          \(\backslash\)
+    if(s != NULL) \{                             \(\backslash\)
+      goto *s;                                  \(\backslash\)
+    \}                                           \(\backslash\)
+  \} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}

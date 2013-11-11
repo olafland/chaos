@@ -1,0 +1,65 @@
+\hypertarget{group__chaos-test-defines}{\section{Application internal defines}
+\label{group__chaos-test-defines}\index{Application internal defines@{Application internal defines}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__chaos-test-defines_gaf02e45f15080b8ec9dd7b286157617ff}{\#define \hyperlink{group__chaos-test-defines_gaf02e45f15080b8ec9dd7b286157617ff}{D\-A\-T\-A\-\_\-\-L\-E\-N}~sizeof(\hyperlink{structchaos__data__struct}{chaos\-\_\-data\-\_\-struct})}\label{group__chaos-test-defines_gaf02e45f15080b8ec9dd7b286157617ff}
+
+\begin{DoxyCompactList}\small\item\em Length of data structure. \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-defines_ga4033ccadc530529ac8bc59d83d36b727}{\#define \hyperlink{group__chaos-test-defines_ga4033ccadc530529ac8bc59d83d36b727}{C\-H\-A\-O\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-M\-O\-D\-E}~C\-H\-A\-O\-S\-\_\-\-S\-Y\-N\-C}\label{group__chaos-test-defines_ga4033ccadc530529ac8bc59d83d36b727}
+
+\begin{DoxyCompactList}\small\item\em synchronization on/off \end{DoxyCompactList}\item 
+\hypertarget{group__chaos-test-defines_ga3d1e7d432a1b08c6c103a999b1dc76df}{\#define \hyperlink{group__chaos-test-defines_ga3d1e7d432a1b08c6c103a999b1dc76df}{I\-S\-\_\-\-I\-N\-I\-T\-I\-A\-T\-O\-R}()~(node\-\_\-id == \hyperlink{group__chaos-test-settings_ga2e373237aef3ee2b0fdb15cd0b8c5390}{I\-N\-I\-T\-I\-A\-T\-O\-R\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D})}\label{group__chaos-test-defines_ga3d1e7d432a1b08c6c103a999b1dc76df}
+
+\begin{DoxyCompactList}\small\item\em Check if the node\-Id matches the one of the initiator. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__chaos-test-defines_gad93c921ab7f327f23c1ba985a0f33c1a}{C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-P\-I\-N\-G}()~(skew\-\_\-estimated $<$ \hyperlink{group__chaos-test-settings_ga115f8d5d589cf7d28c1a67902105c766}{C\-H\-A\-O\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-\_\-\-P\-E\-R\-I\-O\-D\-S})
+\begin{DoxyCompactList}\small\item\em Check if Chaos is still bootstrapping. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__chaos-test-defines_ga8953d1c8a6ef4556adfaf81253f98fc7}{C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-E\-D}()~(\hyperlink{group__chaos__sync_gae7e475746ec86ae6dd8ca9ece642faf8}{is\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated}())
+\begin{DoxyCompactList}\small\item\em Check if Chaos is synchronized. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__chaos-test-defines_ga034934dede09c474ca85417c4794cb51}{C\-H\-A\-O\-S\-\_\-\-R\-E\-F\-E\-R\-E\-N\-C\-E\-\_\-\-T\-I\-M\-E}~(\hyperlink{group__chaos__sync_gaa37a5474c90f7747d0f5054dc1a03764}{get\-\_\-t\-\_\-ref\-\_\-l}())
+\begin{DoxyCompactList}\small\item\em Get Chaos reference time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__chaos-test-defines_gad93c921ab7f327f23c1ba985a0f33c1a}{\index{Application internal defines@{Application internal defines}!C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-P\-I\-N\-G@{C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-P\-I\-N\-G}}
+\index{C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-P\-I\-N\-G@{C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-P\-I\-N\-G}!Application internal defines@{Application internal defines}}
+\subsubsection[{C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-P\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-P\-I\-N\-G(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(skew\-\_\-estimated $<$ {\bf C\-H\-A\-O\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-\_\-\-P\-E\-R\-I\-O\-D\-S})}}\label{group__chaos-test-defines_gad93c921ab7f327f23c1ba985a0f33c1a}
+
+
+Check if Chaos is still bootstrapping. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__chaos-test-settings_ga115f8d5d589cf7d28c1a67902105c766}{C\-H\-A\-O\-S\-\_\-\-B\-O\-O\-T\-S\-T\-R\-A\-P\-\_\-\-P\-E\-R\-I\-O\-D\-S}. 
+\end{DoxySeeAlso}
+\hypertarget{group__chaos-test-defines_ga8953d1c8a6ef4556adfaf81253f98fc7}{\index{Application internal defines@{Application internal defines}!C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-E\-D@{C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-E\-D}}
+\index{C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-E\-D@{C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-E\-D}!Application internal defines@{Application internal defines}}
+\subsubsection[{C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-A\-O\-S\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-E\-D(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~({\bf is\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated}())}}\label{group__chaos-test-defines_ga8953d1c8a6ef4556adfaf81253f98fc7}
+
+
+Check if Chaos is synchronized. 
+
+The application assumes that a node is synchronized if it updated the reference time during the last Chaos phase. \begin{DoxySeeAlso}{See Also}
+\hyperlink{group__chaos__sync_gae7e475746ec86ae6dd8ca9ece642faf8}{is\-\_\-t\-\_\-ref\-\_\-l\-\_\-updated} 
+\end{DoxySeeAlso}
+\hypertarget{group__chaos-test-defines_ga034934dede09c474ca85417c4794cb51}{\index{Application internal defines@{Application internal defines}!C\-H\-A\-O\-S\-\_\-\-R\-E\-F\-E\-R\-E\-N\-C\-E\-\_\-\-T\-I\-M\-E@{C\-H\-A\-O\-S\-\_\-\-R\-E\-F\-E\-R\-E\-N\-C\-E\-\_\-\-T\-I\-M\-E}}
+\index{C\-H\-A\-O\-S\-\_\-\-R\-E\-F\-E\-R\-E\-N\-C\-E\-\_\-\-T\-I\-M\-E@{C\-H\-A\-O\-S\-\_\-\-R\-E\-F\-E\-R\-E\-N\-C\-E\-\_\-\-T\-I\-M\-E}!Application internal defines@{Application internal defines}}
+\subsubsection[{C\-H\-A\-O\-S\-\_\-\-R\-E\-F\-E\-R\-E\-N\-C\-E\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-A\-O\-S\-\_\-\-R\-E\-F\-E\-R\-E\-N\-C\-E\-\_\-\-T\-I\-M\-E~({\bf get\-\_\-t\-\_\-ref\-\_\-l}())}}\label{group__chaos-test-defines_ga034934dede09c474ca85417c4794cb51}
+
+
+Get Chaos reference time. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__chaos__sync_gaa37a5474c90f7747d0f5054dc1a03764}{get\-\_\-t\-\_\-ref\-\_\-l} 
+\end{DoxySeeAlso}

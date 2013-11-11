@@ -1,0 +1,163 @@
+\hypertarget{group__ptsem}{\section{Protothread semaphores}
+\label{group__ptsem}\index{Protothread semaphores@{Protothread semaphores}}
+}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{pt-sem_8h}{pt-\/sem.\-h}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpt__sem}{pt\-\_\-sem}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__ptsem_gad7089c5dc86f12019f0361d82a75b04b}{P\-T\-\_\-\-S\-E\-M\-\_\-\-I\-N\-I\-T}(s, c)
+\item 
+\#define \hyperlink{group__ptsem_ga386ff87a52a840512906f2940e229e2e}{P\-T\-\_\-\-S\-E\-M\-\_\-\-W\-A\-I\-T}(\hyperlink{structpt}{pt}, s)
+\item 
+\#define \hyperlink{group__ptsem_ga1eaaf4d9d75e24582acc6440d7085f19}{P\-T\-\_\-\-S\-E\-M\-\_\-\-S\-I\-G\-N\-A\-L}(\hyperlink{structpt}{pt}, s)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module implements counting semaphores on top of protothreads. Semaphores are a synchronization primitive that provide two operations\-: \char`\"{}wait\char`\"{} and \char`\"{}signal\char`\"{}. The \char`\"{}wait\char`\"{} operation checks the semaphore counter and blocks the thread if the counter is zero. The \char`\"{}signal\char`\"{} operation increases the semaphore counter but does not block. If another thread has blocked waiting for the semaphore that is signaled, the blocked thread will become runnable again.
+
+Semaphores can be used to implement other, more structured, synchronization primitives such as monitors and message queues/bounded buffers (see below).
+
+The following example shows how the producer-\/consumer problem, also known as the bounded buffer problem, can be solved using protothreads and semaphores. Notes on the program follow after the example.
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{pt-sem_8h}{pt-sem.h}"}
+
+\textcolor{preprocessor}{#define NUM\_ITEMS 32}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define BUFSIZE 8}
+\textcolor{preprocessor}{}
+\textcolor{keyword}{static} \textcolor{keyword}{struct }\hyperlink{structpt__sem}{pt\_sem} mutex, full, empty;
+
+\hyperlink{group__pt_ga3d4c8bd4aada659eb34f5d2ffd3e7901}{PT\_THREAD}(producer(\textcolor{keyword}{struct} pt *pt))
+\{
+  \textcolor{keyword}{static} \textcolor{keywordtype}{int} produced;
+  
+  \hyperlink{group__pt_ga2ffbb9e554e08a343ae2f9de4bedfdfc}{PT\_BEGIN}(pt);
+  
+  \textcolor{keywordflow}{for}(produced = 0; produced < NUM\_ITEMS; ++produced) \{
+  
+    \hyperlink{group__ptsem_ga386ff87a52a840512906f2940e229e2e}{PT\_SEM\_WAIT}(pt, &full);
+    
+    \hyperlink{group__ptsem_ga386ff87a52a840512906f2940e229e2e}{PT\_SEM\_WAIT}(pt, &mutex);
+    add\_to\_buffer(produce\_item());    
+    \hyperlink{group__ptsem_ga1eaaf4d9d75e24582acc6440d7085f19}{PT\_SEM\_SIGNAL}(pt, &mutex);
+    
+    \hyperlink{group__ptsem_ga1eaaf4d9d75e24582acc6440d7085f19}{PT\_SEM\_SIGNAL}(pt, &empty);
+  \}
+
+  \hyperlink{group__pt_ga7b04a0035bef29d905496c23bae066d2}{PT\_END}(pt);
+\}
+
+\hyperlink{group__pt_ga3d4c8bd4aada659eb34f5d2ffd3e7901}{PT\_THREAD}(consumer(\textcolor{keyword}{struct} pt *pt))
+\{
+  \textcolor{keyword}{static} \textcolor{keywordtype}{int} consumed;
+  
+  \hyperlink{group__pt_ga2ffbb9e554e08a343ae2f9de4bedfdfc}{PT\_BEGIN}(pt);
+
+  \textcolor{keywordflow}{for}(consumed = 0; consumed < NUM\_ITEMS; ++consumed) \{
+    
+    \hyperlink{group__ptsem_ga386ff87a52a840512906f2940e229e2e}{PT\_SEM\_WAIT}(pt, &empty);
+    
+    \hyperlink{group__ptsem_ga386ff87a52a840512906f2940e229e2e}{PT\_SEM\_WAIT}(pt, &mutex);    
+    consume\_item(get\_from\_buffer());    
+    \hyperlink{group__ptsem_ga1eaaf4d9d75e24582acc6440d7085f19}{PT\_SEM\_SIGNAL}(pt, &mutex);
+    
+    \hyperlink{group__ptsem_ga1eaaf4d9d75e24582acc6440d7085f19}{PT\_SEM\_SIGNAL}(pt, &full);
+  \}
+
+  \hyperlink{group__pt_ga7b04a0035bef29d905496c23bae066d2}{PT\_END}(pt);
+\}
+
+\hyperlink{group__pt_ga3d4c8bd4aada659eb34f5d2ffd3e7901}{PT\_THREAD}(driver\_thread(\textcolor{keyword}{struct} pt *pt))
+\{
+  \textcolor{keyword}{static} \textcolor{keyword}{struct }pt pt\_producer, pt\_consumer;
+
+  \hyperlink{group__pt_ga2ffbb9e554e08a343ae2f9de4bedfdfc}{PT\_BEGIN}(pt);
+  
+  \hyperlink{group__ptsem_gad7089c5dc86f12019f0361d82a75b04b}{PT\_SEM\_INIT}(&empty, 0);
+  \hyperlink{group__ptsem_gad7089c5dc86f12019f0361d82a75b04b}{PT\_SEM\_INIT}(&full, BUFSIZE);
+  \hyperlink{group__ptsem_gad7089c5dc86f12019f0361d82a75b04b}{PT\_SEM\_INIT}(&mutex, 1);
+
+  \hyperlink{group__pt_gae6bae7dc0225468c8a5ac269df549892}{PT\_INIT}(&pt\_producer);
+  \hyperlink{group__pt_gae6bae7dc0225468c8a5ac269df549892}{PT\_INIT}(&pt\_consumer);
+
+  \hyperlink{group__pt_ga2f8f70c30b9ee08a103fbd69a4365c4c}{PT\_WAIT\_THREAD}(pt, producer(&pt\_producer) &
+             consumer(&pt\_consumer));
+
+  \hyperlink{group__pt_ga7b04a0035bef29d905496c23bae066d2}{PT\_END}(pt);
+\}
+\end{DoxyCode}
+
+
+The program uses three protothreads\-: one protothread that implements the consumer, one thread that implements the producer, and one protothread that drives the two other protothreads. The program uses three semaphores\-: \char`\"{}full\char`\"{}, \char`\"{}empty\char`\"{} and \char`\"{}mutex\char`\"{}. The \char`\"{}mutex\char`\"{} semaphore is used to provide mutual exclusion for the buffer, the \char`\"{}empty\char`\"{} semaphore is used to block the consumer is the buffer is empty, and the \char`\"{}full\char`\"{} semaphore is used to block the producer is the buffer is full.
+
+The \char`\"{}driver\-\_\-thread\char`\"{} holds two protothread state variables, \char`\"{}pt\-\_\-producer\char`\"{} and \char`\"{}pt\-\_\-consumer\char`\"{}. It is important to note that both these variables are declared as {\itshape static}. If the static keyword is not used, both variables are stored on the stack. Since protothreads do not store the stack, these variables may be overwritten during a protothread wait operation. Similarly, both the \char`\"{}consumer\char`\"{} and \char`\"{}producer\char`\"{} protothreads declare their local variables as static, to avoid them being stored on the stack. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__ptsem_gad7089c5dc86f12019f0361d82a75b04b}{\index{Protothread semaphores@{Protothread semaphores}!P\-T\-\_\-\-S\-E\-M\-\_\-\-I\-N\-I\-T@{P\-T\-\_\-\-S\-E\-M\-\_\-\-I\-N\-I\-T}}
+\index{P\-T\-\_\-\-S\-E\-M\-\_\-\-I\-N\-I\-T@{P\-T\-\_\-\-S\-E\-M\-\_\-\-I\-N\-I\-T}!Protothread semaphores@{Protothread semaphores}}
+\subsubsection[{P\-T\-\_\-\-S\-E\-M\-\_\-\-I\-N\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-S\-E\-M\-\_\-\-I\-N\-I\-T(
+\begin{DoxyParamCaption}
+\item[{}]{s, }
+\item[{}]{c}
+\end{DoxyParamCaption}
+)}}\label{group__ptsem_gad7089c5dc86f12019f0361d82a75b04b}
+Initialize a semaphore
+
+This macro initializes a semaphore with a value for the counter. Internally, the semaphores use an \char`\"{}unsigned int\char`\"{} to represent the counter, and therefore the \char`\"{}count\char`\"{} argument should be within range of an unsigned int.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & (struct \hyperlink{structpt__sem}{pt\-\_\-sem} $\ast$) A pointer to the \hyperlink{structpt__sem}{pt\-\_\-sem} struct representing the semaphore\\
+\hline
+{\em c} & (unsigned int) The initial count of the semaphore. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__ptsem_ga1eaaf4d9d75e24582acc6440d7085f19}{\index{Protothread semaphores@{Protothread semaphores}!P\-T\-\_\-\-S\-E\-M\-\_\-\-S\-I\-G\-N\-A\-L@{P\-T\-\_\-\-S\-E\-M\-\_\-\-S\-I\-G\-N\-A\-L}}
+\index{P\-T\-\_\-\-S\-E\-M\-\_\-\-S\-I\-G\-N\-A\-L@{P\-T\-\_\-\-S\-E\-M\-\_\-\-S\-I\-G\-N\-A\-L}!Protothread semaphores@{Protothread semaphores}}
+\subsubsection[{P\-T\-\_\-\-S\-E\-M\-\_\-\-S\-I\-G\-N\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-S\-E\-M\-\_\-\-S\-I\-G\-N\-A\-L(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}, }
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}}\label{group__ptsem_ga1eaaf4d9d75e24582acc6440d7085f19}
+Signal a semaphore
+
+This macro carries out the \char`\"{}signal\char`\"{} operation on the semaphore. The signal operation increments the counter inside the semaphore, which eventually will cause waiting protothreads to continue executing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & (struct pt $\ast$) A pointer to the protothread (struct pt) in which the operation is executed.\\
+\hline
+{\em s} & (struct \hyperlink{structpt__sem}{pt\-\_\-sem} $\ast$) A pointer to the \hyperlink{structpt__sem}{pt\-\_\-sem} struct representing the semaphore \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__ptsem_ga386ff87a52a840512906f2940e229e2e}{\index{Protothread semaphores@{Protothread semaphores}!P\-T\-\_\-\-S\-E\-M\-\_\-\-W\-A\-I\-T@{P\-T\-\_\-\-S\-E\-M\-\_\-\-W\-A\-I\-T}}
+\index{P\-T\-\_\-\-S\-E\-M\-\_\-\-W\-A\-I\-T@{P\-T\-\_\-\-S\-E\-M\-\_\-\-W\-A\-I\-T}!Protothread semaphores@{Protothread semaphores}}
+\subsubsection[{P\-T\-\_\-\-S\-E\-M\-\_\-\-W\-A\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-S\-E\-M\-\_\-\-W\-A\-I\-T(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf pt}, }
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}}\label{group__ptsem_ga386ff87a52a840512906f2940e229e2e}
+Wait for a semaphore
+
+This macro carries out the \char`\"{}wait\char`\"{} operation on the semaphore. The wait operation causes the protothread to block while the counter is zero. When the counter reaches a value larger than zero, the protothread will continue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & (struct pt $\ast$) A pointer to the protothread (struct pt) in which the operation is executed.\\
+\hline
+{\em s} & (struct \hyperlink{structpt__sem}{pt\-\_\-sem} $\ast$) A pointer to the \hyperlink{structpt__sem}{pt\-\_\-sem} struct representing the semaphore \\
+\hline
+\end{DoxyParams}

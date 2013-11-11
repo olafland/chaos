@@ -1,0 +1,179 @@
+\hypertarget{process_8h}{\section{core/sys/process.h File Reference}
+\label{process_8h}\index{core/sys/process.\-h@{core/sys/process.\-h}}
+}
+{\ttfamily \#include \char`\"{}sys/pt.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sys/cc.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structprocess}{process}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__process_ga8c1c92ac579df9addba8037625589611}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-N\-O\-N\-E}~N\-U\-L\-L}\label{group__process_ga8c1c92ac579df9addba8037625589611}
+
+\item 
+\hypertarget{group__process_ga9ab88d3a6c2d13dd59f9d41e1347ad40}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-F\-\_\-\-N\-U\-M\-E\-V\-E\-N\-T\-S}~32}\label{group__process_ga9ab88d3a6c2d13dd59f9d41e1347ad40}
+
+\item 
+\hypertarget{group__process_ga57de891168a2d72f56213461d9fb0cc9}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-N\-O\-N\-E}~0x80}\label{group__process_ga57de891168a2d72f56213461d9fb0cc9}
+
+\item 
+\hypertarget{group__process_ga6c18caccfa1f228ca39b41f1be228f91}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-I\-N\-I\-T}~0x81}\label{group__process_ga6c18caccfa1f228ca39b41f1be228f91}
+
+\item 
+\hypertarget{group__process_gaa651f4990d6044e87d5ded0762ef5fec}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-P\-O\-L\-L}~0x82}\label{group__process_gaa651f4990d6044e87d5ded0762ef5fec}
+
+\item 
+\hypertarget{group__process_ga05a3f7ccdd1fa76a632233b2fb925030}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-E\-X\-I\-T}~0x83}\label{group__process_ga05a3f7ccdd1fa76a632233b2fb925030}
+
+\item 
+\hypertarget{group__process_ga2ad52142e294647c7a6f4d3b1f7d0c50}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-S\-E\-R\-V\-I\-C\-E\-\_\-\-R\-E\-M\-O\-V\-E\-D}~0x84}\label{group__process_ga2ad52142e294647c7a6f4d3b1f7d0c50}
+
+\item 
+\hypertarget{group__process_gacdefdad965091a7d73b81b4b79d20cf3}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-C\-O\-N\-T\-I\-N\-U\-E}~0x85}\label{group__process_gacdefdad965091a7d73b81b4b79d20cf3}
+
+\item 
+\hypertarget{group__process_gaf9468ac9433d3fefdc38e1c49c290a45}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-M\-S\-G}~0x86}\label{group__process_gaf9468ac9433d3fefdc38e1c49c290a45}
+
+\item 
+\hypertarget{group__process_ga1b2dcad893494c2a0c51bc18ef53c854}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-E\-X\-I\-T\-E\-D}~0x87}\label{group__process_ga1b2dcad893494c2a0c51bc18ef53c854}
+
+\item 
+\hypertarget{group__process_gad5863f65171a4a63e598afc3da030290}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-T\-I\-M\-E\-R}~0x88}\label{group__process_gad5863f65171a4a63e598afc3da030290}
+
+\item 
+\hypertarget{group__process_gaedffb0684c685580b478e8f49eabc3ad}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-C\-O\-M}~0x89}\label{group__process_gaedffb0684c685580b478e8f49eabc3ad}
+
+\item 
+\hypertarget{group__process_gaf4acd471e64f0b2209049ee42ccff3e4}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-V\-E\-N\-T\-\_\-\-M\-A\-X}~0x8a}\label{group__process_gaf4acd471e64f0b2209049ee42ccff3e4}
+
+\item 
+\hypertarget{group__process_ga958ff4131a37eaf12b920da16749e3b7}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T}~N\-U\-L\-L}\label{group__process_ga958ff4131a37eaf12b920da16749e3b7}
+
+\item 
+\hypertarget{group__process_ga750b6b1b06aa8ba8ae1d72cff428f45a}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-Z\-O\-M\-B\-I\-E}~((struct \hyperlink{structprocess}{process} $\ast$)0x1)}\label{group__process_ga750b6b1b06aa8ba8ae1d72cff428f45a}
+
+\item 
+\hypertarget{group__process_ga1cdf7dc0628e32a933f82de1d3d0d2ce}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-L\-I\-S\-T}()~process\-\_\-list}\label{group__process_ga1cdf7dc0628e32a933f82de1d3d0d2ce}
+
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Return values}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__process_gab8b88e679094ca4b95deb8ee8320802b}{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-O\-K}~0
+\begin{DoxyCompactList}\small\item\em Return value indicating that an operation was successful. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__process_gaf73c4e16f7db2731761680c84e18bf37}{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-R\-R\-\_\-\-F\-U\-L\-L}~1
+\begin{DoxyCompactList}\small\item\em Return value indicating that the event queue was full. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Process protothread functions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__process_ga8efc62947f2ca2c870f52896e0dc1a81}{P\-R\-O\-C\-E\-S\-S\-\_\-\-B\-E\-G\-I\-N}()
+\item 
+\#define \hyperlink{group__process_ga9c2681a0070eba8a7c9fdf4dbb6db05e}{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-N\-D}()
+\item 
+\#define \hyperlink{group__process_ga4f9c1d291e210793e8c4444762f748ba}{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T}()
+\item 
+\#define \hyperlink{group__process_ga996168a0f904c0e28e3f6ed18dddd129}{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-E\-V\-E\-N\-T\-\_\-\-U\-N\-T\-I\-L}(c)
+\item 
+\#define \hyperlink{group__process_gad78fc20c14b0b03c3b2412742f5f416f}{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D}()
+\item 
+\#define \hyperlink{group__process_gae5edd3d10ed29b7a6ed4a42e0690738b}{P\-R\-O\-C\-E\-S\-S\-\_\-\-Y\-I\-E\-L\-D\-\_\-\-U\-N\-T\-I\-L}(c)
+\item 
+\#define \hyperlink{group__process_ga203e74a64e870015d3c2aa456c1ad5d9}{P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-U\-N\-T\-I\-L}(c)
+\item 
+\hypertarget{group__process_ga31a4bb7afbf5adac9f43f37469640229}{\#define {\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-W\-A\-I\-T\-\_\-\-W\-H\-I\-L\-E}(c)~\hyperlink{group__pt_gaad14bbbf092b90aa0a5a4f9169504a8d}{P\-T\-\_\-\-W\-A\-I\-T\-\_\-\-W\-H\-I\-L\-E}(process\-\_\-pt, c)}\label{group__process_ga31a4bb7afbf5adac9f43f37469640229}
+
+\item 
+\#define \hyperlink{group__process_ga479c3ebc58ecef0c027d627433c65862}{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T}()
+\item 
+\#define \hyperlink{group__process_ga8e6d21a11491c5bd2d8017b783da6b29}{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-T\-\_\-\-S\-P\-A\-W\-N}(\hyperlink{structpt}{pt}, thread)
+\item 
+\#define \hyperlink{group__process_ga29eb92d7ef01f486d70a90cc34800a5d}{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-A\-U\-S\-E}()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Poll and exit handlers}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__process_ga4159c99c908ca521cf8b9fdda4b7f64c}{P\-R\-O\-C\-E\-S\-S\-\_\-\-P\-O\-L\-L\-H\-A\-N\-D\-L\-E\-R}(handler)
+\item 
+\#define \hyperlink{group__process_ga3dee46e19ad8848b86d9d06321b75c0e}{P\-R\-O\-C\-E\-S\-S\-\_\-\-E\-X\-I\-T\-H\-A\-N\-D\-L\-E\-R}(handler)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Process declaration and definition}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__process_gaa4cff8e4f3abc50c74619a90ae347200}{P\-R\-O\-C\-E\-S\-S\-\_\-\-T\-H\-R\-E\-A\-D}(name, ev, data)
+\item 
+\#define \hyperlink{group__process_ga96ff784b76d6edef302610d69664025f}{P\-R\-O\-C\-E\-S\-S\-\_\-\-N\-A\-M\-E}(name)
+\item 
+\#define \hyperlink{group__process_ga27e9b6fc13f0438e37a198f69b38b4cf}{P\-R\-O\-C\-E\-S\-S}(name, strname)
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__process_ga4d81d85c09c89d0e97cd0d239728a942}{typedef unsigned char {\bfseries process\-\_\-event\-\_\-t}}\label{group__process_ga4d81d85c09c89d0e97cd0d239728a942}
+
+\item 
+\hypertarget{group__process_gaacfecee3e853f3904a8e695de0f6649d}{typedef void $\ast$ {\bfseries process\-\_\-data\-\_\-t}}\label{group__process_gaacfecee3e853f3904a8e695de0f6649d}
+
+\item 
+\hypertarget{group__process_ga5071f7c273b5a622099737a01e828a06}{typedef unsigned char {\bfseries process\-\_\-num\-\_\-events\-\_\-t}}\label{group__process_ga5071f7c273b5a622099737a01e828a06}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}{\bf Functions called from device drivers}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__process_ga496ba132ce7a2ec12a8313dc05ab0142}{process\-\_\-poll} (struct \hyperlink{structprocess}{process} $\ast$p)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Functions called by the system and boot-\/up code}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__process_gaab238b68c176e90138159f41af9133f1}{process\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the process module. \end{DoxyCompactList}\item 
+int \hyperlink{group__process_ga4968157ca91c28e26075ab78a1a4fb56}{process\-\_\-run} (void)
+\item 
+int \hyperlink{group__process_ga45108066f1eabfd536782f7a19c7da6e}{process\-\_\-is\-\_\-running} (struct \hyperlink{structprocess}{process} $\ast$p)
+\item 
+int \hyperlink{group__process_gaa6f7728a7860837ad311380036b538eb}{process\-\_\-nevents} (void)
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__process_ga03302c412b77c7e2a8c5b3515e0ad93a}{C\-C\-I\-F struct \hyperlink{structprocess}{process} $\ast$ {\bfseries process\-\_\-list}}\label{group__process_ga03302c412b77c7e2a8c5b3515e0ad93a}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions called from application programs}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__process_ga64e81621381e2e575fad8959ce7a8496}{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-U\-R\-R\-E\-N\-T}()
+\item 
+\#define \hyperlink{group__process_gaa355c55e3ff7aa0999f2ae770298b7bb}{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-B\-E\-G\-I\-N}(p)
+\item 
+\#define \hyperlink{group__process_gae4aa7fc8384dfc5416669cc0f712d0ed}{P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-E\-N\-D}(p)~process\-\_\-current = tmp\-\_\-current; \}
+\item 
+\hypertarget{group__process_ga5d5ebe8593273fc5cb6d4a203879b300}{C\-C\-I\-F struct \hyperlink{structprocess}{process} $\ast$ {\bfseries process\-\_\-current}}\label{group__process_ga5d5ebe8593273fc5cb6d4a203879b300}
+
+\item 
+void \hyperlink{group__process_ga1ecfc797b48072142b3e22ac1f0bbfdd}{process\-\_\-start} (struct \hyperlink{structprocess}{process} $\ast$p, const char $\ast$arg)
+\item 
+int \hyperlink{group__process_gaaf5f03bb404a67415ea4ea72a749203f}{process\-\_\-post} (struct \hyperlink{structprocess}{process} $\ast$p, process\-\_\-event\-\_\-t ev, process\-\_\-data\-\_\-t data)
+\item 
+void \hyperlink{group__process_ga6b8e9574ecf58706d51b28c26723a94b}{process\-\_\-post\-\_\-synch} (struct \hyperlink{structprocess}{process} $\ast$p, process\-\_\-event\-\_\-t ev, process\-\_\-data\-\_\-t data)
+\item 
+void \hyperlink{group__process_ga7f3c7706ec62fbcbdf018f799b21cd66}{process\-\_\-exit} (struct \hyperlink{structprocess}{process} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Cause a process to exit. \end{DoxyCompactList}\item 
+process\-\_\-event\-\_\-t \hyperlink{group__process_ga24326129d48a7afaf618e3e01f75c086}{process\-\_\-alloc\-\_\-event} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a global event number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for the Contiki process interface. \begin{DoxyAuthor}{Author}
+Adam Dunkels \href{mailto:adam@sics.se}{\tt adam@sics.\-se} 
+\end{DoxyAuthor}

@@ -1,0 +1,307 @@
+\hypertarget{group__etimer}{\section{Event timers}
+\label{group__etimer}\index{Event timers@{Event timers}}
+}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{etimer_8c}{etimer.\-c}
+\item 
+file \hyperlink{etimer_8h}{etimer.\-h}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structetimer}{etimer}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__etimer_ga7b4deba6dec820808d556b9f611ed610}{{\bfseries P\-R\-O\-C\-E\-S\-S} (etimer\-\_\-process,\char`\"{}Event \hyperlink{structtimer}{timer}\char`\"{})}\label{group__etimer_ga7b4deba6dec820808d556b9f611ed610}
+
+\item 
+\hypertarget{group__etimer_ga045d36807a20508f3dfea0a618e23ca7}{{\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-T\-H\-R\-E\-A\-D} (etimer\-\_\-process, ev, data)}\label{group__etimer_ga045d36807a20508f3dfea0a618e23ca7}
+
+\item 
+\hypertarget{group__etimer_ga1439dbb6e50928b95cf90a1a1fbec80b}{{\bfseries P\-R\-O\-C\-E\-S\-S\-\_\-\-N\-A\-M\-E} (etimer\-\_\-process)}\label{group__etimer_ga1439dbb6e50928b95cf90a1a1fbec80b}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions called from application programs}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__etimer_gadb6c83643bbca82b614c50b27c586302}{etimer\-\_\-set} (struct \hyperlink{structetimer}{etimer} $\ast$et, clock\-\_\-time\-\_\-t interval)
+\begin{DoxyCompactList}\small\item\em Set an event timer. \end{DoxyCompactList}\item 
+void \hyperlink{group__etimer_ga4f73b01caad4528df4ddadc9fbd30eac}{etimer\-\_\-reset} (struct \hyperlink{structetimer}{etimer} $\ast$et)
+\begin{DoxyCompactList}\small\item\em Reset an event timer with the same interval as was previously set. \end{DoxyCompactList}\item 
+void \hyperlink{group__etimer_ga185a69f1e6e8607fb6e2bc1a0a4900e6}{etimer\-\_\-restart} (struct \hyperlink{structetimer}{etimer} $\ast$et)
+\begin{DoxyCompactList}\small\item\em Restart an event timer from the current point in time. \end{DoxyCompactList}\item 
+void \hyperlink{group__etimer_gaee6120fc1c980055c90828028eb6b446}{etimer\-\_\-adjust} (struct \hyperlink{structetimer}{etimer} $\ast$et, int td)
+\begin{DoxyCompactList}\small\item\em Adjust the expiration time for an event timer. \end{DoxyCompactList}\item 
+int \hyperlink{group__etimer_gada74975ee3bc980472df748b373d8636}{etimer\-\_\-expired} (struct \hyperlink{structetimer}{etimer} $\ast$et)
+\begin{DoxyCompactList}\small\item\em Check if an event timer has expired. \end{DoxyCompactList}\item 
+clock\-\_\-time\-\_\-t \hyperlink{group__etimer_gaccc5133cd775e2adf7a96eab15d2e6ec}{etimer\-\_\-expiration\-\_\-time} (struct \hyperlink{structetimer}{etimer} $\ast$et)
+\begin{DoxyCompactList}\small\item\em Get the expiration time for the event timer. \end{DoxyCompactList}\item 
+clock\-\_\-time\-\_\-t \hyperlink{group__etimer_ga1c6f865134a64ecc5011ff5d3bd3b7fe}{etimer\-\_\-start\-\_\-time} (struct \hyperlink{structetimer}{etimer} $\ast$et)
+\begin{DoxyCompactList}\small\item\em Get the start time for the event timer. \end{DoxyCompactList}\item 
+void \hyperlink{group__etimer_ga94628979920ab92a3cc0e69e537bef7d}{etimer\-\_\-stop} (struct \hyperlink{structetimer}{etimer} $\ast$et)
+\begin{DoxyCompactList}\small\item\em Stop a pending event timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions called from timer interrupts, by the system}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__etimer_ga59f4cb712f2bba21ef307bcf67c83118}{etimer\-\_\-request\-\_\-poll} (void)
+\begin{DoxyCompactList}\small\item\em Make the event timer aware that the clock has changed. \end{DoxyCompactList}\item 
+int \hyperlink{group__etimer_ga1cc1db9f408e7c26035399ceb9ee1c5b}{etimer\-\_\-pending} (void)
+\begin{DoxyCompactList}\small\item\em Check if there are any non-\/expired event timers. \end{DoxyCompactList}\item 
+clock\-\_\-time\-\_\-t \hyperlink{group__etimer_ga904ba7c454cdf40eceaa010ed861006c}{etimer\-\_\-next\-\_\-expiration\-\_\-time} (void)
+\begin{DoxyCompactList}\small\item\em Get next event timer expiration time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Event timers provides a way to generate timed events. An event timer will post an event to the process that set the timer when the event timer expires.
+
+An event timer is declared as a {\ttfamily struct} {\ttfamily etimer} and all access to the event timer is made by a pointer to the declared event timer.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__timer}{Simple timer library} 
+
+\hyperlink{group__clock}{Clock library} (used by the \hyperlink{structtimer}{timer} library) 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__etimer_gaee6120fc1c980055c90828028eb6b446}{\index{Event timers@{Event timers}!etimer\-\_\-adjust@{etimer\-\_\-adjust}}
+\index{etimer\-\_\-adjust@{etimer\-\_\-adjust}!Event timers@{Event timers}}
+\subsubsection[{etimer\-\_\-adjust}]{\setlength{\rightskip}{0pt plus 5cm}void etimer\-\_\-adjust (
+\begin{DoxyParamCaption}
+\item[{struct {\bf etimer} $\ast$}]{et, }
+\item[{int}]{td}
+\end{DoxyParamCaption}
+)}}\label{group__etimer_gaee6120fc1c980055c90828028eb6b446}
+
+
+Adjust the expiration time for an event timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em et} & A pointer to the event timer. \\
+\hline
+{\em td} & The time difference to adjust the expiration time with. \begin{DoxyVerb}        This function is used to adjust the time the event
+        timer will expire. It can be used to synchronize
+        periodic timers without the need to restart the timer
+        or change the timer interval.
+
+        \note This function should only be used for small
+        adjustments. For large adjustments use etimer_set()
+        instead.
+
+        \note A periodic timer will drift unless the
+        etimer_reset() function is used.
+\end{DoxyVerb}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__etimer_gadb6c83643bbca82b614c50b27c586302}{etimer\-\_\-set()} 
+
+\hyperlink{group__etimer_ga4f73b01caad4528df4ddadc9fbd30eac}{etimer\-\_\-reset()} 
+\end{DoxySeeAlso}
+\hypertarget{group__etimer_gaccc5133cd775e2adf7a96eab15d2e6ec}{\index{Event timers@{Event timers}!etimer\-\_\-expiration\-\_\-time@{etimer\-\_\-expiration\-\_\-time}}
+\index{etimer\-\_\-expiration\-\_\-time@{etimer\-\_\-expiration\-\_\-time}!Event timers@{Event timers}}
+\subsubsection[{etimer\-\_\-expiration\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}clock\-\_\-time\-\_\-t etimer\-\_\-expiration\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{struct {\bf etimer} $\ast$}]{et}
+\end{DoxyParamCaption}
+)}}\label{group__etimer_gaccc5133cd775e2adf7a96eab15d2e6ec}
+
+
+Get the expiration time for the event timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em et} & A pointer to the event timer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The expiration time for the event timer. \begin{DoxyVerb}        This function returns the expiration time for an event timer.\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\hypertarget{group__etimer_gada74975ee3bc980472df748b373d8636}{\index{Event timers@{Event timers}!etimer\-\_\-expired@{etimer\-\_\-expired}}
+\index{etimer\-\_\-expired@{etimer\-\_\-expired}!Event timers@{Event timers}}
+\subsubsection[{etimer\-\_\-expired}]{\setlength{\rightskip}{0pt plus 5cm}C\-C\-I\-F int etimer\-\_\-expired (
+\begin{DoxyParamCaption}
+\item[{struct {\bf etimer} $\ast$}]{et}
+\end{DoxyParamCaption}
+)}}\label{group__etimer_gada74975ee3bc980472df748b373d8636}
+
+
+Check if an event timer has expired. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em et} & A pointer to the event timer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if the timer has expired, zero otherwise. \begin{DoxyVerb}        This function tests if an event timer has expired and
+        returns true or false depending on its status.\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\hypertarget{group__etimer_ga904ba7c454cdf40eceaa010ed861006c}{\index{Event timers@{Event timers}!etimer\-\_\-next\-\_\-expiration\-\_\-time@{etimer\-\_\-next\-\_\-expiration\-\_\-time}}
+\index{etimer\-\_\-next\-\_\-expiration\-\_\-time@{etimer\-\_\-next\-\_\-expiration\-\_\-time}!Event timers@{Event timers}}
+\subsubsection[{etimer\-\_\-next\-\_\-expiration\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}clock\-\_\-time\-\_\-t etimer\-\_\-next\-\_\-expiration\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__etimer_ga904ba7c454cdf40eceaa010ed861006c}
+
+
+Get next event timer expiration time. 
+
+\begin{DoxyReturn}{Returns}
+Next expiration time of all pending event timers. If there are no pending event timers this function returns 0. \begin{DoxyVerb}This functions returns next expiration time of all
+pending event timers.\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\hypertarget{group__etimer_ga1cc1db9f408e7c26035399ceb9ee1c5b}{\index{Event timers@{Event timers}!etimer\-\_\-pending@{etimer\-\_\-pending}}
+\index{etimer\-\_\-pending@{etimer\-\_\-pending}!Event timers@{Event timers}}
+\subsubsection[{etimer\-\_\-pending}]{\setlength{\rightskip}{0pt plus 5cm}int etimer\-\_\-pending (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__etimer_ga1cc1db9f408e7c26035399ceb9ee1c5b}
+
+
+Check if there are any non-\/expired event timers. 
+
+\begin{DoxyReturn}{Returns}
+True if there are active event timers, false if there are no active timers.
+\end{DoxyReturn}
+This function checks if there are any active event timers that have not expired. \hypertarget{group__etimer_ga59f4cb712f2bba21ef307bcf67c83118}{\index{Event timers@{Event timers}!etimer\-\_\-request\-\_\-poll@{etimer\-\_\-request\-\_\-poll}}
+\index{etimer\-\_\-request\-\_\-poll@{etimer\-\_\-request\-\_\-poll}!Event timers@{Event timers}}
+\subsubsection[{etimer\-\_\-request\-\_\-poll}]{\setlength{\rightskip}{0pt plus 5cm}void etimer\-\_\-request\-\_\-poll (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__etimer_ga59f4cb712f2bba21ef307bcf67c83118}
+
+
+Make the event timer aware that the clock has changed. 
+
+This function is used to inform the event timer module that the system clock has been updated. Typically, this function would be called from the timer interrupt handler when the clock has ticked. \hypertarget{group__etimer_ga4f73b01caad4528df4ddadc9fbd30eac}{\index{Event timers@{Event timers}!etimer\-\_\-reset@{etimer\-\_\-reset}}
+\index{etimer\-\_\-reset@{etimer\-\_\-reset}!Event timers@{Event timers}}
+\subsubsection[{etimer\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}C\-C\-I\-F void etimer\-\_\-reset (
+\begin{DoxyParamCaption}
+\item[{struct {\bf etimer} $\ast$}]{et}
+\end{DoxyParamCaption}
+)}}\label{group__etimer_ga4f73b01caad4528df4ddadc9fbd30eac}
+
+
+Reset an event timer with the same interval as was previously set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em et} & A pointer to the event timer. \begin{DoxyVerb}        This function resets the event timer with the same
+        interval that was given to the event timer with the
+        etimer_set() function. The start point of the interval
+        is the exact time that the event timer last
+        expired. Therefore, this function will cause the timer
+        to be stable over time, unlike the etimer_restart()
+        function.
+\end{DoxyVerb}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__etimer_ga185a69f1e6e8607fb6e2bc1a0a4900e6}{etimer\-\_\-restart()} 
+\end{DoxySeeAlso}
+\hypertarget{group__etimer_ga185a69f1e6e8607fb6e2bc1a0a4900e6}{\index{Event timers@{Event timers}!etimer\-\_\-restart@{etimer\-\_\-restart}}
+\index{etimer\-\_\-restart@{etimer\-\_\-restart}!Event timers@{Event timers}}
+\subsubsection[{etimer\-\_\-restart}]{\setlength{\rightskip}{0pt plus 5cm}void etimer\-\_\-restart (
+\begin{DoxyParamCaption}
+\item[{struct {\bf etimer} $\ast$}]{et}
+\end{DoxyParamCaption}
+)}}\label{group__etimer_ga185a69f1e6e8607fb6e2bc1a0a4900e6}
+
+
+Restart an event timer from the current point in time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em et} & A pointer to the event timer. \begin{DoxyVerb}        This function restarts the event timer with the same
+        interval that was given to the etimer_set()
+        function. The event timer will start at the current
+        time.
+
+        \note A periodic timer will drift if this function is
+        used to reset it. For periodic timers, use the
+        etimer_reset() function instead.
+\end{DoxyVerb}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__etimer_ga4f73b01caad4528df4ddadc9fbd30eac}{etimer\-\_\-reset()} 
+\end{DoxySeeAlso}
+\hypertarget{group__etimer_gadb6c83643bbca82b614c50b27c586302}{\index{Event timers@{Event timers}!etimer\-\_\-set@{etimer\-\_\-set}}
+\index{etimer\-\_\-set@{etimer\-\_\-set}!Event timers@{Event timers}}
+\subsubsection[{etimer\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}C\-C\-I\-F void etimer\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{struct {\bf etimer} $\ast$}]{et, }
+\item[{clock\-\_\-time\-\_\-t}]{interval}
+\end{DoxyParamCaption}
+)}}\label{group__etimer_gadb6c83643bbca82b614c50b27c586302}
+
+
+Set an event timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em et} & A pointer to the event timer \\
+\hline
+{\em interval} & The interval before the timer expires. \begin{DoxyVerb}        This function is used to set an event timer for a time
+        sometime in the future. When the event timer expires,
+        the event PROCESS_EVENT_TIMER will be posted to the
+        process that called the etimer_set() function.\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__etimer_ga1c6f865134a64ecc5011ff5d3bd3b7fe}{\index{Event timers@{Event timers}!etimer\-\_\-start\-\_\-time@{etimer\-\_\-start\-\_\-time}}
+\index{etimer\-\_\-start\-\_\-time@{etimer\-\_\-start\-\_\-time}!Event timers@{Event timers}}
+\subsubsection[{etimer\-\_\-start\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}clock\-\_\-time\-\_\-t etimer\-\_\-start\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{struct {\bf etimer} $\ast$}]{et}
+\end{DoxyParamCaption}
+)}}\label{group__etimer_ga1c6f865134a64ecc5011ff5d3bd3b7fe}
+
+
+Get the start time for the event timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em et} & A pointer to the event timer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The start time for the event timer. \begin{DoxyVerb}        This function returns the start time (when the timer
+        was last set) for an event timer.\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\hypertarget{group__etimer_ga94628979920ab92a3cc0e69e537bef7d}{\index{Event timers@{Event timers}!etimer\-\_\-stop@{etimer\-\_\-stop}}
+\index{etimer\-\_\-stop@{etimer\-\_\-stop}!Event timers@{Event timers}}
+\subsubsection[{etimer\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}void etimer\-\_\-stop (
+\begin{DoxyParamCaption}
+\item[{struct {\bf etimer} $\ast$}]{et}
+\end{DoxyParamCaption}
+)}}\label{group__etimer_ga94628979920ab92a3cc0e69e537bef7d}
+
+
+Stop a pending event timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em et} & A pointer to the pending event timer. \begin{DoxyVerb}        This function stops an event timer that has previously
+        been set with etimer_set() or etimer_reset(). After
+        this function has been called, the event timer will not
+        emit any event when it expires.\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}

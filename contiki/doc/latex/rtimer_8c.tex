@@ -1,0 +1,37 @@
+\hypertarget{rtimer_8c}{\section{core/sys/rtimer.c File Reference}
+\label{rtimer_8c}\index{core/sys/rtimer.\-c@{core/sys/rtimer.\-c}}
+}
+{\ttfamily \#include \char`\"{}sys/rtimer.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}contiki.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__rt_gad72dbcf6d0153db1b8d8a58001feed83}{\#define {\bfseries D\-E\-B\-U\-G}~0}\label{group__rt_gad72dbcf6d0153db1b8d8a58001feed83}
+
+\item 
+\hypertarget{group__rt_ga1f464e950a4fa11e8821b5c725921a15}{\#define {\bfseries P\-R\-I\-N\-T\-F}(...)}\label{group__rt_ga1f464e950a4fa11e8821b5c725921a15}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__rt_ga655b7809b449b92eb2579db5f5c10e78}{rtimer\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the real-\/time scheduler. \end{DoxyCompactList}\item 
+int \hyperlink{group__rt_ga6a437542171f242142c80b4c3d8e4bfa}{rtimer\-\_\-set} (struct \hyperlink{structrtimer}{rtimer} $\ast$task, rtimer\-\_\-clock\-\_\-t time, rtimer\-\_\-clock\-\_\-t duration, rtimer\-\_\-callback\-\_\-t func, void $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Post a real-\/time task. \end{DoxyCompactList}\item 
+\hypertarget{group__rt_ga3007f52b4104251bcc2491237c66de39}{int {\bfseries rtimer\-\_\-set\-\_\-long} (struct \hyperlink{structrtimer}{rtimer} $\ast$\hyperlink{structrtimer}{rtimer}, rtimer\-\_\-clock\-\_\-t ref\-\_\-time, unsigned long offset, rtimer\-\_\-callback\-\_\-t func, void $\ast$ptr)}\label{group__rt_ga3007f52b4104251bcc2491237c66de39}
+
+\item 
+\hypertarget{group__rt_ga4f90133fee9050ec6554eb766e4c96a5}{unsigned long {\bfseries rtimer\-\_\-time\-\_\-to\-\_\-expire} (void)}\label{group__rt_ga4f90133fee9050ec6554eb766e4c96a5}
+
+\item 
+void \hyperlink{group__rt_gaa9322a37b5a9b7ff51018fa67e39ad3b}{rtimer\-\_\-run\-\_\-next} (void)
+\begin{DoxyCompactList}\small\item\em Execute the next real-\/time task and schedule the next task, if any. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}    Implementation of the architecture-agnostic parts of the real-time timer module.
+\end{DoxyVerb}
+ \begin{DoxyAuthor}{Author}
+Adam Dunkels \href{mailto:adam@sics.se}{\tt adam@sics.\-se} 
+\end{DoxyAuthor}
