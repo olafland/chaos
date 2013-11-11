@@ -36,9 +36,13 @@ There are some paramters that you should set according to your settings in `chao
 
 These two are essenttial to set, you find many more configuration parameters in `chaos-test.h`, `chaos.h`, and `testbed.h`. You can either set them in the file directly or feed as parameters to your compiler.
 
-Testbed: TBD
+Testbed: 
 
-Cooja simulator: TBD
+Here is one example for 15 nodes and node 3 acting as initiator:
+
+`make chaos-test.sky TARGET=sky DEFINES=CHAOS_NODES=15,INITIATOR_NODE_ID=3`
+
+Cooja simulator: to run in Cooja, you have to tell Chaos that we are using Cooja by adding `COOJA=1` (0 by default) to your defines (see testbed example above). In addition, you should use the MRM radio model in Cooja.
 
 System Setup: TBD
 
