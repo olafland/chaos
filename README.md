@@ -28,7 +28,7 @@ Building and Running Chaos
 
 Configuration: 
 
-There are some paramters that you should set according to your settings in `chaos-test.h` in `/chaos/contiki/apps/`
+There are some paramters in `chaos-test.h` in folder `/chaos/contiki/apps/` that you should set according to your requirements:
 
 `#define INITIATOR_NODE_ID 1` (choose the node ID of the initiator, 1 by default)
 
