@@ -42,9 +42,13 @@ Here is one example for 15 nodes and node 3 acting as initiator:
 
 `make chaos-test.sky TARGET=sky DEFINES=CHAOS_NODES=15,INITIATOR_NODE_ID=3`
 
-Cooja simulator: to run in Cooja, you have to tell Chaos that we are using Cooja by adding `COOJA=1` (0 by default) to your defines (see testbed example above). In addition, you should use the MRM radio model in Cooja.
+Cooja simulator: 
 
-System Setup: TBD
+To run in Cooja, you have to tell Chaos that we are using Cooja by adding `COOJA=1` (0 by default) to your defines (see testbed example above). In addition, you should use the MRM radio model in Cooja.
+
+System Setup: 
+
+Just for your reference, evalution of this work was done with `gcc version 4.6.3 20120301 (mspgcc LTS 20120406 unpatched) (GCC)`.
 
 Research
 --------
