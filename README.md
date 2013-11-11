@@ -22,15 +22,13 @@ Code Layout
 
 `/chaos/contiki/core/dev` (Chaos header and source files)
 
-`/chaos/simulator` (Python Chaos simulator)
-
 
 Building and Running Chaos
 ----------------------
 
-Testbed
+Testbed: TBD
 
-Cooja simulator
+Cooja simulator: TBD
 
 Research
 --------
