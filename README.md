@@ -26,6 +26,10 @@ Code Layout
 Building and Running Chaos
 ----------------------
 
+Configuration: There are some paramters that you should set according to your settings in 'chaos-test.h' in `/chaos/contiki/apps/`
+
+'#define INITIATOR_NODE_ID       1' (choose the node ID of the initiator, 1 by default)
+
 Testbed: TBD
 
 Cooja simulator: TBD
