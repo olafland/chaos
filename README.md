@@ -27,7 +27,6 @@ Building and Running Chaos
 ----------------------
 
 Configuration: 
-=====
 
 There are some paramters that you should set according to your settings in `chaos-test.h` in `/chaos/contiki/apps/`
 
@@ -40,6 +39,8 @@ These two are essenttial to set, you find many more configuration parameters in 
 Testbed: TBD
 
 Cooja simulator: TBD
+
+System Setup: TBD
 
 Research
 --------
