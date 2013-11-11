@@ -44,7 +44,7 @@ Here is one example for 15 nodes and node 3 acting as initiator:
 
 Cooja simulator: 
 
-To run in Cooja, you have to tell Chaos that we are using Cooja by adding `COOJA=1` (0 by default) to your defines (see testbed example above). In addition, you should use the MRM radio model in Cooja.
+To run in Cooja, you have to tell Chaos that we are using Cooja by adding `COOJA=1` (0 by default) to your defines (see testbed example above). In addition, you should use the MRM radio model in Cooja. Please note that Chaos pushes Cooja to its limits (and sometimes beyond). As a result, you might see some artifacts when running Chaos in Cooja. However, commonly Chaos and Cooja get along well.
 
 System Setup: 
 
