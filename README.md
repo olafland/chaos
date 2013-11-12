@@ -33,7 +33,7 @@ There are a few parameters in `/chaos/contiki/apps/chaos-test.h` that you should
 * `#define INITIATOR_NODE_ID 1` (the node ID of the initiator, 1 by default)
 * `#define CHAOS_NODES 3` (the total number of nodes in the network, 3 by default)
 
-These two are essential; you can find many more configuration parameters in `/chaos/contiki/apps/chaos-test.h`, `/chaos/contiki/core/dev/chaos.h`, and `/chaos/contiki/core/deploy/testbed.h`. You can either set them in the file directly or feed as parameters to your compiler.
+These two are essential; you can find many more configuration parameters in `/chaos/contiki/apps/chaos-test.h`, `/chaos/contiki/core/dev/chaos.h`, and `/chaos/contiki/core/deploy/testbed.h`. You can either set them in the file directly or feed them as parameters to your compiler.
 
 ### Testbed
 
