@@ -18,7 +18,7 @@ To learn more about Chaos, check out our [SenSys'13 paper](http://dl.acm.org/cit
 Code Layout
 -----------
 
-`/chaos/contiki/apps/` (example app)
+`/chaos/contiki/apps/chaos-test` (test application)
 
 `/chaos/contiki/core/dev` (Chaos header and source files)
 
@@ -26,27 +26,26 @@ Code Layout
 Building and Running Chaos
 ----------------------
 
-Configuration: 
+### Configuration 
 
-There are some paramters in `chaos-test.h` in folder `/chaos/contiki/apps/` that you should set according to your requirements:
+There are a few parameters in `/chaos/contiki/apps/chaos-test.h` that you should set according to your needs:
 
-`#define INITIATOR_NODE_ID 1` (choose the node ID of the initiator, 1 by default)
+* `#define INITIATOR_NODE_ID 1` (the node ID of the initiator, 1 by default)
+* `#define CHAOS_NODES 3` (the total number of nodes in the network, 3 by default)
 
-`#define CHAOS_NODES 3` (set the number of nodes, 3 by default)
+These two are essential; you can find many more configuration parameters in `/chaos/contiki/apps/chaos-test.h`, `/chaos/contiki/core/dev/chaos.h`, and `/chaos/contiki/apps/testbed.h`. You can either set them in the file directly or feed as parameters to your compiler.
 
-These two are essenttial to set, you find many more configuration parameters in `chaos-test.h`, `chaos.h`, and `testbed.h`. You can either set them in the file directly or feed as parameters to your compiler.
-
-Testbed: 
+### Testbed
 
 Here is one example for 15 nodes and node 3 acting as initiator:
 
 `make chaos-test.sky TARGET=sky DEFINES=CHAOS_NODES=15,INITIATOR_NODE_ID=3`
 
-Cooja simulator: 
+### Cooja simulator 
 
-To run in Cooja, you have to tell Chaos that we are using Cooja by adding `COOJA=1` (0 by default) to your defines (see testbed example above). In addition, you should use the MRM radio model in Cooja. Please note that Chaos pushes Cooja to its limits (and sometimes beyond). As a result, you might see some artifacts when running Chaos in Cooja. However, commonly Chaos and Cooja get along well.
+To run Chaos in Cooja, you have to set `COOJA=1` (0 by default) in your defines (see testbed example above). In addition, you should use the MRM radio model in Cooja. Please note that Chaos pushes Cooja to its limits (and sometimes beyond). As a result, you might see some artifacts when running Chaos in Cooja. However, commonly Chaos and Cooja get along well.
 
-System Setup: 
+### System setup 
 
 Just for your reference, evalution of this work was done with `gcc version 4.6.3 20120301 (mspgcc LTS 20120406 unpatched) (GCC)`.
 
