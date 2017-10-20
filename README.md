@@ -1,6 +1,8 @@
 Chaos
 ======
 
+Note: an extended version of Chaos is now available as: https://github.com/iot-chalmers/a2-synchrotron
+
 Chaos is a versatile, efficient, and reliable primitive for sharing data among all nodes in a low-power wireless network.
 Applications of Chaos are diverse and include the computation of aggregate functions, network-wide agreement, atomic broadcast, reliable dissemination, and all-to-all communication.
 
